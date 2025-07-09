@@ -41,6 +41,12 @@ nav {
     gap: 0.5rem;
 }
 
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* .btc-logo {
     width: 24px;
     height: 24px;
