@@ -41,7 +41,7 @@ nav {
     gap: 0.5rem;
 }
 
-.btc-logo {
+/* .btc-logo {
     width: 24px;
     height: 24px;
     background: #f39c12;
@@ -52,8 +52,17 @@ nav {
     color: white;
     font-weight: bold;
     font-size: 14px;
-}
-
+} */
+.btc-img {
+    width: 2em;
+    height: 2em;
+    max-width: 40px;
+    max-height: 40px;
+    object-fit: contain;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
 .nav-links {
     display: flex;
     list-style: none;
