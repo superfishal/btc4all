@@ -1,4 +1,4 @@
-![BTC4All](/assets/images/Asset%205.png)
+![BareBits](/assets/images/cat-blackyellow.png)
 ***
-# BTC4All
-**BTC4All is a Bitcoin Lightning Network Payment Solution company focused on providing fast, safe, and secure payment solutions for all types of businesses and industries.**
+# BareBits
+**BareBits is a Bitcoin Lightning Network Payment Solution company focused on providing fast, safe, and secure payment solutions for all types of businesses and industries.**
