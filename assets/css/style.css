@@ -155,6 +155,93 @@ nav {
     opacity: 0.9;
 }
 
+/* Comparison Section */
+.comparison-section {
+    padding: 80px 0;
+    background: var(--color-white);
+}
+
+.comparison-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--color-black);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.comparison-side {
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.comparison-side.traditional {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #dee2e6;
+}
+
+.comparison-side.lightning {
+    background: linear-gradient(135deg, var(--color-btc-gold) 0%, var(--color-btc-orange) 100%);
+    color: var(--color-black);
+}
+
+.comparison-side h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-display);
+}
+
+.comparison-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.comparison-item:hover {
+    transform: translateY(-2px);
+}
+
+.comparison-side.traditional .comparison-item {
+    background: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.comparison-side.lightning .comparison-item {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.comparison-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.comparison-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.comparison-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
 .cta-button {
     display: inline-block;
     background: #f39c12;
@@ -316,6 +403,15 @@ footer {
     
     .nav-toggle {
         display: block;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .comparison-side {
+        padding: 1.5rem;
     }
     
     .hero h1 {
