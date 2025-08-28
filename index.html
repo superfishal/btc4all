@@ -78,13 +78,17 @@
     <section class="pitch-section" id="pitch">
       <div class="container">
         <h2>Why Traditional Payments Are Broken</h2>
-        
+
         <!-- Why Section -->
         <div class="pitch-step why-section" data-step="why">
           <div class="step-content">
             <div class="step-number">01</div>
-            <h3>Why Traditional Payments Suck</h3>
-            <p>Your business is losing money on every transaction. Banks discriminate against certain industries, charge exorbitant fees, and make you wait days for your money.</p>
+            <h3>Traditional Payments Suck</h3>
+            <p>
+              Your business is losing money on every transaction. Banks
+              discriminate against certain industries, charge exorbitant fees,
+              and make you wait days for your money.
+            </p>
             <ul class="pain-points">
               <li>2-15% processing fees eating your profits</li>
               <li>Days or weeks to receive payments</li>
@@ -102,7 +106,11 @@
           <div class="step-content">
             <div class="step-number">02</div>
             <h3>How Lightning Network Solves This</h3>
-            <p>Bitcoin Lightning Network technology eliminates traditional payment problems. It's like upgrading from dial-up to fiber internet for your money.</p>
+            <p>
+              Bitcoin Lightning Network technology eliminates traditional
+              payment problems. It's like upgrading from dial-up to fiber
+              internet for your money.
+            </p>
             <ul class="benefits">
               <li>Zero processing fees - keep 100% of your money</li>
               <li>Instant settlement - money in seconds, not days</li>
@@ -120,14 +128,19 @@
           <div class="step-content">
             <div class="step-number">03</div>
             <h3>What This Means for You</h3>
-            <p>Transform your business from a fee-paying victim to a profit-maximizing powerhouse. Join the future of payments.</p>
+            <p>
+              Transform your business from a fee-paying victim to a
+              profit-maximizing powerhouse. Join the future of payments.
+            </p>
             <ul class="results">
               <li>Save thousands per month in processing fees</li>
               <li>Get paid instantly, not in 30-90 days</li>
               <li>Accept payments from anyone, anywhere</li>
               <li>Eliminate fraud and chargeback risk</li>
             </ul>
-            <a href="#calculator" class="cta-button">See How Much You'll Save</a>
+            <a href="#calculator" class="cta-button"
+              >See How Much You'll Save</a
+            >
           </div>
           <div class="step-visual">
             <div class="visual-placeholder">🚀</div>
@@ -159,6 +172,77 @@
             <div>
               <div>⚡</div>
               <div>Lightning Network Visualization</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fee Calculator Section -->
+        <div class="calculator-section">
+          <h3>See How Much You'll Save</h3>
+          <p>
+            Calculate your potential savings by switching to Lightning Network
+            payments
+          </p>
+
+          <div class="calculator-form">
+            <div class="input-group">
+              <label for="monthlyRevenue">Monthly Revenue</label>
+              <input
+                type="number"
+                id="monthlyRevenue"
+                placeholder="50000"
+                min="0"
+                step="1000"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="processingFee">Current Processing Fee (%)</label>
+              <select id="processingFee">
+                <option value="2.9">2.9% (Standard)</option>
+                <option value="3.5">3.5% (High-Risk)</option>
+                <option value="5.0">5.0% (Adult/Cannabis)</option>
+                <option value="8.0">8.0% (Firearms)</option>
+                <option value="15.0">15.0% (Extreme Risk)</option>
+              </select>
+            </div>
+
+            <button type="button" id="calculateBtn" class="cta-button">
+              Calculate Savings
+            </button>
+          </div>
+
+          <div
+            class="calculator-results"
+            id="calculatorResults"
+            style="display: none"
+          >
+            <div class="result-card">
+              <h4>Your Current Costs</h4>
+              <div class="result-amount current-cost">
+                $<span id="currentCost">0</span>/month
+              </div>
+            </div>
+
+            <div class="result-card">
+              <h4>With Lightning Network</h4>
+              <div class="result-amount lightning-cost">
+                $<span id="lightningCost">0</span>/month
+              </div>
+            </div>
+
+            <div class="result-card highlight">
+              <h4>Monthly Savings</h4>
+              <div class="result-amount savings">
+                $<span id="monthlySavings">0</span>/month
+              </div>
+            </div>
+
+            <div class="result-card highlight">
+              <h4>Annual Savings</h4>
+              <div class="result-amount savings">
+                $<span id="annualSavings">0</span>/year
+              </div>
             </div>
           </div>
         </div>
