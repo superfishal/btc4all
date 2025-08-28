@@ -21,3 +21,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     navLinks.classList.remove("active");
   });
 });
+
+// Scroll animations for pitch section
+const pitchObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate");
+    }
+  });
+}, {
+  threshold: 0.2,
+  rootMargin: "0px 0px -100px 0px"
+});
+
+// Observe all pitch steps
+document.querySelectorAll(".pitch-step").forEach((step) => {
+  pitchObserver.observe(step);
+});

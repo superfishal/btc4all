@@ -260,6 +260,119 @@ nav {
     opacity: 0.9;
 }
 
+/* Pitch Section - Why/How/What */
+.pitch-section {
+    padding: 80px 0;
+    background: var(--color-white);
+}
+
+.pitch-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--color-black);
+}
+
+.pitch-step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.pitch-step.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pitch-step:nth-child(even) {
+    direction: rtl;
+}
+
+.pitch-step:nth-child(even) .step-content {
+    direction: ltr;
+}
+
+.step-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-btc-gold);
+    font-family: var(--font-display);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.step-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
+    font-family: var(--font-display);
+}
+
+.step-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--color-grey);
+    line-height: 1.6;
+}
+
+.step-content ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.step-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-grey);
+}
+
+.step-content li:before {
+    content: "•";
+    color: var(--color-btc-gold);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.pain-points li:before {
+    content: "✗";
+    color: #f44336;
+}
+
+.benefits li:before {
+    content: "✓";
+    color: var(--color-btc-gold);
+}
+
+.results li:before {
+    content: "→";
+    color: var(--color-btc-orange);
+}
+
+.step-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.visual-placeholder {
+    font-size: 8rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.pitch-step:hover .visual-placeholder {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
 
 
 .cta-button {
@@ -455,6 +568,24 @@ footer {
     
     .features-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .pitch-step {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+    
+    .step-number {
+        font-size: 3rem;
+    }
+    
+    .step-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .visual-placeholder {
+        font-size: 5rem;
     }
 }
 
