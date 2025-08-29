@@ -296,7 +296,7 @@ nav {
     position: relative;
 }
 
-/* Add blockchain hexagon transition to pitch section */
+/* Add Matrix-style digital rain transition to pitch section */
 .pitch-section::before {
     content: '';
     position: absolute;
@@ -305,11 +305,18 @@ nav {
     right: 0;
     height: 40px;
     background-image: 
-        repeating-linear-gradient(60deg, transparent, transparent 20px, var(--color-btc-gold) 20px, var(--color-btc-gold) 22px),
-        repeating-linear-gradient(-60deg, transparent, transparent 20px, var(--color-btc-gold) 20px, var(--color-btc-gold) 22px);
-    background-size: 40px 40px;
-    opacity: 0.3;
-    animation: hexMove 8s linear infinite;
+        linear-gradient(90deg, transparent 0px, transparent 8px, var(--color-btc-gold) 8px, var(--color-btc-gold) 9px, transparent 9px, transparent 16px),
+        linear-gradient(90deg, transparent 0px, transparent 4px, var(--color-btc-gold) 4px, var(--color-btc-gold) 5px, transparent 5px, transparent 12px),
+        linear-gradient(90deg, transparent 0px, transparent 12px, var(--color-btc-gold) 12px, var(--color-btc-gold) 13px, transparent 13px, transparent 20px),
+        linear-gradient(90deg, transparent 0px, transparent 6px, var(--color-btc-gold) 6px, var(--color-btc-gold) 7px, transparent 7px, transparent 14px),
+        linear-gradient(90deg, transparent 0px, transparent 10px, var(--color-btc-gold) 10px, var(--color-btc-gold) 11px, transparent 11px, transparent 18px);
+    background-size: 16px 40px, 12px 40px, 20px 40px, 14px 40px, 18px 40px;
+    animation: matrixRain 4s linear infinite;
+}
+
+@keyframes matrixRain {
+    0% { background-position: 0 -40px, 0 -40px, 0 -40px, 0 -40px, 0 -40px; }
+    100% { background-position: 0 40px, 0 40px, 0 40px, 0 40px, 0 40px; }
 }
 
 /* Section Transition Effects - Multiple Styles */
@@ -475,9 +482,21 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--color-btc-gold), transparent);
-    opacity: 0.3;
+    height: 25px;
+    background-image: 
+        linear-gradient(90deg, var(--color-btc-gold) 0px, var(--color-btc-gold) 2px, transparent 2px, transparent 8px),
+        linear-gradient(90deg, transparent 0px, transparent 4px, var(--color-btc-gold) 4px, var(--color-btc-gold) 6px, transparent 6px, transparent 12px),
+        linear-gradient(90deg, var(--color-btc-gold) 0px, var(--color-btc-gold) 1px, transparent 1px, transparent 6px),
+        linear-gradient(90deg, transparent 0px, transparent 2px, var(--color-btc-gold) 2px, var(--color-btc-gold) 3px, transparent 3px, transparent 10px);
+    background-size: 8px 25px, 12px 25px, 6px 25px, 10px 25px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    animation: bitcoinFlow 6s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes bitcoinFlow {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 8px 0, 12px 0, 6px 0, 10px 0; }
 }
 
 .pitch-section h2 {
@@ -961,20 +980,58 @@ footer {
     position: relative;
 }
 
-/* Add lightning zigzag transition to footer */
+/* Add Bitcoin network nodes transition to footer */
 footer::before {
     content: '';
     position: absolute;
-    top: -20px;
+    top: -25px;
     left: 0;
     right: 0;
-    height: 20px;
+    height: 25px;
     background-image: 
-        linear-gradient(45deg, transparent 33.333%, var(--color-btc-gold) 33.333%, var(--color-btc-gold) 66.667%, transparent 66.667%),
-        linear-gradient(-45deg, transparent 33.333%, var(--color-btc-gold) 33.333%, var(--color-btc-gold) 66.667%, transparent 66.667%);
-    background-size: 20px 20px;
+        radial-gradient(circle at 15px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 45px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 75px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 105px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 135px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 165px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 195px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 225px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 255px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 285px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 315px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 345px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 375px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 405px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 435px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 465px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 495px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 525px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 555px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 585px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 615px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 645px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 675px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 705px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 735px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 765px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 795px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 825px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 855px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 885px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 915px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 945px 12px, var(--color-btc-gold) 3px, transparent 3px),
+        radial-gradient(circle at 975px 12px, var(--color-btc-gold) 3px, transparent 3px);
+    background-size: 30px 25px;
     opacity: 0.4;
-    animation: lightningFlash 2s ease-in-out infinite;
+    animation: bitcoinNodes 5s ease-in-out infinite;
+}
+
+@keyframes bitcoinNodes {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    25% { opacity: 0.6; transform: scale(1.02); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+    75% { opacity: 0.6; transform: scale(1.02); }
 }
 
 .footer-content {
