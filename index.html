@@ -72,6 +72,35 @@
         </div>
         <a href="#services" class="cta-button">Start Saving Today</a>
       </div>
+        </section>
+
+    <!-- Why Choose Lightning Section -->
+    <section class="two-column" id="services">
+      <div class="container">
+        <div class="two-column-grid">
+          <div class="column-content">
+            <h2>Why Choose Lightning?</h2>
+            <p>
+              Experience the future of payments with Bitcoin Lightning Network.
+              Our service provides instant transactions, minimal fees, and
+              complete privacy for your business.
+            </p>
+            <p>
+              Perfect for businesses in regulated industries who need reliable,
+              fast payment processing without traditional banking restrictions.
+            </p>
+            <div class="flex">
+              <a href="#how-it-works" class="cta-button">Learn More</a>
+            </div>
+          </div>
+          <div class="feature-image">
+            <div>
+              <div>⚡</div>
+              <div>Lightning Network Visualization</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Why/How/What Infographic Section -->
@@ -138,9 +167,6 @@
               <li>Accept payments from anyone, anywhere</li>
               <li>Eliminate fraud and chargeback risk</li>
             </ul>
-            <a href="#calculator" class="cta-button"
-              >See How Much You'll Save</a
-            >
           </div>
           <div class="step-visual">
             <div class="visual-placeholder">🚀</div>
@@ -149,95 +175,117 @@
       </div>
     </section>
 
-    <!-- Services/Info Section -->
-    <section class="two-column" id="services">
+    <!-- How It Works Section -->
+    <section class="additional-section" id="how-it-works">
       <div class="container">
-        <div class="two-column-grid">
-          <div class="column-content">
-            <h2>Why Choose Lightning?</h2>
+        <h2>How It Works</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>Easy Setup</h3>
             <p>
-              Experience the future of payments with Bitcoin Lightning Network.
-              Our service provides instant transactions, minimal fees, and
-              complete privacy for your business.
+              Get your payment system up and running in minutes with our simple
+              integration process.
             </p>
-            <p>
-              Perfect for businesses in regulated industries who need reliable,
-              fast payment processing without traditional banking restrictions.
-            </p>
-            <div class="flex">
-              <a href="#how-it-works" class="cta-button">Learn More</a>
-            </div>
           </div>
-          <div class="feature-image">
-            <div>
-              <div>⚡</div>
-              <div>Lightning Network Visualization</div>
-            </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant Processing</h3>
+            <p>
+              Lightning Network enables instant transactions with minimal fees,
+              perfect for high-volume businesses.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure & Private</h3>
+            <p>
+              Your transactions are private and secure, with no personal
+              information required from your customers.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Fee Calculator Section -->
-        <div class="calculator-section">
-          <h3>Fee Comparison Calculator</h3>
-          <p>See exactly how much you're losing to traditional payment processors</p>
+    <!-- Fee Calculator Section -->
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <h3>Fee Comparison Calculator</h3>
+        <p>
+          See exactly how much you're losing to traditional payment processors
+        </p>
 
-          <div class="calculator-form">
-            <div class="input-group">
-              <label for="monthlyRevenue">Monthly Revenue</label>
-              <input
-                type="number"
-                id="monthlyRevenue"
-                placeholder="50000"
-                min="0"
-                step="1000"
-              />
-            </div>
-
-            <div class="input-group">
-              <label for="processingFee">Current Processing Fee (%)</label>
-              <select id="processingFee">
-                <option value="2.9">2.9% (Standard)</option>
-                <option value="3.5">3.5% (High-Risk)</option>
-                <option value="5.0">5.0% (Adult/Cannabis)</option>
-                <option value="8.0">8.0% (Firearms)</option>
-                <option value="15.0">15.0% (Extreme Risk)</option>
-              </select>
-            </div>
-
-            <button type="button" id="calculateBtn" class="cta-button">
-              Calculate Savings
-            </button>
+        <div class="calculator-form">
+          <div class="input-group">
+            <label for="monthlyRevenue">Monthly Revenue</label>
+            <input
+              type="number"
+              id="monthlyRevenue"
+              placeholder="50000"
+              min="0"
+              step="1000"
+            />
           </div>
 
-          <div class="comparison-table" id="comparisonTable">
-            <div class="table-header">
-              <div class="table-cell">Fee Type</div>
-              <div class="table-cell">Traditional Processing</div>
-              <div class="table-cell">Lightning Network</div>
-              <div class="table-cell">Monthly Savings</div>
+          <div class="input-group">
+            <label for="processingFee">Current Processing Fee (%)</label>
+            <select id="processingFee">
+              <option value="2.9">2.9% (Standard)</option>
+              <option value="3.5">3.5% (High-Risk)</option>
+              <option value="5.0">5.0% (Adult/Cannabis)</option>
+              <option value="8.0">8.0% (Firearms)</option>
+              <option value="15.0">15.0% (Extreme Risk)</option>
+              </select>
+          </div>
+
+          <button type="button" id="calculateBtn" class="cta-button">
+            Calculate Savings
+          </button>
+        </div>
+
+        <div class="comparison-table" id="comparisonTable">
+          <div class="table-header">
+            <div class="table-cell">Fee Type</div>
+            <div class="table-cell">Traditional Processing</div>
+            <div class="table-cell">Lightning Network</div>
+            <div class="table-cell">Monthly Savings</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell label">Processing Fees</div>
+            <div class="table-cell traditional">
+              $<span id="traditionalFees">0</span>
             </div>
-            
-            <div class="table-row">
-              <div class="table-cell label">Processing Fees</div>
-              <div class="table-cell traditional">$<span id="traditionalFees">0</span></div>
-              <div class="table-cell lightning">$<span id="lightningFees">0</span></div>
-              <div class="table-cell savings">$<span id="feeSavings">0</span></div>
+            <div class="table-cell lightning">
+              $<span id="lightningFees">0</span>
             </div>
-            
-            <div class="table-row">
-              <div class="table-cell label">Monthly Total</div>
-              <div class="table-cell traditional total">$<span id="traditionalTotal">0</span></div>
-              <div class="table-cell lightning total">$<span id="lightningTotal">0</span></div>
-              <div class="table-cell savings total">$<span id="monthlySavings">0</span></div>
+            <div class="table-cell savings">
+              $<span id="feeSavings">0</span>
             </div>
-            
-            <div class="table-row highlight">
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell label">Monthly Total</div>
+            <div class="table-cell traditional total">
+              $<span id="traditionalTotal">0</span>
+            </div>
+            <div class="table-cell lightning total">
+              $<span id="lightningTotal">0</span>
+            </div>
+            <div class="table-cell savings total">
+              $<span id="monthlySavings">0</span>
+            </div>
+          </div>
+
+                      <div class="table-row highlight">
               <div class="table-cell label">Annual Savings</div>
               <div class="table-cell"></div>
               <div class="table-cell"></div>
-              <div class="table-cell savings annual">$<span id="annualSavings">0</span></div>
+              <div class="table-cell savings annual">
+                $<span id="annualSavings">0</span>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
