@@ -196,6 +196,29 @@ nav {
     color: var(--color-white);
     padding: 120px 0 80px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero Background Pattern */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 176, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 176, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 176, 0, 0.05) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(1deg); }
+    66% { transform: translateY(20px) rotate(-1deg); }
 }
 
 .hero-logo {
@@ -251,6 +274,12 @@ nav {
     color: var(--color-btc-gold);
     font-family: var(--font-display);
     line-height: 1;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .stat-label {
@@ -264,6 +293,40 @@ nav {
 .pitch-section {
     padding: 80px 0;
     background: var(--color-white);
+    position: relative;
+}
+
+/* Section Transition Effects */
+.section-transition {
+    position: relative;
+}
+
+.section-transition::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--color-white));
+    pointer-events: none;
+}
+
+/* Two Column Section Enhancement */
+.two-column {
+    position: relative;
+    background: linear-gradient(135deg, #fafafa 0%, var(--color-white) 100%);
+}
+
+.two-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-btc-gold), transparent);
+    opacity: 0.3;
 }
 
 .pitch-section h2 {
@@ -628,6 +691,29 @@ nav {
 .additional-section {
     background: #f8f9fa;
     padding: 80px 0;
+    position: relative;
+}
+
+/* Wave Divider */
+.additional-section::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--color-btc-gold) 25%, 
+        var(--color-btc-orange) 50%, 
+        var(--color-btc-gold) 75%, 
+        transparent 100%);
+    animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
 }
 
 .additional-section h2 {
@@ -657,6 +743,11 @@ nav {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, var(--color-btc-gold), var(--color-btc-orange));
+}
+
 .feature-icon {
     width: 80px;
     height: 80px;
@@ -668,6 +759,7 @@ nav {
     justify-content: center;
     color: var(--color-black);
     font-size: 2rem;
+    transition: all 0.3s ease;
 }
 
 /* Footer */
