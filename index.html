@@ -178,11 +178,8 @@
 
         <!-- Fee Calculator Section -->
         <div class="calculator-section">
-          <h3>See How Much You'll Save</h3>
-          <p>
-            Calculate your potential savings by switching to Lightning Network
-            payments
-          </p>
+          <h3>Fee Comparison Calculator</h3>
+          <p>See exactly how much you're losing to traditional payment processors</p>
 
           <div class="calculator-form">
             <div class="input-group">
@@ -212,37 +209,33 @@
             </button>
           </div>
 
-          <div
-            class="calculator-results"
-            id="calculatorResults"
-            style="display: none"
-          >
-            <div class="result-card">
-              <h4>Your Current Costs</h4>
-              <div class="result-amount current-cost">
-                $<span id="currentCost">0</span>/month
-              </div>
+          <div class="comparison-table" id="comparisonTable">
+            <div class="table-header">
+              <div class="table-cell">Fee Type</div>
+              <div class="table-cell">Traditional Processing</div>
+              <div class="table-cell">Lightning Network</div>
+              <div class="table-cell">Monthly Savings</div>
             </div>
-
-            <div class="result-card">
-              <h4>With Lightning Network</h4>
-              <div class="result-amount lightning-cost">
-                $<span id="lightningCost">0</span>/month
-              </div>
+            
+            <div class="table-row">
+              <div class="table-cell label">Processing Fees</div>
+              <div class="table-cell traditional">$<span id="traditionalFees">0</span></div>
+              <div class="table-cell lightning">$<span id="lightningFees">0</span></div>
+              <div class="table-cell savings">$<span id="feeSavings">0</span></div>
             </div>
-
-            <div class="result-card highlight">
-              <h4>Monthly Savings</h4>
-              <div class="result-amount savings">
-                $<span id="monthlySavings">0</span>/month
-              </div>
+            
+            <div class="table-row">
+              <div class="table-cell label">Monthly Total</div>
+              <div class="table-cell traditional total">$<span id="traditionalTotal">0</span></div>
+              <div class="table-cell lightning total">$<span id="lightningTotal">0</span></div>
+              <div class="table-cell savings total">$<span id="monthlySavings">0</span></div>
             </div>
-
-            <div class="result-card highlight">
-              <h4>Annual Savings</h4>
-              <div class="result-amount savings">
-                $<span id="annualSavings">0</span>/year
-              </div>
+            
+            <div class="table-row highlight">
+              <div class="table-cell label">Annual Savings</div>
+              <div class="table-cell"></div>
+              <div class="table-cell"></div>
+              <div class="table-cell savings annual">$<span id="annualSavings">0</span></div>
             </div>
           </div>
         </div>

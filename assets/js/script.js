@@ -43,7 +43,7 @@ document.querySelectorAll(".pitch-step").forEach((step) => {
 const calculateBtn = document.getElementById("calculateBtn");
 const monthlyRevenueInput = document.getElementById("monthlyRevenue");
 const processingFeeSelect = document.getElementById("processingFee");
-const calculatorResults = document.getElementById("calculatorResults");
+const comparisonTable = document.getElementById("comparisonTable");
 
 // Pre-populate with common values
 monthlyRevenueInput.value = "50000";
@@ -59,26 +59,27 @@ function calculateSavings() {
   }
   
   // Calculate current costs
-  const currentCost = (monthlyRevenue * processingFee) / 100;
+  const traditionalFees = (monthlyRevenue * processingFee) / 100;
   
   // Lightning Network costs (essentially 0, but we'll show a tiny amount for realism)
-  const lightningCost = monthlyRevenue * 0.0001; // 0.01% for exchange fees
+  const lightningFees = monthlyRevenue * 0.0001; // 0.01% for exchange fees
   
   // Calculate savings
-  const monthlySavings = currentCost - lightningCost;
+  const feeSavings = traditionalFees - lightningFees;
+  const monthlySavings = feeSavings;
   const annualSavings = monthlySavings * 12;
   
-  // Update results with animation
-  animateValue("currentCost", 0, currentCost, 1000);
-  animateValue("lightningCost", 0, lightningCost, 1000);
+  // Update table with animation
+  animateValue("traditionalFees", 0, traditionalFees, 1000);
+  animateValue("lightningFees", 0, lightningFees, 1000);
+  animateValue("feeSavings", 0, feeSavings, 1000);
+  animateValue("traditionalTotal", 0, traditionalFees, 1000);
+  animateValue("lightningTotal", 0, lightningFees, 1000);
   animateValue("monthlySavings", 0, monthlySavings, 1000);
   animateValue("annualSavings", 0, annualSavings, 1000);
   
-  // Show results
-  calculatorResults.style.display = "grid";
-  
-  // Scroll to results
-  calculatorResults.scrollIntoView({ behavior: "smooth", block: "center" });
+  // Show table (it's always visible now, but we can add a subtle highlight)
+  comparisonTable.classList.add("calculated");
 }
 
 function animateValue(elementId, start, end, duration) {

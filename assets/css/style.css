@@ -377,9 +377,11 @@ nav {
 .calculator-section {
     margin-top: 4rem;
     padding: 3rem;
-    background: linear-gradient(135deg, var(--color-btc-gold) 0%, var(--color-btc-orange) 100%);
+    background: var(--color-white);
     border-radius: 20px;
     text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
 }
 
 .calculator-section h3 {
@@ -390,7 +392,7 @@ nav {
 }
 
 .calculator-section p {
-    color: var(--color-black);
+    color: var(--color-grey);
     margin-bottom: 2rem;
     font-size: 1.1rem;
 }
@@ -421,76 +423,112 @@ nav {
 .input-group select {
     width: 100%;
     padding: 1rem;
-    border: 2px solid var(--color-black);
+    border: 2px solid #e0e0e0;
     border-radius: 10px;
     font-size: 1rem;
     background: var(--color-white);
     color: var(--color-black);
+    transition: border-color 0.3s ease;
 }
 
 .input-group input:focus,
 .input-group select:focus {
     outline: none;
-    border-color: var(--color-btc-orange);
-    box-shadow: 0 0 0 3px rgba(255, 137, 0, 0.2);
+    border-color: var(--color-btc-gold);
+    box-shadow: 0 0 0 3px rgba(255, 176, 0, 0.1);
 }
 
-.calculator-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    max-width: 800px;
+/* Comparison Table */
+.comparison-table {
+    background: var(--color-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.result-card {
-    background: var(--color-white);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.result-card:hover {
-    transform: translateY(-5px);
-}
-
-.result-card.highlight {
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background: var(--color-black);
     color: var(--color-white);
-}
-
-.result-card h4 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: var(--color-black);
+    font-weight: 600;
     font-family: var(--font-display);
 }
 
-.result-card.highlight h4 {
-    color: var(--color-white);
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease;
 }
 
-.result-amount {
-    font-size: 2rem;
+.table-row:hover {
+    background-color: #fafafa;
+}
+
+.table-row.highlight {
+    background: linear-gradient(135deg, var(--color-btc-gold) 0%, var(--color-btc-orange) 100%);
+    color: var(--color-black);
+    font-weight: 600;
+}
+
+.table-cell {
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    min-height: 60px;
+}
+
+.table-cell.label {
+    justify-content: flex-start;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.table-cell.traditional {
+    color: #f44336;
+    font-weight: 600;
+    font-family: var(--font-display);
+}
+
+.table-cell.lightning {
+    color: var(--color-btc-gold);
+    font-weight: 600;
+    font-family: var(--font-display);
+}
+
+.table-cell.savings {
+    color: #4caf50;
     font-weight: 700;
     font-family: var(--font-display);
 }
 
-.current-cost {
-    color: #f44336;
+.table-cell.total {
+    font-size: 1.2rem;
+    border-top: 2px solid #f0f0f0;
 }
 
-.lightning-cost {
-    color: var(--color-btc-gold);
+.table-cell.annual {
+    font-size: 1.4rem;
+    color: var(--color-black);
 }
 
-.savings {
-    color: #4caf50;
+/* Initial table state */
+.comparison-table {
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: all 0.5s ease;
 }
 
-.result-card.highlight .savings {
-    color: var(--color-btc-gold);
+.comparison-table.calculated {
+    opacity: 1;
+    transform: scale(1);
 }
 
 
@@ -720,6 +758,20 @@ footer {
     .calculator-section {
         padding: 2rem;
         margin-top: 2rem;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .table-cell {
+        padding: 1rem 0.5rem;
+        min-height: 50px;
+    }
+    
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
