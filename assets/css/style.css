@@ -296,20 +296,171 @@ nav {
     position: relative;
 }
 
-/* Section Transition Effects */
-.section-transition {
+/* Add blockchain hexagon transition to pitch section */
+.pitch-section::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-image: 
+        repeating-linear-gradient(60deg, transparent, transparent 20px, var(--color-btc-gold) 20px, var(--color-btc-gold) 22px),
+        repeating-linear-gradient(-60deg, transparent, transparent 20px, var(--color-btc-gold) 20px, var(--color-btc-gold) 22px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    animation: hexMove 8s linear infinite;
+}
+
+/* Section Transition Effects - Multiple Styles */
+
+/* Style 1: Blockchain-inspired Hexagon Pattern */
+.section-transition-hex {
     position: relative;
 }
 
-.section-transition::before {
+.section-transition-hex::before {
     content: '';
     position: absolute;
-    top: -50px;
+    top: -40px;
     left: 0;
     right: 0;
-    height: 50px;
-    background: linear-gradient(to bottom, transparent, var(--color-white));
-    pointer-events: none;
+    height: 40px;
+    background-image: 
+        repeating-linear-gradient(60deg, transparent, transparent 20px, var(--color-btc-gold) 20px, var(--color-btc-gold) 22px),
+        repeating-linear-gradient(-60deg, transparent, transparent 20px, var(--color-btc-gold) 20px, var(--color-btc-gold) 22px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    animation: hexMove 8s linear infinite;
+}
+
+@keyframes hexMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+}
+
+/* Style 2: Network-inspired Connected Dots */
+.section-transition-network {
+    position: relative;
+}
+
+.section-transition-network::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: 
+        radial-gradient(circle at 20px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 60px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 100px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 140px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 180px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 220px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 260px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 300px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 340px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 380px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 420px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 460px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 500px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 540px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 580px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 620px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 660px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 700px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 740px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 780px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 820px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 860px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 900px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 940px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 980px 15px, var(--color-btc-gold) 2px, transparent 2px);
+    background-size: 40px 30px;
+    animation: networkPulse 3s ease-in-out infinite;
+}
+
+@keyframes networkPulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* Style 3: Futuristic Circuit Board */
+.section-transition-circuit {
+    position: relative;
+}
+
+.section-transition-circuit::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background-image: 
+        linear-gradient(90deg, var(--color-btc-gold) 0px, var(--color-btc-gold) 2px, transparent 2px, transparent 8px),
+        linear-gradient(90deg, transparent 0px, transparent 4px, var(--color-btc-gold) 4px, var(--color-btc-gold) 6px, transparent 6px, transparent 12px),
+        linear-gradient(90deg, var(--color-btc-gold) 0px, var(--color-btc-gold) 1px, transparent 1px, transparent 6px),
+        linear-gradient(90deg, transparent 0px, transparent 2px, var(--color-btc-gold) 2px, var(--color-btc-gold) 3px, transparent 3px, transparent 10px);
+    background-size: 12px 25px, 12px 25px, 6px 25px, 10px 25px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    animation: circuitFlow 4s linear infinite;
+}
+
+@keyframes circuitFlow {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 12px 0, 12px 0, 6px 0, 10px 0; }
+}
+
+/* Style 4: Lightning-inspired Zigzag */
+.section-transition-lightning {
+    position: relative;
+}
+
+.section-transition-lightning::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-image: 
+        linear-gradient(45deg, transparent 33.333%, var(--color-btc-gold) 33.333%, var(--color-btc-gold) 66.667%, transparent 66.667%),
+        linear-gradient(-45deg, transparent 33.333%, var(--color-btc-gold) 33.333%, var(--color-btc-gold) 66.667%, transparent 66.667%);
+    background-size: 20px 20px;
+    opacity: 0.4;
+    animation: lightningFlash 2s ease-in-out infinite;
+}
+
+@keyframes lightningFlash {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+}
+
+/* Style 5: Digital Rain Effect */
+.section-transition-digital {
+    position: relative;
+}
+
+.section-transition-digital::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: 
+        linear-gradient(90deg, transparent 0px, transparent 8px, var(--color-btc-gold) 8px, var(--color-btc-gold) 9px, transparent 9px, transparent 16px),
+        linear-gradient(90deg, transparent 0px, transparent 4px, var(--color-btc-gold) 4px, var(--color-btc-gold) 5px, transparent 5px, transparent 12px),
+        linear-gradient(90deg, transparent 0px, transparent 12px, var(--color-btc-gold) 12px, var(--color-btc-gold) 13px, transparent 13px, transparent 20px);
+    background-size: 16px 30px, 12px 30px, 20px 30px;
+    animation: digitalRain 6s linear infinite;
+}
+
+@keyframes digitalRain {
+    0% { background-position: 0 -30px, 0 -30px, 0 -30px; }
+    100% { background-position: 0 30px, 0 30px, 0 30px; }
 }
 
 /* Two Column Section Enhancement */
@@ -472,6 +623,45 @@ nav {
     padding: 80px 0;
     background: #fafafa;
     text-align: center;
+    position: relative;
+}
+
+/* Add network dots transition to calculator section */
+.calculator-section::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: 
+        radial-gradient(circle at 20px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 60px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 100px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 140px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 180px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 220px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 260px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 300px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 340px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 380px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 420px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 460px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 500px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 540px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 580px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 620px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 660px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 700px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 740px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 780px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 820px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 860px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 900px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 940px 15px, var(--color-btc-gold) 2px, transparent 2px),
+        radial-gradient(circle at 980px 15px, var(--color-btc-gold) 2px, transparent 2px);
+    background-size: 40px 30px;
+    animation: networkPulse 3s ease-in-out infinite;
 }
 
 .calculator-section .container {
@@ -768,6 +958,23 @@ footer {
     color: var(--color-white);
     padding: 40px 0;
     text-align: center;
+    position: relative;
+}
+
+/* Add lightning zigzag transition to footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-image: 
+        linear-gradient(45deg, transparent 33.333%, var(--color-btc-gold) 33.333%, var(--color-btc-gold) 66.667%, transparent 66.667%),
+        linear-gradient(-45deg, transparent 33.333%, var(--color-btc-gold) 33.333%, var(--color-btc-gold) 66.667%, transparent 66.667%);
+    background-size: 20px 20px;
+    opacity: 0.4;
+    animation: lightningFlash 2s ease-in-out infinite;
 }
 
 .footer-content {
