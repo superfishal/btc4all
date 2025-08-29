@@ -24,11 +24,12 @@
         <div class="nav-container">
           <div class="logo">
             <img
-              src="assets/images/cat-yellowblack.png"
+              src="assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
               alt="BareBits Logo"
-              class="btc-img"
+              class="logo-img"
+              id="navbarLogo"
+              title="BareBits - Bitcoin Lightning Payment Solutions"
             />
-            BareBits
           </div>
           <button class="nav-toggle" id="navToggle">☰</button>
           <ul class="nav-links" id="navLinks">
@@ -44,17 +45,10 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="container">
-        <div class="hero-logo">
-          <img
-            src="assets/images/cat-blackyellow.png"
-            alt="BareBits Hero Logo"
-            class="hero-logo-img"
-          />
-        </div>
-        <h1>The Average Business Loses $47,000 Per Year in Processing Fees</h1>
+        <h1>Lightning-Fast Bitcoin Payments for the modern world.</h1>
         <p class="hero-subtitle">
-          We can save you 100% of those fees. Lightning Network payments are
-          instant, completely private, and can be used in any industry.
+          Instant, anonymous, and trustworthy payment solutions for modern
+          businesses. No banks, no delays, no hassles.
         </p>
         <div class="hero-stats">
           <div class="stat">
@@ -213,116 +207,62 @@
       </div>
     </section>
 
-    <!-- Fee Calculator Section -->
-    <section class="calculator-section" id="calculator">
+    <!-- Simple Savings Table Section -->
+    <section class="savings-table-section" id="calculator">
       <div class="container">
-        <h3>Fee Comparison Calculator</h3>
+        <h3>See Your Potential Savings</h3>
         <p>
-          See exactly how much you're losing to traditional payment processors
+          Calculate how much you'll save by switching to Lightning Network
+          payments
         </p>
 
-        <div class="calculator-form">
-          <div class="input-group">
-            <label for="monthlyRevenue">Monthly Revenue</label>
-            <input
-              type="number"
-              id="monthlyRevenue"
-              placeholder="50000"
-              min="0"
-              step="1000"
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="processingFee">Current Processing Fee (%)</label>
-            <select id="processingFee">
-              <option value="2.9">2.9% (Standard)</option>
-              <option value="3.5">3.5% (High-Risk)</option>
-              <option value="5.0">5.0% (Adult/Cannabis)</option>
-              <option value="8.0">8.0% (Firearms)</option>
-              <option value="15.0">15.0% (Extreme Risk)</option>
-            </select>
-          </div>
-
-          <button type="button" id="calculateBtn" class="cta-button">
-            Calculate Savings
-          </button>
-        </div>
-
-        <div class="comparison-table" id="comparisonTable">
+        <div class="simple-table">
           <div class="table-header">
-            <div class="table-cell">Fee Type</div>
-            <div class="table-cell">Traditional Processing</div>
-            <div class="table-cell">Lightning Network</div>
+            <div class="table-cell">Input</div>
             <div class="table-cell">Monthly Savings</div>
+            <div class="table-cell">Annual Savings</div>
           </div>
 
           <div class="table-row">
-            <div class="table-cell label">Processing Fees</div>
-            <div class="table-cell traditional">
-              $<span id="traditionalFees">0</span>
+            <div class="table-cell input-cell">
+              <div class="input-group">
+                <label for="monthlyRevenue">Monthly Revenue</label>
+                <input
+                  type="number"
+                  id="monthlyRevenue"
+                  placeholder="50000"
+                  min="0"
+                  step="1000"
+                />
+              </div>
+              <div class="input-group">
+                <label for="processingFee">Processing Fee (%)</label>
+                <select id="processingFee">
+                  <option value="2.9">2.9% (Standard)</option>
+                  <option value="3.5">3.5% (High-Risk)</option>
+                  <option value="5.0">5.0% (Adult/Cannabis)</option>
+                  <option value="8.0">8.0% (Firearms)</option>
+                  <option value="15.0">15.0% (Extreme Risk)</option>
+                </select>
+              </div>
+              <button type="button" id="calculateBtn" class="cta-button">
+                Calculate
+              </button>
             </div>
-            <div class="table-cell lightning">
-              $<span id="lightningFees">0</span>
-            </div>
-            <div class="table-cell savings">
-              $<span id="feeSavings">0</span>
-            </div>
-          </div>
 
-          <div class="table-row">
-            <div class="table-cell label">Monthly Total</div>
-            <div class="table-cell traditional total">
-              $<span id="traditionalTotal">0</span>
+            <div class="table-cell savings-cell">
+              <div class="savings-amount">
+                $<span id="monthlySavings">0</span>
+              </div>
+              <div class="savings-label">per month</div>
             </div>
-            <div class="table-cell lightning total">
-              $<span id="lightningTotal">0</span>
-            </div>
-            <div class="table-cell savings total">
-              $<span id="monthlySavings">0</span>
-            </div>
-          </div>
 
-          <div class="table-row highlight">
-            <div class="table-cell label">Annual Savings</div>
-            <div class="table-cell"></div>
-            <div class="table-cell"></div>
-            <div class="table-cell savings annual">
-              $<span id="annualSavings">0</span>
+            <div class="table-cell savings-cell">
+              <div class="savings-amount">
+                $<span id="annualSavings">0</span>
+              </div>
+              <div class="savings-label">per year</div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="additional-section" id="how-it-works">
-      <div class="container">
-        <h2>How It Works</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🔧</div>
-            <h3>Easy Setup</h3>
-            <p>
-              Get your payment system up and running in minutes with our simple
-              integration process.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Instant Processing</h3>
-            <p>
-              Lightning Network enables instant transactions with minimal fees,
-              perfect for high-volume businesses.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Secure & Private</h3>
-            <p>
-              Your transactions are private and secure, with no personal
-              information required from your customers.
-            </p>
           </div>
         </div>
       </div>
