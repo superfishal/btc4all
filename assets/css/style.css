@@ -373,6 +373,37 @@ nav {
     opacity: 1;
 }
 
+/* Pitch CTA Section */
+.pitch-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.pitch-cta .cta-button {
+    font-size: 1.2rem;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, var(--color-btc-gold) 0%, var(--color-btc-orange) 100%);
+    color: var(--color-black);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--font-display);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 176, 0, 0.3);
+}
+
+.pitch-cta .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 176, 0, 0.4);
+}
+
+.pitch-cta .cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 176, 0, 0.3);
+}
+
 /* Calculator Section */
 .calculator-section {
     padding: 80px 0;
