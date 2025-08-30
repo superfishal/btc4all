@@ -1,3 +1,13 @@
+// Font loading verification
+document.fonts.ready.then(() => {
+  console.log("Fonts loaded successfully!");
+  if (document.fonts.check("1em acumin-pro")) {
+    console.log("✅ Acumin Pro Wide is loaded and working!");
+  } else {
+    console.log("❌ Acumin Pro Wide not detected, using fallback fonts");
+  }
+});
+
 // Mobile navigation toggle
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");

@@ -1,3 +1,22 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'acumin-pro';
+    src: url('../fonts/acuminprowide-bold-webfont.woff2') format('woff2'),
+         url('../fonts/acuminprowide-bold-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'acumin-pro';
+    src: url('../fonts/acuminprowide-bold-webfont.woff2') format('woff2'),
+         url('../fonts/acuminprowide-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* BTC4All Brand Variables */
 :root {
   --color-btc-gold:   #FFB000;
@@ -6,7 +25,7 @@
   --color-btc-orange: #FF8900; /* accent only */
   --color-grey:       #5A5A5A; /* accent only */
   
-  /* Typography - Adobe fonts loaded from Typekit */
+  /* Typography - Local Acumin Pro Wide fonts */
   --font-display: "acumin-pro", "Inter", Helvetica, Arial, sans-serif;
   --font-body: "Helvetica Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -208,6 +227,19 @@ nav {
     overflow: hidden;
 }
 
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-grey);
+    opacity: 0.3;
+}
+
+
+
 
 
 
@@ -252,7 +284,7 @@ nav {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-btc-gold);
+    color: var(--color-white);
     font-family: var(--font-display);
     line-height: 1;
     animation: pulse 2s ease-in-out infinite;
@@ -274,9 +306,9 @@ nav {
 .pitch-section {
     padding: 80px 0;
     background: var(--color-white);
+    position: relative;
 }
 
-/* Simple line transition for pitch section */
 .pitch-section::before {
     content: '';
     position: absolute;
@@ -290,10 +322,23 @@ nav {
 
 
 
+
+
 /* Two Column Section Enhancement */
 .two-column {
     position: relative;
     background: linear-gradient(135deg, #fafafa 0%, var(--color-white) 100%);
+}
+
+.two-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-btc-gold), transparent);
+    opacity: 0.3;
 }
 
 
@@ -444,6 +489,18 @@ nav {
     padding: 80px 0;
     background: var(--color-white);
     text-align: center;
+    position: relative;
+}
+
+.savings-table-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-btc-gold), transparent);
+    opacity: 0.3;
 }
 
 .savings-table-section h3 {
@@ -464,7 +521,7 @@ nav {
     background: var(--color-white);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     border: 1px solid #f0f0f0;
     max-width: 900px;
     margin: 0 auto;
@@ -495,7 +552,7 @@ nav {
 }
 
 .table-cell.input-cell {
-    background: #fafafa;
+    background: var(--color-white);
     border-right: 1px solid #f0f0f0;
 }
 
@@ -737,6 +794,31 @@ nav {
     transition: all 0.3s ease;
 }
 
+/* Footer Hero Section */
+.footer-hero {
+    background: var(--color-black);
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+}
+
+.footer-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-grey);
+    opacity: 0.3;
+}
+
+.footer-hero-logo {
+    max-width: 400px;
+    height: auto;
+    width: 100%;
+}
+
 /* Footer */
 footer {
     background: var(--color-black);
@@ -809,6 +891,10 @@ footer {
         height: 32px;
         min-width: 100px;
         min-height: 24px;
+    }
+    
+    .footer-hero-logo {
+        max-width: 350px;
     }
     
     .hero h1 {
@@ -891,6 +977,10 @@ footer {
         height: 28px;
         min-width: 80px;
         min-height: 20px;
+    }
+    
+    .footer-hero-logo {
+        max-width: 300px;
     }
     
     .container {
