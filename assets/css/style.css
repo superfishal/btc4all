@@ -1,8 +1,8 @@
 /* Font Face Declarations */
 @font-face {
     font-family: 'acumin-pro';
-    src: url('../fonts/acuminprowide-bold-webfont.woff2') format('woff2'),
-         url('../fonts/acuminprowide-bold-webfont.woff') format('woff');
+    src: url('../fonts/acuminprowide-regular-webfont.woff2') format('woff2'),
+         url('../fonts/acuminprowide-regular-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -222,7 +222,7 @@ nav {
     background: var(--color-btc-gold);
     color: var(--color-black);
     padding: 120px 0 80px;
-    text-align: center;
+    text-align: left;
     position: relative;
     overflow: hidden;
 }
@@ -245,7 +245,7 @@ nav {
 
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 6rem;
     margin-bottom: 1rem;
 }
 
@@ -253,22 +253,22 @@ nav {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 600px;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
     margin-bottom: 3rem;
     max-width: 700px;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     font-weight: 400;
 }
 
 .hero-stats {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 3rem;
     margin-bottom: 3rem;
     flex-wrap: wrap;
@@ -417,19 +417,52 @@ nav {
     left: 0;
 }
 
+.pain-points li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
 .pain-points li:before {
-    content: "✗";
-    color: #f44336;
+    content: "•";
+    color: var(--color-btc-gold);
+    font-weight: 900;
+    font-size: 2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.benefits li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
 .benefits li:before {
-    content: "✓";
+    content: "•";
     color: var(--color-btc-gold);
+    font-weight: 900;
+    font-size: 2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.results li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
 .results li:before {
-    content: "→";
-    color: var(--color-btc-orange);
+    content: "•";
+    color: var(--color-btc-gold);
+    font-weight: 900;
+    font-size: 2em;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .step-visual {
@@ -487,7 +520,7 @@ nav {
 /* Simple Savings Table Section */
 .savings-table-section {
     padding: 80px 0;
-    background: var(--color-white);
+    background: var(--color-btc-gold);
     text-align: center;
     position: relative;
 }
@@ -530,8 +563,8 @@ nav {
 .table-header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-white);
+    color: var(--color-black);
     font-weight: 600;
     font-family: var(--font-display);
 }
@@ -611,6 +644,7 @@ nav {
     color: var(--color-grey);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 700;
 }
 
 
@@ -694,6 +728,8 @@ nav {
 /* Two Column Section */
 .two-column {
     padding: 80px 0;
+    background: var(--color-black);
+    color: var(--color-white);
 }
 
 .two-column-grid {
@@ -706,13 +742,13 @@ nav {
 .column-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 .column-content p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: var(--color-grey);
+    color: var(--color-white);
 }
 
 .feature-image {
@@ -814,9 +850,8 @@ nav {
 }
 
 .footer-hero-logo {
-    max-width: 400px;
-    height: auto;
     width: 100%;
+    height: auto;
 }
 
 /* Footer */
@@ -894,11 +929,12 @@ footer {
     }
     
     .footer-hero-logo {
-        max-width: 350px;
+        width: 100%;
+        height: auto;
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     
     .hero p {
@@ -980,7 +1016,8 @@ footer {
     }
     
     .footer-hero-logo {
-        max-width: 300px;
+        width: 100%;
+        height: auto;
     }
     
     .container {

@@ -98,7 +98,8 @@ function animateValue(elementId, start, end, duration) {
     const easeOutQuart = 1 - Math.pow(1 - progress, 4);
     const current = start + (end - start) * easeOutQuart;
 
-    element.textContent = current.toFixed(2);
+    // Format number with commas and no decimal places
+    element.textContent = Math.round(current).toLocaleString();
 
     if (progress < 1) {
       requestAnimationFrame(updateValue);
