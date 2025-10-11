@@ -729,7 +729,7 @@ nav {
 /* Calculator Pattern Background */
 .calculator-pattern-bg {
     background: #FF8C00;
-    background-image: url('/assets/images/patterns/BareBits_Pattern_BG_1_V1.svg');
+    background-image: url('../images/patterns/BareBits_Pattern_BG_1_V1.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1605,7 +1605,7 @@ nav {
 
 .pattern-transition-1 {
     background: #FF8C00;
-    background-image: url('/assets/images/patterns/BareBits_Pattern_BG_1_V1.svg');
+    background-image: url('../images/patterns/BareBits_Pattern_BG_1_V1.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1614,7 +1614,7 @@ nav {
 /* Badges Section */
 .badges-section {
     background: var(--color-black);
-    background-image: url('/assets/images/patterns/BareBits_Pattern_BG_4_V1.svg');
+    background-image: url('../images/patterns/BareBits_Pattern_BG_4_V1.svg');
     background-repeat: repeat-x;
     background-size: 400px 400px;
     background-position: 0 0;
@@ -1836,7 +1836,7 @@ nav {
 /* Footer Hero Section */
 .footer-hero {
     background: var(--color-black);
-    background-image: url('/assets/images/patterns/BareBits_Pattern_BG_7_V1.png');
+    background-image: url('../images/patterns/BareBits_Pattern_BG_7_V1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
