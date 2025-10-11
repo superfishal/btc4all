@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Animation Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .test-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+      .animation-box {
+        width: 300px;
+        height: 300px;
+        border: 2px solid #ffb000;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+      .status {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+      .success {
+        background: #d4edda;
+        color: #155724;
+      }
+      .error {
+        background: #f8d7da;
+        color: #721c24;
+      }
+      .loading {
+        background: #fff3cd;
+        color: #856404;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Animation Test</h1>
+
+    <div class="test-container">
+      <h2>Test 1: BB_KOIN Animation</h2>
+      <div id="status1" class="status loading">Loading...</div>
+      <div id="animation1" class="animation-box"></div>
+      <button onclick="testAnimation1()">Test Animation</button>
+    </div>
+
+    <div class="test-container">
+      <h2>Test 2: BITKAT Cat Animation</h2>
+      <div id="status2" class="status loading">Loading...</div>
+      <div id="animation2" class="animation-box"></div>
+      <button onclick="testAnimation2()">Test Cat Animation</button>
+    </div>
+
+    <script>
+      let animation1, animation2;
+
+      // Test 1: Try to load BB_KOIN
+      function testAnimation1() {
+        const status = document.getElementById("status1");
+        status.className = "status loading";
+        status.textContent = "Loading BB_KOIN...";
+
+        try {
+          animation1 = lottie.loadAnimation({
+            container: document.getElementById("animation1"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "assets/animations/BB_KOIN/BB_KOIN.json",
+          });
+
+          animation1.addEventListener("DOMLoaded", function () {
+            status.className = "status success";
+            status.textContent = "BB_KOIN loaded successfully!";
+          });
+
+          animation1.addEventListener("data_failed", function () {
+            status.className = "status error";
+            status.textContent = "Failed to load BB_KOIN data";
+          });
+        } catch (error) {
+          status.className = "status error";
+          status.textContent = "Error: " + error.message;
+        }
+      }
+
+      // Test 2: Try a different animation
+      function testAnimation2() {
+        const status = document.getElementById("status2");
+        status.className = "status loading";
+        status.textContent = "Loading BITKAT animation...";
+
+        try {
+          animation2 = lottie.loadAnimation({
+            container: document.getElementById("animation2"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "assets/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json",
+          });
+
+          animation2.addEventListener("DOMLoaded", function () {
+            status.className = "status success";
+            status.textContent = "BITKAT animation loaded successfully!";
+          });
+
+          animation2.addEventListener("data_failed", function () {
+            status.className = "status error";
+            status.textContent = "Failed to load BITKAT animation";
+          });
+        } catch (error) {
+          status.className = "status error";
+          status.textContent = "Error: " + error.message;
+        }
+      }
+
+      // Auto-run tests when page loads
+      window.addEventListener("load", function () {
+        setTimeout(testAnimation1, 1000);
+        setTimeout(testAnimation2, 2000);
+      });
+    </script>
+  </body>
+</html>

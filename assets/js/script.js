@@ -74,12 +74,24 @@ function calculateSavings() {
   // Calculate current costs
   const currentCost = (monthlyRevenue * processingFee) / 100;
 
-  // Lightning Network costs (essentially 0, but we'll show a tiny amount for realism)
-  const lightningCost = monthlyRevenue * 0.0001; // 0.01% for exchange fees
+  // BareBits Lightning Network costs (2% fee)
+  const barebitsMonthlyCost = monthlyRevenue * 0.02; // 2% fee
+  const barebitsAnnualCost = barebitsMonthlyCost * 12;
+
+  // Current costs (annual)
+  const currentAnnualCost = currentCost * 12;
 
   // Calculate savings
-  const monthlySavings = currentCost - lightningCost;
-  const annualSavings = monthlySavings * 12;
+  const monthlySavings = currentCost - barebitsMonthlyCost;
+  const annualSavings = currentAnnualCost - barebitsAnnualCost;
+
+  // Update BareBits fees with animation
+  animateValue("barebitsMonthlyFee", 0, barebitsMonthlyCost, 1000);
+  animateValue("barebitsAnnualFee", 0, barebitsAnnualCost, 1000);
+
+  // Update current fees with animation
+  animateValue("currentMonthlyFee", 0, currentCost, 1000);
+  animateValue("currentAnnualFee", 0, currentAnnualCost, 1000);
 
   // Update results with animation
   animateValue("monthlySavings", 0, monthlySavings, 1000);
@@ -118,3 +130,30 @@ monthlyRevenueInput.addEventListener("keypress", (e) => {
     calculateSavings();
   }
 });
+
+// Mouse wheel scrolling for badges section
+const badgesScroll = document.querySelector(".badges-scroll");
+
+if (badgesScroll) {
+  badgesScroll.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    // Make scrolling more responsive
+    badgesScroll.scrollLeft += e.deltaY * 2;
+  });
+
+  // Add touch/swipe support for mobile
+  let startX = 0;
+  let scrollLeft = 0;
+
+  badgesScroll.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].pageX - badgesScroll.offsetLeft;
+    scrollLeft = badgesScroll.scrollLeft;
+  });
+
+  badgesScroll.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    const x = e.touches[0].pageX - badgesScroll.offsetLeft;
+    const walk = (x - startX) * 2;
+    badgesScroll.scrollLeft = scrollLeft - walk;
+  });
+}
