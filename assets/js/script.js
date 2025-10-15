@@ -133,12 +133,52 @@ monthlyRevenueInput.addEventListener("keypress", (e) => {
 
 // Mouse wheel scrolling for badges section
 const badgesScroll = document.querySelector(".badges-scroll");
+const badgesSection = document.querySelector(".badges-section");
 
-if (badgesScroll) {
+if (badgesScroll && badgesSection) {
+  let currentPatternOffset = 0;
+  let targetPatternOffset = 0;
+  let animationId = null;
+
+  // Function to smoothly animate pattern position
+  const smoothUpdatePattern = () => {
+    const maxScroll = badgesScroll.scrollWidth - badgesScroll.clientWidth;
+    if (maxScroll <= 0) return; // Prevent division by zero
+
+    const scrollPercent = badgesScroll.scrollLeft / maxScroll;
+    targetPatternOffset = scrollPercent * 200; // Target position
+
+    // Cancel any existing animation
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+    }
+
+    // Smooth animation function
+    const animate = () => {
+      const difference = targetPatternOffset - currentPatternOffset;
+
+      // If the difference is very small, stop animating
+      if (Math.abs(difference) < 0.1) {
+        currentPatternOffset = targetPatternOffset;
+        badgesSection.style.backgroundPosition = `${-currentPatternOffset}px 0`;
+        return;
+      }
+
+      // Smooth interpolation (easing)
+      currentPatternOffset += difference * 0.15; // Adjust this value for smoothness (0.1 = slower, 0.3 = faster)
+      badgesSection.style.backgroundPosition = `${-currentPatternOffset}px 0`;
+
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animate();
+  };
+
   badgesScroll.addEventListener("wheel", (e) => {
     e.preventDefault();
-    // Make scrolling more responsive
-    badgesScroll.scrollLeft += e.deltaY * 2;
+    // Reduce scroll sensitivity for smoother movement
+    badgesScroll.scrollLeft += e.deltaY * 1;
+    smoothUpdatePattern();
   });
 
   // Add touch/swipe support for mobile
@@ -153,7 +193,35 @@ if (badgesScroll) {
   badgesScroll.addEventListener("touchmove", (e) => {
     e.preventDefault();
     const x = e.touches[0].pageX - badgesScroll.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 1.5; // Reduced sensitivity
     badgesScroll.scrollLeft = scrollLeft - walk;
+    smoothUpdatePattern();
   });
 }
+
+// Load Lottie animations
+document.addEventListener("DOMContentLoaded", function () {
+  // Load why section animation
+  const whyAnimationElement = document.getElementById("why-animation");
+  if (whyAnimationElement) {
+    const whyAnimation = lottie.loadAnimation({
+      container: whyAnimationElement,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "assets/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json",
+    });
+  }
+
+  // Load how section animation (coin)
+  const howAnimationElement = document.getElementById("how-animation");
+  if (howAnimationElement) {
+    const howAnimation = lottie.loadAnimation({
+      container: howAnimationElement,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "assets/animations/BB_KOIN/BB_KOIN.json",
+    });
+  }
+});

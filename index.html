@@ -36,13 +36,13 @@
                 title="BareBits - Bitcoin Lightning Payment Solutions"
               />
             </a>
-            <ul class="nav-links" id="navLinks">
+          </div>
+          <div class="nav-right">
+            <ul class="nav-links desktop-only" id="navLinks">
               <li><a href="#services">Services</a></li>
               <li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-          </div>
-          <div class="nav-right">
             <a href="#contact" class="nav-cta desktop-only"
               >Start Saving Today</a
             >
@@ -83,11 +83,156 @@
       <div class="container">
         <h1>Stop Getting Screwed</h1>
         <h2 class="hero-subtitle">Banks discriminate, we don't.</h2>
+        <p class="hero-description">
+          BareBits is the fastest, easiest, most secure way to accept payments.
+          Our service utilizes Bitcoin's Lightning Network to give you payments
+          at just 2% - no discrimination, no BS.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="cta-button primary">Start Saving Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why/How/What Infographic Section -->
+    <section class="pitch-section" id="pitch">
+      <div class="container">
+        <h1 class="section-main-header">Why Use BareBits?</h1>
+
+        <!-- Row 1: Traditional Payments Broken (left) + Cat Animation (right) -->
+        <div class="pitch-row">
+          <div class="pitch-content">
+            <h3>Traditional Payments are Broken</h3>
+            <p>
+              Your business is losing money on every transaction. Banks
+              discriminate against certain industries, charge exorbitant fees,
+              and make you wait days for your money.
+            </p>
+            <ul class="pain-points">
+              <li>2-15% processing fees eating your profits</li>
+              <li>Days or weeks to receive payments</li>
+              <li>Banks discriminate</li>
+              <li>Constant risk of chargebacks and fraud</li>
+            </ul>
+          </div>
+          <div class="pitch-animation">
+            <div id="why-animation" class="large-animation"></div>
+          </div>
+        </div>
+
+        <!-- Row 2: Coin Animation (left) + BareBits Solves This (right) -->
+        <div class="pitch-row reverse">
+          <div class="pitch-animation">
+            <div id="how-animation" class="large-animation"></div>
+          </div>
+          <div class="pitch-content">
+            <h3>BareBits Solves This</h3>
+            <p>
+              Our service eliminates traditional payment problems. It's like
+              upgrading from dial-up to fiber internet for your money.
+            </p>
+            <ul class="benefits">
+              <li>Minimal processing fees - keep more of your money</li>
+              <li>Instant settlement = money in seconds, not days</li>
+              <li>No discrimination - works for any legal business</li>
+              <li>Secure and private, your customers' data is safe</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Row 3: What This Means (left) + Calculator (right) -->
+        <div class="pitch-row">
+          <div class="pitch-content">
+            <h3>What This Means for You</h3>
+            <p>
+              Transform your business from a fee-paying victim to a
+              profit-maximizing powerhouse. Join the future of payments.
+            </p>
+            <ul class="results">
+              <li>Save thousands per month in processing fees</li>
+              <li>Get paid instantly, not in 30-90 days</li>
+              <li>Accept payments from anyone, anywhere</li>
+              <li>Eliminate fraud and chargeback risk</li>
+            </ul>
+          </div>
+          <div class="pitch-animation">
+            <div class="calculator-placeholder">
+              <div class="calc-header">See your potential savings</div>
+              <div class="calc-inputs">
+                <input
+                  type="text"
+                  placeholder="Enter monthly earnings"
+                  class="calc-input"
+                />
+                <select class="calc-select">
+                  <option value="2.9">2.9%</option>
+                  <option value="3.5">3.5%</option>
+                  <option value="5">5%</option>
+                  <option value="8">8%</option>
+                  <option value="12">12%</option>
+                </select>
+              </div>
+              <div class="calc-result">
+                You save $2,400/month with BareBits!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="container">
+        <div class="video-content">
+          <h2>How does BareBits work?</h2>
+          <p>Watch how easy it is to accept Bitcoin Lightning payments</p>
+          <div class="video-placeholder">
+            <div class="video-play-button">▶</div>
+            <div class="video-overlay">
+              <h3>BareBits Demo Video</h3>
+              <p>2:30 minutes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="additional-section how-it-works-section" id="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>Easy Setup</h3>
+            <p>
+              Get your payment system up and running in minutes with our simple
+              integration process.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant Payments</h3>
+            <p>
+              Receive payments instantly with Bitcoin Lightning Network - no
+              waiting for bank transfers.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Save Money</h3>
+            <p>
+              Pay just 2% in fees compared to 3-15% with traditional payment
+              processors.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Why BareBits -->
-    <section class="two-column" id="services">
+    <!-- <section class="two-column" id="services">
       <div class="container">
         <div class="two-column-grid">
           <div class="column-content">
@@ -102,8 +247,6 @@
               worry about discrimination again. Perfect for businesses in
               regulated industries who need reliable, fast payment processing
               without traditional banking restrictions.
-              <br />
-              WONDERING IF WE SHOULD TALK ABOUT 2% FEES HERE OR HAVE A DIFFERENT ANIMATION?
             </p>
             <div class="flex">
               <a href="#how-it-works" class="cta-button">Learn More</a>
@@ -118,7 +261,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Section Divider -->
     <div class="section-divider"></div>
@@ -128,40 +271,77 @@
       <div class="container">
         <h2>Companies Using Bitcoin Lightning</h2>
         <div class="badges-scroll">
+          <!-- Companies with actual logos -->
           <div class="badge-item">
-            <div class="badge-logo-placeholder">Strike</div>
+            <img
+              src="assets/images/logos/companies/stike_logo.png"
+              alt="Strike"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">Block</div>
+            <img
+              src="assets/images/logos/companies/block_logo.png"
+              alt="Block"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">Coinbase</div>
+            <img
+              src="assets/images/logos/companies/coinbase_logo.png"
+              alt="Coinbase"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">Binance</div>
+            <img
+              src="assets/images/logos/companies/Binance_logo.svg.png"
+              alt="Binance"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">Kraken</div>
+            <img
+              src="assets/images/logos/companies/kraken_logo.png"
+              alt="Kraken"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">Bitfinex</div>
+            <img
+              src="assets/images/logos/companies/Bitfinex_logo.svg.png"
+              alt="Bitfinex"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">Cash App</div>
+            <img
+              src="assets/images/logos/companies/CashApp_logo.png"
+              alt="Cash App"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">BitPay</div>
+            <img
+              src="assets/images/logos/companies/bitpay_logo.png"
+              alt="BitPay"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
-            <div class="badge-logo-placeholder">OpenNode</div>
+            <img
+              src="assets/images/logos/companies/openn_logo.png"
+              alt="OpenNode"
+              class="company-logo"
+            />
           </div>
           <div class="badge-divider"></div>
           <div class="badge-item">
@@ -227,115 +407,30 @@
       </div>
     </section>
 
-    <!-- Section Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Why/How/What Infographic Section -->
-    <section class="pitch-section" id="pitch">
+    <!-- CTA Section -->
+    <section class="cta-section">
       <div class="container">
-        <!-- Why Section -->
-        <div class="pitch-step why-section" data-step="why">
-          <div class="step-content">
-            <h3>Traditional Payments are Broken</h3>
-            <p>
-              Your business is losing money on every transaction. Banks
-              discriminate against certain industries, charge exorbitant fees,
-              and make you wait days for your money.
-            </p>
-            <ul class="pain-points">
-              <li>2-15% processing fees eating your profits</li>
-              <li>Days or weeks to receive payments</li>
-              <li>Banks discriminate</li>
-              <li>Constant risk of chargebacks and fraud</li>
-            </ul>
+        <div class="cta-content">
+          <div class="cta-text">
+            <h2>
+              Are you ready to upgrade payment processing from the stone age to
+              the future?
+            </h2>
+            <a href="#contact" class="cta-button">Get Started</a>
           </div>
-          <div class="step-visual">
-            <div id="why-animation" class="why-animation"></div>
-          </div>
-        </div>
-
-        <!-- How Section -->
-        <div class="pitch-step how-section" data-step="how">
-          <div class="step-content">
-            <h3>BareBits Solves This</h3>
-            <p>
-              Our service eliminates traditional payment problems. It's like
-              upgrading from dial-up to fiber internet for your money.
-            </p>
-            <ul class="benefits">
-              <li>Minimal processing fees - keep more of your money</li>
-              <li>Instant settlement = money in seconds, not days</li>
-              <li>No discrimination - works for any legal business</li>
-              <li>Secure and private, your customers' data is safe</li>
-            </ul>
-          </div>
-          <div class="step-visual">
-            <div class="visual-placeholder">⚡</div>
-          </div>
-        </div>
-        <!-- we need to redo the copy and title for this section-->
-        <!-- What Section -->
-        <div class="pitch-step what-section" data-step="what">
-          <div class="step-content">
-            <h3>What This Means for You</h3>
-            <p>
-              Transform your business from a fee-paying victim to a
-              profit-maximizing powerhouse. Join the future of payments.
-            </p>
-            <ul class="results">
-              <li>Save thousands per month in processing fees</li>
-              <li>Get paid instantly, not in 30-90 days</li>
-              <li>Accept payments from anyone, anywhere</li>
-              <li>Eliminate fraud and chargeback risk</li>
-            </ul>
-          </div>
-          <div class="step-visual">
-            <div class="visual-placeholder">🚀</div>
-          </div>
-        </div>
-
-        <!-- CTA Button Section -->
-        <div class="pitch-cta">
-          <a href="#calculator" class="cta-button">Start Saving Today</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="additional-section how-it-works-section" id="how-it-works">
-      <div class="container">
-        <h2>How It Works</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🔧</div>
-            <h3>Easy Setup</h3>
-            <p>
-              Get your payment system up and running in minutes with our simple
-              integration process.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Instant Processing</h3>
-            <p>
-              Lightning Network enables instant transactions with minimal fees,
-              perfect for high-volume businesses.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Secure & Private</h3>
-            <p>
-              Your transactions are private and secure, with no personal
-              information required from your customers.
-            </p>
+          <div class="cta-image">
+            <img
+              src="assets/images/illustrations/BTC-CAT_2_2percent.svg"
+              alt="2% Bitcoin Cat"
+              class="cta-cat-image"
+            />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Simple Savings Table Section -->
-    <section
+    <!-- <section
       class="savings-table-section calculator-pattern-bg"
       id="calculator"
     >
@@ -434,10 +529,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Big Coin CTA Section -->
-    <section class="big-coin-section">
+    <!-- <section class="big-coin-section">
       <div class="container">
         <div class="big-coin-content">
           <h2>Ready to Stop Getting Screwed?</h2>
@@ -450,7 +545,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer Hero Section -->
     <section class="footer-hero">
@@ -505,29 +600,5 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
-
-    <!-- Lightning Network Animation -->
-    <script>
-      // Load animations when page loads
-      window.addEventListener("load", function () {
-        // Load why section animation
-        const whyAnimation = lottie.loadAnimation({
-          container: document.getElementById("why-animation"),
-          renderer: "svg",
-          loop: true,
-          autoplay: true,
-          path: "assets/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json",
-        });
-
-        // Load big coin animation
-        const bigCoinAnimation = lottie.loadAnimation({
-          container: document.getElementById("big-coin-animation"),
-          renderer: "svg",
-          loop: true,
-          autoplay: true,
-          path: "assets/animations/BB_KOIN/BB_KOIN.json",
-        });
-      });
-    </script>
   </body>
 </html>
