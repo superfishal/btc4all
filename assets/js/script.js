@@ -1,10 +1,27 @@
 // Font loading verification
 document.fonts.ready.then(() => {
   console.log("Fonts loaded successfully!");
+
+  // Check if Acumin Pro Wide is loaded
   if (document.fonts.check("1em acumin-pro")) {
     console.log("✅ Acumin Pro Wide is loaded and working!");
   } else {
     console.log("❌ Acumin Pro Wide not detected, using fallback fonts");
+
+    // Try to load the font manually
+    const fontFace = new FontFace(
+      "acumin-pro",
+      "url(assets/fonts/acuminprowide-regular-webfont.woff2)"
+    );
+    fontFace
+      .load()
+      .then((loadedFace) => {
+        document.fonts.add(loadedFace);
+        console.log("✅ Acumin Pro Wide manually loaded!");
+      })
+      .catch((error) => {
+        console.log("❌ Failed to manually load Acumin Pro Wide:", error);
+      });
   }
 });
 
@@ -58,9 +75,13 @@ const monthlyRevenueInput = document.getElementById("monthlyRevenue");
 const processingFeeSelect = document.getElementById("processingFee");
 const calculatorResults = document.getElementById("calculatorResults");
 
-// Pre-populate with common values
-monthlyRevenueInput.value = "50000";
-processingFeeSelect.value = "5.0";
+// Pre-populate with common values (only if elements exist)
+if (monthlyRevenueInput) {
+  monthlyRevenueInput.value = "50000";
+}
+if (processingFeeSelect) {
+  processingFeeSelect.value = "5.0";
+}
 
 function calculateSavings() {
   const monthlyRevenue = parseFloat(monthlyRevenueInput.value) || 0;
@@ -121,24 +142,67 @@ function animateValue(elementId, start, end, duration) {
   requestAnimationFrame(updateValue);
 }
 
-// Event listeners
-calculateBtn.addEventListener("click", calculateSavings);
+// Event listeners (only if elements exist)
+if (calculateBtn) {
+  calculateBtn.addEventListener("click", calculateSavings);
+}
 
-// Allow Enter key on input
-monthlyRevenueInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    calculateSavings();
-  }
-});
+// Allow Enter key on input (only if element exists)
+if (monthlyRevenueInput) {
+  monthlyRevenueInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      calculateSavings();
+    }
+  });
+}
 
 // Mouse wheel scrolling for badges section
 const badgesScroll = document.querySelector(".badges-scroll");
 const badgesSection = document.querySelector(".badges-section");
+const badgeItems = document.querySelectorAll(".badge-item");
 
 if (badgesScroll && badgesSection) {
   let currentPatternOffset = 0;
   let targetPatternOffset = 0;
   let animationId = null;
+  let currentCenterIndex = 0;
+
+  // Function to update center company
+  function updateCenterCompany() {
+    badgeItems.forEach((item, index) => {
+      item.classList.remove("center", "side");
+      if (index === currentCenterIndex) {
+        item.classList.add("center");
+      } else {
+        item.classList.add("side");
+      }
+    });
+  }
+
+  // Function to find which item is closest to center
+  function updateCenterIndex() {
+    const containerWidth = badgesScroll.offsetWidth;
+    const scrollLeft = badgesScroll.scrollLeft;
+    const centerPoint = scrollLeft + containerWidth / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    badgeItems.forEach((item, index) => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const distance = Math.abs(itemCenter - centerPoint);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    if (closestIndex !== currentCenterIndex) {
+      currentCenterIndex = closestIndex;
+      updateCenterCompany();
+    }
+  }
 
   // Function to smoothly animate pattern position
   const smoothUpdatePattern = () => {
@@ -179,6 +243,7 @@ if (badgesScroll && badgesSection) {
     // Reduce scroll sensitivity for smoother movement
     badgesScroll.scrollLeft += e.deltaY * 1;
     smoothUpdatePattern();
+    updateCenterIndex();
   });
 
   // Add touch/swipe support for mobile
@@ -196,32 +261,196 @@ if (badgesScroll && badgesSection) {
     const walk = (x - startX) * 1.5; // Reduced sensitivity
     badgesScroll.scrollLeft = scrollLeft - walk;
     smoothUpdatePattern();
+    updateCenterIndex();
   });
+
+  // Click to center functionality
+  badgeItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const containerCenter = badgesScroll.offsetWidth / 2;
+      const scrollPosition = itemCenter - containerCenter;
+
+      badgesScroll.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth",
+      });
+
+      currentCenterIndex = index;
+      updateCenterCompany();
+    });
+  });
+
+  // Initialize center company
+  updateCenterCompany();
 }
 
 // Load Lottie animations
 document.addEventListener("DOMContentLoaded", function () {
-  // Load why section animation
-  const whyAnimationElement = document.getElementById("why-animation");
-  if (whyAnimationElement) {
-    const whyAnimation = lottie.loadAnimation({
-      container: whyAnimationElement,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "assets/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json",
+  // Wait a bit to ensure DOM is fully loaded
+  setTimeout(() => {
+    // Load why section animation
+    const whyAnimationElement = document.getElementById("why-animation");
+    if (whyAnimationElement) {
+      console.log("Loading why animation...");
+      try {
+        const whyAnimation = lottie.loadAnimation({
+          container: whyAnimationElement,
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          path: "assets/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json",
+        });
+
+        whyAnimation.addEventListener("DOMLoaded", () => {
+          console.log("✅ Why animation loaded successfully");
+        });
+
+        whyAnimation.addEventListener("data_failed", () => {
+          console.log("❌ Why animation failed to load");
+        });
+      } catch (error) {
+        console.log("❌ Error loading why animation:", error);
+      }
+    } else {
+      console.log("❌ Why animation element not found");
+    }
+
+    // Load how section animation (coin)
+    const howAnimationElement = document.getElementById("how-animation");
+    if (howAnimationElement) {
+      console.log("Loading how animation...");
+      try {
+        const howAnimation = lottie.loadAnimation({
+          container: howAnimationElement,
+          renderer: "svg",
+          loop: true,
+          autoplay: true,
+          path: "assets/animations/BB_KOIN/BB_KOIN.json",
+        });
+
+        howAnimation.addEventListener("DOMLoaded", () => {
+          console.log("✅ How animation loaded successfully");
+        });
+
+        howAnimation.addEventListener("data_failed", () => {
+          console.log("❌ How animation failed to load");
+        });
+      } catch (error) {
+        console.log("❌ Error loading how animation:", error);
+      }
+    } else {
+      console.log("❌ How animation element not found");
+    }
+  }, 100);
+});
+
+// Enhanced Companies Section - NEW FUNCTIONALITY
+document.addEventListener("DOMContentLoaded", function () {
+  const enhancedSection = document.querySelector(".enhanced-companies-section");
+  const enhancedScroll = document.querySelector(".enhanced-companies-scroll");
+  const enhancedItems = document.querySelectorAll(".enhanced-badge-item");
+
+  if (!enhancedSection || !enhancedScroll || !enhancedItems.length) {
+    console.log("Enhanced companies section not found");
+    return;
+  }
+
+  let currentIndex = 0;
+  let lastScrollDirection = "right";
+  let isScrolling = false;
+  let patternOffset = 0;
+  let patternDirection = 1; // 1 for right, -1 for left
+
+  // Initialize center company
+  function updateCenterCompany() {
+    enhancedItems.forEach((item, index) => {
+      item.classList.remove("center", "side");
+      if (index === currentIndex) {
+        item.classList.add("center");
+      } else {
+        item.classList.add("side");
+      }
     });
   }
 
-  // Load how section animation (coin)
-  const howAnimationElement = document.getElementById("how-animation");
-  if (howAnimationElement) {
-    const howAnimation = lottie.loadAnimation({
-      container: howAnimationElement,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "assets/animations/BB_KOIN/BB_KOIN.json",
-    });
+  // Calculate scroll position to center an item
+  function getScrollPositionForCenter(index) {
+    const item = enhancedItems[index];
+    if (!item) return 0;
+
+    const containerWidth = enhancedScroll.offsetWidth;
+    const itemWidth = item.offsetWidth;
+    const itemOffsetLeft = item.offsetLeft;
+
+    // Calculate position to center the item in the container
+    const centerPosition = itemOffsetLeft - containerWidth / 2 + itemWidth / 2;
+
+    return Math.max(0, centerPosition);
   }
+
+  // Scroll to specific company
+  function scrollToCompany(index) {
+    if (isScrolling) return;
+
+    isScrolling = true;
+    currentIndex = Math.max(0, Math.min(index, enhancedItems.length - 1));
+
+    const scrollPosition = getScrollPositionForCenter(currentIndex);
+
+    // Smooth scroll to the calculated position
+    enhancedScroll.scrollTo({
+      left: scrollPosition,
+      behavior: "smooth",
+    });
+
+    updateCenterCompany();
+
+    setTimeout(() => {
+      isScrolling = false;
+    }, 500);
+  }
+
+  // Handle wheel scroll
+  enhancedScroll.addEventListener("wheel", function (e) {
+    e.preventDefault();
+
+    if (isScrolling) return;
+
+    const direction = e.deltaY > 0 ? "right" : "left";
+    lastScrollDirection = direction;
+
+    // Update pattern direction
+    patternDirection = direction === "right" ? 1 : -1;
+
+    if (direction === "right" && currentIndex < enhancedItems.length - 1) {
+      scrollToCompany(currentIndex + 1);
+    } else if (direction === "left" && currentIndex > 0) {
+      scrollToCompany(currentIndex - 1);
+    }
+  });
+
+  // Continuous pattern scrolling
+  function animatePattern() {
+    patternOffset += patternDirection * 0.5;
+    enhancedSection.style.backgroundPosition = `${patternOffset}px 0`;
+    requestAnimationFrame(animatePattern);
+  }
+
+  // Initialize - start with first company centered
+  updateCenterCompany();
+  // Center the first company on load
+  setTimeout(() => {
+    scrollToCompany(0);
+  }, 100);
+  animatePattern();
+
+  // Click to center
+  enhancedItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      scrollToCompany(index);
+    });
+  });
+
+  console.log("✅ Enhanced companies section initialized");
 });
