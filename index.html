@@ -18,7 +18,7 @@
       href="assets/images/logos/CAT_ICON/BareBits_Cat_Icon_GLD_A.png"
     />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style-new.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   </head>
   <body>
@@ -52,33 +52,7 @@
       </div>
     </nav>
 
-    <!-- Hero Section #'s -->
-    <!-- <section class="hero" id="home">
-      <div class="container">
-        <h1>Lightning-Fast Bitcoin Payments for the modern world</h1>
-        <p class="hero-subtitle">
-          Instant, anonymous, and trustworthy payment solutions for modern
-          businesses. No banks, no delays, no hassles.
-        </p>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number">0%</span>
-            <span class="stat-label">Processing Fees</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">Instant</span>
-            <span class="stat-label">Settlement</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Private & Secure</span>
-          </div>
-        </div>
-        <a href="#services" class="cta-button">Start Saving Today</a>
-      </div>
-    </section> -->
-
-    <!-- Hero Section Words -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="container">
         <h1>Stop Getting Screwed</h1>
@@ -97,7 +71,9 @@
     <!-- Why/How/What Infographic Section -->
     <section class="pitch-section" id="pitch">
       <div class="container">
-        <h1 class="section-main-header">Why Get BareBits?</h1>
+        <h1 class="section-main-header">
+          Why Get BareBits?
+        </h1>
 
         <!-- Row 1: Traditional Payments Broken (left) + Cat Animation (right) -->
         <div class="pitch-row">
@@ -165,6 +141,7 @@
                   class="calc-input"
                 />
                 <select class="calc-select">
+                  <option value="">Processing Fee</option>
                   <option value="2.9">2.9%</option>
                   <option value="3.5">3.5%</option>
                   <option value="5">5%</option>
@@ -172,59 +149,70 @@
                   <option value="12">12%</option>
                 </select>
               </div>
-              <div class="calc-result">
-                You save $2,400/month with BareBits!
-              </div>
+              <div class="calc-result">Enter your monthly earnings</div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    
 
     <!-- Video Section -->
     <section class="video-section">
       <div class="container">
         <div class="video-content">
-          <h2>How does BareBits work?</h2>
+          <h2>Video Content Coming Soon</h2>
           <p>Watch how easy it is to accept Bitcoin Lightning payments</p>
           <div class="video-placeholder">
             <div class="video-play-button">▶</div>
             <div class="video-overlay">
               <h3>BareBits Demo Video</h3>
-              <p>2:30 minutes</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Integrations Section -->
-    <section class="integrations-section">
-      <div class="container">
-        <h2>Popular Integrations</h2>
-        <div class="integrations-scroll">
-          <div class="integration-item">
-            <div class="integration-logo-placeholder">Shopify</div>
-          </div>
-          <div class="integration-divider"></div>
-          <div class="integration-item">
-            <div class="integration-logo-placeholder">WooCommerce</div>
-          </div>
-          <div class="integration-divider"></div>
-          <div class="integration-item">
-            <div class="integration-logo-placeholder">Odoo</div>
-          </div>
-          <div class="integration-divider"></div>
-          <div class="integration-item">
-            <div class="integration-logo-placeholder">Magento</div>
-          </div>
-          <div class="integration-divider"></div>
-          <div class="integration-item">
-            <div class="integration-logo-placeholder">More Coming Soon</div>
-          </div>
-        </div>
+<!-- Integrations Section -->
+<section class="integrations-section simple-integrations">
+  <div class="container">
+    <h2>Popular Integrations</h2>
+    <div class="integrations-scroll">
+      <div class="integration-item">
+        <img
+          src="assets/images/logos/companies/shopify/png/shopify_logo_black.png"
+          alt="Shopify"
+          class="company-logo"
+        />
       </div>
-    </section>
+      <div class="integration-divider-line"></div>
+      <div class="integration-item">
+        <img
+          src="assets/images/logos/companies/woocommerce/Woo_logo_color.png"
+          alt="WooCommerce"
+          class="company-logo"
+        />
+      </div>
+      <div class="integration-divider-line"></div>
+      <div class="integration-item">
+        <img
+          src="assets/images/logos/companies/odoo_logo.png"
+          alt="Odoo"
+          class="company-logo"
+        />
+      </div>
+      <div class="integration-divider-line"></div>
+      <div class="integration-item">
+        <img
+          src="assets/images/logos/companies/magento-original-wordmark.png"
+          alt="Magento"
+          class="company-logo magento-logo"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- How It Works Section -->
     <section class="additional-section how-it-works-section" id="how-it-works">
@@ -259,38 +247,6 @@
       </div>
     </section>
 
-    <!-- Why BareBits -->
-    <!-- <section class="two-column" id="services">
-      <div class="container">
-        <div class="two-column-grid">
-          <div class="column-content">
-            <h2>Why BareBits?</h2>
-            <p>
-              Stop losing money to banks and CC fees. BareBits uses Bitcoin's
-              game-changing Lightning Network to upgrade your payment processing
-              from the stone age to the future.
-            </p>
-            <p>
-              Get instant settlements, eliminate credit card fees, and never
-              worry about discrimination again. Perfect for businesses in
-              regulated industries who need reliable, fast payment processing
-              without traditional banking restrictions.
-            </p>
-            <div class="flex">
-              <a href="#how-it-works" class="cta-button">Learn More</a>
-            </div>
-          </div>
-          <div class="feature-image">
-            <img
-              src="assets/images/illustrations/BTC-CAT_2_2percent.svg"
-              alt="2% Bitcoin Cat"
-              class="btc-cat-image"
-            />
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <!-- Badges Section -->
     <section class="badges-section">
       <div class="container">
@@ -308,7 +264,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/block_logo.png"
@@ -316,7 +271,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/coinbase_logo.png"
@@ -324,7 +278,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/Binance_logo.svg.png"
@@ -332,7 +285,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/kraken_logo-1.png"
@@ -340,7 +292,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/Bitfinex_logo.svg.png"
@@ -348,7 +299,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/CashApp_logo.png"
@@ -356,7 +306,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/bitpay-logo-svg-vector.png"
@@ -364,7 +313,6 @@
               class="company-logo"
             />
           </div>
-          <div class="badge-divider"></div>
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/openn_logo.png"
@@ -408,83 +356,6 @@
       </div>
     </section>
 
-    <!-- Enhanced Companies Section -->
-    <section class="enhanced-companies-section">
-      <div class="container">
-        <h2>
-          <a href="/directory" style="color: inherit; text-decoration: none"
-            >Companies Accepting Bitcoin</a
-          >
-        </h2>
-        <div class="enhanced-companies-scroll">
-          <!-- Company logos with enhanced styling -->
-          <div class="enhanced-badge-item" data-company="strike">
-            <img
-              src="assets/images/logos/companies/stike_logo.png"
-              alt="Strike"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="block">
-            <img
-              src="assets/images/logos/companies/block_logo.png"
-              alt="Block"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="coinbase">
-            <img
-              src="assets/images/logos/companies/coinbase_logo.png"
-              alt="Coinbase"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="binance">
-            <img
-              src="assets/images/logos/companies/Binance_logo.svg.png"
-              alt="Binance"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="kraken">
-            <img
-              src="assets/images/logos/companies/kraken_logo-1.png"
-              alt="Kraken"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="bitfinex">
-            <img
-              src="assets/images/logos/companies/Bitfinex_logo.svg.png"
-              alt="Bitfinex"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="cashapp">
-            <img
-              src="assets/images/logos/companies/CashApp_logo.png"
-              alt="Cash App"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="bitpay">
-            <img
-              src="assets/images/logos/companies/bitpay-logo-svg-vector.png"
-              alt="BitPay"
-              class="enhanced-company-logo"
-            />
-          </div>
-          <div class="enhanced-badge-item" data-company="opennode">
-            <img
-              src="assets/images/logos/companies/openn_logo.png"
-              alt="OpenNode"
-              class="enhanced-company-logo"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
@@ -506,124 +377,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Simple Savings Table Section -->
-    <!-- <section
-      class="savings-table-section calculator-pattern-bg"
-      id="calculator"
-    >
-      <div class="container">
-        <h3>See Your Potential Savings</h3>
-        <p>
-          See how much you'll save on credit card processing fees by switching
-          to BareBits
-        </p>
-
-        <div class="calculator-container">
-          <div class="calculator-content">
-            <div class="input-section">
-              <div class="input-group">
-                <label for="monthlyRevenue">Monthly Revenue</label>
-                <input
-                  type="number"
-                  id="monthlyRevenue"
-                  placeholder="50000"
-                  min="0"
-                  step="1000"
-                />
-              </div>
-              <div class="input-group">
-                <label for="processingFee">Processing Fee (%)</label>
-                <div class="select-wrapper">
-                  <select id="processingFee">
-                    <option value="2.9">2.9% (Standard)</option>
-                    <option value="3.5">3.5% (High-Risk)</option>
-                    <option value="5.0">5.0% (Adult/Cannabis)</option>
-                    <option value="8.0">8.0% (Firearms)</option>
-                    <option value="15.0">15.0% (Extreme Risk)</option>
-                  </select>
-                  <div class="select-arrow">▼</div>
-                </div>
-              </div>
-              <button type="button" id="calculateBtn" class="cta-button">
-                Calculate
-              </button>
-            </div>
-
-            <div class="results-section">
-              <div class="results-header">
-                <div class="header-cell">Monthly</div>
-                <div class="header-cell">Annually</div>
-              </div>
-
-              <div class="results-row">
-                <div class="result-cell">
-                  <div class="savings-amount green">
-                    $<span id="barebitsMonthlyFee">0</span>
-                  </div>
-                  <div class="savings-label">BareBits</div>
-                </div>
-
-                <div class="result-cell">
-                  <div class="savings-amount green">
-                    $<span id="barebitsAnnualFee">0</span>
-                  </div>
-                  <div class="savings-label">BareBits</div>
-                </div>
-              </div>
-
-              <div class="results-row">
-                <div class="result-cell">
-                  <div class="savings-amount red">
-                    $<span id="currentMonthlyFee">0</span>
-                  </div>
-                  <div class="savings-label">What You Pay</div>
-                </div>
-
-                <div class="result-cell">
-                  <div class="savings-amount red">
-                    $<span id="currentAnnualFee">0</span>
-                  </div>
-                  <div class="savings-label">What You Pay</div>
-                </div>
-              </div>
-
-              <div class="results-row">
-                <div class="result-cell">
-                  <div class="savings-amount">
-                    $<span id="monthlySavings">0</span>
-                  </div>
-                  <div class="savings-label">Monthly Savings</div>
-                </div>
-
-                <div class="result-cell">
-                  <div class="savings-amount">
-                    $<span id="annualSavings">0</span>
-                  </div>
-                  <div class="savings-label">Annual Savings</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Big Coin CTA Section -->
-    <!-- <section class="big-coin-section">
-      <div class="container">
-        <div class="big-coin-content">
-          <h2>Ready to Stop Getting Screwed?</h2>
-          <p>
-            Join thousands of businesses already using Bitcoin Lightning
-            payments
-          </p>
-          <a href="#contact" class="big-coin-link">
-            <div id="big-coin-animation" class="big-coin-animation"></div>
-          </a>
-        </div>
-      </div>
-    </section> -->
 
     <!-- Footer Hero Section -->
     <section class="footer-hero">
@@ -649,10 +402,6 @@
               <li><a href="#">Political Activists</a></li>
             </ul>
           </div>
-          <div class="footer-section footer-support">
-            <h3>📞</h3>
-            <p>Need Support?</p>
-          </div>
           <div class="footer-section">
             <h3>Company</h3>
             <ul>
@@ -661,6 +410,9 @@
               <li><a href="#">Security</a></li>
             </ul>
           </div>
+        </div>
+        <div class="footer-support-row">
+          <a href="/support">Need Support?</a>
         </div>
         <div class="footer-bottom">
           <p>

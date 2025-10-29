@@ -239,7 +239,7 @@ if (badgesScroll && badgesSection) {
   };
 
   badgesScroll.addEventListener("wheel", (e) => {
-    e.preventDefault();
+    // Allow natural scrolling - don't prevent default
     // Reduce scroll sensitivity for smoother movement
     badgesScroll.scrollLeft += e.deltaY * 1;
     smoothUpdatePattern();
@@ -343,6 +343,68 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("❌ How animation element not found");
     }
   }, 100);
+});
+
+// Calculator Functionality - NEW
+document.addEventListener("DOMContentLoaded", function () {
+  const calcInput = document.querySelector(".calc-input");
+  const calcSelect = document.querySelector(".calc-select");
+  const calcResult = document.querySelector(".calc-result");
+
+  if (calcInput && calcSelect && calcResult) {
+    function calculateSavings() {
+      const monthlyEarnings = parseFloat(calcInput.value) || 0;
+      const selectedRate = parseFloat(calcSelect.value) || 0;
+
+      // Only show placeholder messages if BOTH are not filled
+      if (monthlyEarnings === 0 && selectedRate === 0) {
+        calcResult.textContent = "Enter your monthly earnings";
+        calcResult.classList.remove("bulge");
+        return;
+      }
+
+      if (monthlyEarnings === 0) {
+        calcResult.textContent = "Enter your monthly earnings";
+        calcResult.classList.remove("bulge");
+        return;
+      }
+
+      if (selectedRate === 0) {
+        calcResult.textContent = "Select your processing fee";
+        calcResult.classList.remove("bulge");
+        return;
+      }
+
+      // Both are filled - calculate and animate!
+      const barebitsRate = 2; // BareBits rate
+      const annualEarnings = monthlyEarnings * 12;
+      const currentCost = (annualEarnings * selectedRate) / 100;
+      const barebitsCost = (annualEarnings * barebitsRate) / 100;
+      const savings = currentCost - barebitsCost;
+
+      // Format the result
+      const formattedSavings = Math.round(savings).toLocaleString();
+      calcResult.textContent = `You save $${formattedSavings}/year with BareBits!`;
+
+      // Trigger animation by removing and re-adding the class
+      calcResult.classList.remove("bulge");
+      // Use setTimeout to trigger the animation on the next frame
+      setTimeout(() => {
+        calcResult.classList.add("bulge");
+      }, 10);
+    }
+
+    // Calculate on input change - wait for blur/enter on input
+    calcInput.addEventListener("blur", calculateSavings);
+    calcInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        calculateSavings();
+      }
+    });
+
+    // Dropdown triggers immediately on change
+    calcSelect.addEventListener("change", calculateSavings);
+  }
 });
 
 // Enhanced Companies Section - NEW FUNCTIONALITY
@@ -453,4 +515,79 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   console.log("✅ Enhanced companies section initialized");
+});
+
+// Carousel badge logos - main centered, 1 on each side, rest hidden
+document.addEventListener("DOMContentLoaded", function () {
+  const badgesScroll = document.querySelector(".badges-scroll");
+  if (!badgesScroll) return;
+
+  const items = badgesScroll.querySelectorAll(".badge-item");
+  if (items.length === 0) return;
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    items.forEach((item, index) => {
+      // Remove all classes first
+      item.classList.remove("active", "prev", "next");
+
+      // Only show current, previous, and next
+      if (index === currentIndex) {
+        item.classList.add("active");
+      } else if (index === (currentIndex - 1 + items.length) % items.length) {
+        item.classList.add("prev");
+      } else if (index === (currentIndex + 1) % items.length) {
+        item.classList.add("next");
+      }
+      // All others remain hidden (no class, so they stay at opacity: 0)
+    });
+  }
+
+  // Initialize
+  updateCarousel();
+
+  // Auto-rotate
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+  }, 3000);
+});
+
+// Carousel integration logos - main centered, 1 on each side, rest hidden (for mobile)
+document.addEventListener("DOMContentLoaded", function () {
+  const integrationsScroll = document.querySelector(".integrations-scroll");
+  if (!integrationsScroll) return;
+
+  // Get only the actual integration-item divs (not the divider lines)
+  const items = integrationsScroll.querySelectorAll(".integration-item");
+  if (items.length === 0) return;
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    items.forEach((item, index) => {
+      // Remove all classes first
+      item.classList.remove("active", "prev", "next");
+
+      // Only show current, previous, and next
+      if (index === currentIndex) {
+        item.classList.add("active");
+      } else if (index === (currentIndex - 1 + items.length) % items.length) {
+        item.classList.add("prev");
+      } else if (index === (currentIndex + 1) % items.length) {
+        item.classList.add("next");
+      }
+      // All others remain hidden
+    });
+  }
+
+  // Initialize
+  updateCarousel();
+
+  // Auto-rotate
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+  }, 3000);
 });

@@ -1,0 +1,467 @@
+/* Mobile-First Responsive Design */
+
+/* ============================================
+   BASE: Mobile-first (0px+)
+   All mobile defaults - no media query needed
+   ============================================ */
+
+/* Mobile navigation defaults */
+.desktop-only {
+  display: none;
+}
+
+.nav-toggle {
+  display: block;
+}
+
+.nav-links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-black);
+  flex-direction: column;
+  padding: var(--space-md);
+  border-top: 1px solid var(--color-grey);
+  gap: var(--space-xs);
+  display: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+/* Mobile hero adjustments */
+.hero-cta {
+  flex-direction: column;
+}
+
+.cta-button {
+  width: 100%;
+  min-width: auto;
+}
+
+/* Mobile footer stacks */
+.footer-content {
+  text-align: center;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.footer-section {
+  width: 100%;
+}
+
+/* Mobile CTA section - huge cat, then text, then button */
+.cta-content {
+  flex-direction: column;
+}
+
+.cta-image {
+  order: 1;
+  width: 100%;
+}
+
+.cta-text {
+  order: 2;
+  text-align: center;
+}
+
+.cta-section .cta-button {
+  order: 3;
+  margin: var(--space-lg) auto 0;
+  width: auto;
+  display: block;
+}
+
+/* Mobile features grid */
+.features-grid {
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.feature-card {
+  min-width: 100%;
+}
+
+/* Mobile animations */
+.large-animation {
+  min-height: 20rem;
+}
+
+/* Mobile badge sizing */
+.integration-item img,
+.badge-item img {
+  max-width: 200px;
+}
+
+/* Mobile pitch-row reverse reordering */
+.pitch-row.reverse .pitch-animation {
+  order: 2;
+}
+
+.pitch-row.reverse .pitch-content {
+  order: 1;
+}
+
+/* ============================================
+   TABLET & UP (768px+)
+   Typography scales, nav becomes visible
+   ============================================ */
+@media (min-width: 768px) {
+  /* Typography scales up */
+  h1 { font-size: 5rem; }
+  h2 { font-size: 3.6rem; }
+  h3 { font-size: 2.8rem; }
+  
+  /* Hero scales up */
+  .hero {
+    padding: 8rem var(--container-pad) 6rem;
+  }
+  
+  .hero h1 {
+    font-size: 5.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 3rem;
+  }
+  
+  .hero-description {
+    font-size: 2rem !important;
+  }
+  
+  /* Nav becomes visible for tablet */
+  .desktop-only {
+    display: block;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-links {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: var(--space-md);
+  }
+  
+  /* Tablet nav compact sizing (overridden at 1024px) */
+  .nav-links {
+    gap: 0.8rem;
+  }
+  
+  .nav-links a {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+  
+  .nav-cta {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+  
+  .nav-left {
+    gap: 1rem;
+  }
+  
+  .nav-right {
+    gap: 0.8rem;
+  }
+  
+  /* Tablet logo */
+  .logo-img {
+    height: 3.5vw;
+    max-width: 12rem;
+    max-height: 4rem;
+  }
+  
+  /* Center hero CTA on tablet */
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  /* Keep column layout on tablet - desktop will override this at 1024px */
+  .pitch-row {
+    flex-direction: column;
+  }
+  
+  /* Tablet CTA still column */
+  .cta-content {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+   DESKTOP & UP (1024px+)
+   Two column layouts, full nav, side-by-side
+   ============================================ */
+@media (min-width: 1024px) {
+  /* Base font size scales */
+  body {
+    font-size: 2rem;
+  }
+  
+  /* Container padding increases */
+  .container {
+    padding: 0 3rem;
+  }
+  
+  /* Hero scales up more */
+  .hero {
+    padding: 10rem var(--container-pad) 6rem;
+  }
+  
+  .hero h1 {
+    font-size: 7rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 3.2rem;
+  }
+  
+  /* Full nav sizing for desktop */
+  .nav-links {
+    gap: var(--space-md);
+  }
+  
+  .nav-links a {
+    font-size: 1.4rem;
+  }
+  
+  .nav-cta {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
+  
+  .nav-left {
+    gap: var(--space-lg);
+  }
+  
+  .nav-right {
+    gap: var(--space-lg);
+  }
+  
+  /* Desktop logo */
+  .logo-img {
+    height: 4vw;
+    max-width: 15rem;
+    max-height: 5rem;
+  }
+  
+  /* Two column layout for pitch sections */
+  .pitch-row {
+    flex-direction: row;
+    gap: 6rem;
+  }
+  
+  .pitch-content {
+    flex: 1 1 60%;
+    justify-content: center;
+  }
+  
+  .pitch-animation {
+    flex: 0 0 40%;
+  }
+  
+  .large-animation {
+    min-height: 35rem;
+  }
+  
+  /* Row 2: Don't reverse - HTML already has animation first, which is what we want */
+  .pitch-row.reverse {
+    flex-direction: row;
+  }
+  
+  .pitch-row.reverse .pitch-animation,
+  .pitch-row.reverse .pitch-content {
+    order: 0;
+  }
+  
+  
+  /* Desktop footer flex */
+  .footer-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8rem;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  /* Desktop features grid side by side */
+  .features-grid {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: var(--space-lg);
+    justify-content: space-between;
+  }
+  
+  .feature-card {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* Desktop CTA side by side */
+  .cta-content {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+  
+  .cta-text {
+    text-align: left;
+    flex: 0 0 40%;
+    order: 1;
+  }
+  
+  .cta-text .cta-button {
+    margin: 0 auto;
+    width: auto;
+    max-width: 20rem;
+  }
+  
+  .cta-image {
+    flex: 0 0 60%;
+    order: 2;
+  }
+  
+  .cta-text h2 {
+    font-size: 3rem;
+    padding-left: 0;
+    margin-bottom: 3rem;
+  }
+  
+  .cta-section {
+    padding: 4rem var(--container-pad);
+  }
+  
+  .cta-cat-image {
+    width: auto;
+    height: auto;
+    min-height: 70vh;
+    max-height: 85vh;
+    object-fit: contain;
+    max-width: none;
+  }
+  
+  .cta-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .cta-content {
+    align-items: stretch;
+    min-height: 85vh;
+    gap: var(--space-2xl);
+    padding: 2rem 0;
+  }
+  
+  .cta-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem 0;
+  }
+  
+  /* Desktop section padding */
+  .section {
+    padding: 3rem var(--container-pad) var(--space-2xl);
+  }
+  
+  .section-main-header {
+    font-size: 5rem;
+  }
+  
+  /* Desktop animation sizes */
+  .large-animation {
+    min-height: 40rem;
+  }
+  
+  .large-animation svg,
+  .large-animation canvas,
+  #why-animation,
+  #how-animation {
+    transform: scale(1.5);
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1600px+)
+   Extra padding and spacing
+   ============================================ */
+@media (min-width: 1600px) {
+  .container {
+    padding: 0 4rem;
+  }
+  
+  .cta-text h2 {
+    padding-left: 4rem;
+  }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE (max-width: 480px)
+   Override base styles for very small screens
+   ============================================ */
+@media (max-width: 480px) {
+  /* Even smaller text */
+  body {
+    font-size: 1.4rem;
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.8rem; }
+  
+  /* Reduced spacing */
+  .section {
+    padding: 3rem var(--container-pad);
+  }
+  
+  .section-main-header {
+    font-size: 3rem;
+  }
+  
+  /* Even smaller animations */
+  .large-animation {
+    height: 18rem;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.3rem !important;
+  }
+  
+  /* Make badges/integrations even smaller */
+  .badge-item img,
+  .integration-item img {
+    max-width: 150px;
+  }
+  
+  /* Reduce container padding */
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* Smaller logo on very small screens */
+  .logo-img {
+    height: 3.5vw;
+    max-width: 11rem;
+    min-height: 2.8rem;
+  }
+}
