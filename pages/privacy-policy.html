@@ -4,187 +4,184 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy - BareBits</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="icon"
+      type="image/png"
+      href="../assets/images/logos/CAT_ICON/BareBits_Cat_Icon_GLD_A.png"
     />
+    <link rel="stylesheet" href="../assets/css/style-new.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
     <nav>
       <div class="container">
-        <div class="nav-content">
+        <div class="nav-container">
           <div class="nav-left">
-            <a href="../index.html" class="nav-logo">
+            <a href="../index.html" class="logo">
               <img
-                src="../assets/images/logos/GEN_LOGO/BareBits_GenericLogo_BLK_GLD.svg"
+                src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
                 alt="BareBits Logo"
                 class="logo-img"
+                id="navbarLogo"
+                title="BareBits - Bitcoin Lightning Payment Solutions"
               />
             </a>
           </div>
           <div class="nav-right">
-            <div class="nav-links">
-              <a href="../pages/services.html">Services</a>
-              <a href="../pages/how-it-works.html">How It Works</a>
-              <a href="../pages/contact.html">Contact</a>
-            </div>
-            <a href="../index.html#contact" class="nav-cta cta-button primary"
+            <ul class="nav-links desktop-only" id="navLinks">
+              <li><a href="how-it-works.html">How It Works</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta desktop-only"
               >Start Saving Today</a
             >
+            <button class="nav-toggle" id="navToggle">☰</button>
           </div>
-          <button class="nav-toggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
       </div>
     </nav>
 
     <!-- Privacy Policy Content -->
-    <section class="hero" style="padding: 8rem 0 4rem">
+    <section class="hero">
       <div class="container">
         <h1>Privacy Policy</h1>
-        <p
-          style="font-size: 1.8rem; color: var(--color-grey); margin-top: 2rem"
-        >
-          Last updated: January 2025
+        <p class="hero-description">Last updated: January 2026</p>
+      </div>
+    </section>
+
+    <section class="additional-section">
+      <div class="container">
+        <h2>Information We Collect</h2>
+        <p>
+          We collect information you provide directly to us, such as when you
+          create an account, use our services, or contact us for support. This
+          may include:
+        </p>
+        <ul>
+          <li>Contact information (name, email address, phone number)</li>
+          <li>Business information (company name, business type)</li>
+          <li>
+            Payment information (processed securely through our payment
+            partners)
+          </li>
+          <li>Communication preferences</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>
+            Provide, maintain, and improve our Bitcoin Lightning Network payment
+            services
+          </li>
+          <li>Process transactions and send related information</li>
+          <li>Send technical notices, updates, and support messages</li>
+          <li>Respond to your comments and questions</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+
+        <h2>Information Sharing</h2>
+        <p>
+          We do not sell, trade, or otherwise transfer your personal information
+          to third parties except:
+        </p>
+        <ul>
+          <li>With your consent</li>
+          <li>To comply with legal requirements</li>
+          <li>To protect our rights and prevent fraud</li>
+          <li>
+            With service providers who assist in our operations (under strict
+            confidentiality agreements)
+          </li>
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>
+          We implement appropriate security measures to protect your personal
+          information against unauthorized access, alteration, disclosure, or
+          destruction. However, no method of transmission over the internet is
+          100% secure.
+        </p>
+
+        <h2>Bitcoin Lightning Network</h2>
+        <p>
+          Our services utilize Bitcoin's Lightning Network, which provides
+          enhanced privacy through:
+        </p>
+        <ul>
+          <li>Decentralized payment routing</li>
+          <li>No central authority controlling transactions</li>
+          <li>
+            Reduced transaction traceability compared to traditional payment
+            systems
+          </li>
+        </ul>
+
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your personal information</li>
+          <li>Correct inaccurate data</li>
+          <li>Request deletion of your data</li>
+          <li>Opt out of marketing communications</li>
+          <li>Data portability</li>
+        </ul>
+
+        <h2>Contact Us</h2>
+        <p>
+          If you have questions about this Privacy Policy, please contact us at:
+        </p>
+        <p>
+          Email: privacy@barebits.com<br />
+          Address: BareBits Privacy Team, [Your Business Address]
+        </p>
+
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. We will notify
+          you of any changes by posting the new Privacy Policy on this page and
+          updating the "Last updated" date.
         </p>
       </div>
     </section>
 
-    <section class="additional-section" style="padding: 4rem 0">
+    <!-- Footer Hero Section -->
+    <section class="footer-hero">
       <div class="container">
-        <div style="max-width: 800px; margin: 0 auto">
-          <h2>Information We Collect</h2>
-          <p>
-            We collect information you provide directly to us, such as when you
-            create an account, use our services, or contact us for support. This
-            may include:
-          </p>
-          <ul>
-            <li>Contact information (name, email address, phone number)</li>
-            <li>Business information (company name, business type)</li>
-            <li>
-              Payment information (processed securely through our payment
-              partners)
-            </li>
-            <li>Communication preferences</li>
-          </ul>
-
-          <h2>How We Use Your Information</h2>
-          <p>We use the information we collect to:</p>
-          <ul>
-            <li>
-              Provide, maintain, and improve our Bitcoin Lightning Network
-              payment services
-            </li>
-            <li>Process transactions and send related information</li>
-            <li>Send technical notices, updates, and support messages</li>
-            <li>Respond to your comments and questions</li>
-            <li>Comply with legal obligations</li>
-          </ul>
-
-          <h2>Information Sharing</h2>
-          <p>
-            We do not sell, trade, or otherwise transfer your personal
-            information to third parties except:
-          </p>
-          <ul>
-            <li>With your consent</li>
-            <li>To comply with legal requirements</li>
-            <li>To protect our rights and prevent fraud</li>
-            <li>
-              With service providers who assist in our operations (under strict
-              confidentiality agreements)
-            </li>
-          </ul>
-
-          <h2>Data Security</h2>
-          <p>
-            We implement appropriate security measures to protect your personal
-            information against unauthorized access, alteration, disclosure, or
-            destruction. However, no method of transmission over the internet is
-            100% secure.
-          </p>
-
-          <h2>Bitcoin Lightning Network</h2>
-          <p>
-            Our services utilize Bitcoin's Lightning Network, which provides
-            enhanced privacy through:
-          </p>
-          <ul>
-            <li>Decentralized payment routing</li>
-            <li>No central authority controlling transactions</li>
-            <li>
-              Reduced transaction traceability compared to traditional payment
-              systems
-            </li>
-          </ul>
-
-          <h2>Your Rights</h2>
-          <p>You have the right to:</p>
-          <ul>
-            <li>Access your personal information</li>
-            <li>Correct inaccurate data</li>
-            <li>Request deletion of your data</li>
-            <li>Opt out of marketing communications</li>
-            <li>Data portability</li>
-          </ul>
-
-          <h2>Contact Us</h2>
-          <p>
-            If you have questions about this Privacy Policy, please contact us
-            at:
-          </p>
-          <p>
-            Email: privacy@barebits.com<br />
-            Address: BareBits Privacy Team, [Your Business Address]
-          </p>
-
-          <h2>Changes to This Policy</h2>
-          <p>
-            We may update this Privacy Policy from time to time. We will notify
-            you of any changes by posting the new Privacy Policy on this page
-            and updating the "Last updated" date.
-          </p>
-        </div>
+        <img
+          src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
+          alt="BareBits Logo"
+          class="footer-hero-logo"
+        />
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-hero">
+    <footer id="contact">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
             <h3>Industries</h3>
             <ul>
-              <li><a href="#">E-commerce</a></li>
-              <li><a href="#">SaaS</a></li>
-              <li><a href="#">Digital Services</a></li>
-              <li><a href="#">Content Creators</a></li>
+              <li><a href="#">Adult Entertainment</a></li>
+              <li><a href="#">Cannabis Dispensaries</a></li>
+              <li><a href="#">Firearms & Sporting Goods</a></li>
+              <li><a href="#">Political Activists</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h3>Company</h3>
             <ul>
-              <li><a href="../pages/how-it-works.html">How It Works</a></li>
-              <li><a href="../pages/services.html">Services</a></li>
-              <li><a href="../pages/contact.html">Contact</a></li>
+              <li><a href="#">About Us</a></li>
               <li><a href="#">FAQ</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
-          <div class="footer-support">
-            <h3>📞</h3>
-            <p>Need Support?</p>
-          </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 BareBits. All rights reserved.</p>
+        <div class="footer-support-row">
+          <a href="/support">Need Support?</a>
         </div>
         <div class="footer-legal">
           <p>
@@ -196,6 +193,12 @@
             within the United States. By using our software, you agree to our
             <a href="../pages/terms-of-service.html">terms of service</a> and
             <a href="../pages/privacy-policy.html">privacy policy</a>.
+          </p>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 BareBits. All rights reserved. Lightning-fast Bitcoin
+            payments for the modern world.
           </p>
         </div>
       </div>

@@ -6,10 +6,15 @@
     <title>Contact Us - BareBits</title>
     <link
       rel="icon"
-      type="image/svg+xml"
-      href="assets/images/logos/CAT_ICON/BareBits_Cat_Icon_BLK_A.svg"
+      type="image/png"
+      href="../assets/images/logos/CAT_ICON/BareBits_Cat_Icon_GLD_A.png"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      href="../assets/images/logos/CAT_ICON/BareBits_Cat_Icon_GLD_A.png"
+    />
+    <link rel="stylesheet" href="../assets/css/style-new.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -17,22 +22,21 @@
       <div class="container">
         <div class="nav-container">
           <div class="nav-left">
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
               <img
-                src="assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
+                src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
                 alt="BareBits Logo"
                 class="logo-img"
                 id="navbarLogo"
                 title="BareBits - Bitcoin Lightning Payment Solutions"
               />
             </a>
-            <ul class="nav-links" id="navLinks">
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="how-it-works.html">How It Works</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
           </div>
           <div class="nav-right">
+            <ul class="nav-links desktop-only" id="navLinks">
+              <li><a href="how-it-works.html">How It Works</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
             <a href="contact.html" class="nav-cta desktop-only"
               >Start Saving Today</a
             >
@@ -42,29 +46,20 @@
       </div>
     </nav>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Hero Section -->
+    <section class="hero">
       <div class="container">
-        <h1>Get Started Today</h1>
-        <p>
-          Ready to stop getting screwed by traditional payment processors? Let's
-          talk.
+        <h1>Let's Talk.</h1>
+        <p class="hero-description">
+          Ready to stop getting screwed by traditional payment processors?
         </p>
+      </div>
+    </section>
 
-        <div class="contact-content">
-          <div class="contact-info">
-            <h2>Contact Information</h2>
-            <div class="contact-item">
-              <strong>Email:</strong> hello@barebits.com
-            </div>
-            <div class="contact-item">
-              <strong>Phone:</strong> (555) 123-4567
-            </div>
-            <div class="contact-item">
-              <strong>Business Hours:</strong> Mon-Fri 9AM-6PM EST
-            </div>
-          </div>
-
+    <!-- Contact Section -->
+    <section class="additional-section">
+      <div class="container">
+        <div class="contact-form-wrapper">
           <div class="contact-form">
             <h2>Send us a message</h2>
             <form>
@@ -89,7 +84,9 @@
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="cta-button">Send Message</button>
+              <button type="submit" class="cta-button primary">
+                Send Message
+              </button>
             </form>
           </div>
         </div>
@@ -100,7 +97,7 @@
     <section class="footer-hero">
       <div class="container">
         <img
-          src="assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
+          src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
           alt="BareBits Logo"
           class="footer-hero-logo"
         />
@@ -112,36 +109,48 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>Services</h3>
+            <h3>Industries</h3>
             <ul>
-              <li><a href="index.html#services">Payment Processing</a></li>
-              <li><a href="index.html#services">Lightning Network</a></li>
-              <li><a href="index.html#services">Business Integration</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Support</h3>
-            <ul>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="how-it-works.html">How It Works</a></li>
-              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Adult Entertainment</a></li>
+              <li><a href="#">Cannabis Dispensaries</a></li>
+              <li><a href="#">Firearms & Sporting Goods</a></li>
+              <li><a href="#">Political Activists</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h3>Company</h3>
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
+        <div class="footer-support-row">
+          <a href="/support">Need Support?</a>
+        </div>
+        <div class="footer-legal">
+          <p>
+            If you have a payment dispute with a vendor who uses BareBits, you
+            must work with that vendor directly as we have no access to vendor
+            funds. We are unable to issue refunds or mediate any disputes. We
+            are not responsible for the usage of our software by third parties.
+            BareBits software can only be used for purposes which are legal
+            within the United States. By using our software, you agree to our
+            <a href="terms-of-service.html">terms of service</a> and
+            <a href="privacy-policy.html">privacy policy</a>.
+          </p>
+        </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 BareBits. All rights reserved.</p>
+          <p>
+            &copy; 2025 BareBits. All rights reserved. Lightning-fast Bitcoin
+            payments for the modern world.
+          </p>
         </div>
       </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
   </body>
 </html>

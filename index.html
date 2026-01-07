@@ -39,11 +39,10 @@
           </div>
           <div class="nav-right">
             <ul class="nav-links desktop-only" id="navLinks">
-              <li><a href="#services">Pricing</a></li>
-              <li><a href="#how-it-works">How It Works</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="pages/how-it-works.html">How It Works</a></li>
+              <li><a href="pages/pricing.html">Pricing</a></li>
             </ul>
-            <a href="#contact" class="nav-cta desktop-only"
+            <a href="pages/contact.html" class="nav-cta desktop-only"
               >Start Saving Today</a
             >
             <button class="nav-toggle" id="navToggle">☰</button>
@@ -55,15 +54,17 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="container">
-        <h1>Stop Getting Screwed</h1>
+        <h1>Stop Getting Screwed.</h1>
         <h2 class="hero-subtitle">Banks discriminate, we don't.</h2>
         <p class="hero-description">
           BareBits is the fastest, easiest, most secure way to accept payments.
-          Our service utilizes Bitcoin's Lightning Network to give you payments
-          at just 2% - no discrimination, no BS.
+          Our service gives you payment processing at just 2%. Lightning fast,
+          easy and secure.
         </p>
         <div class="hero-cta">
-          <a href="#contact" class="cta-button primary">Start Saving Today</a>
+          <a href="pages/contact.html" class="cta-button primary"
+            >Start Saving Today</a
+          >
         </div>
       </div>
     </section>
@@ -111,9 +112,13 @@
               <li>No discrimination - works for any legal business</li>
               <li>Secure and private, we never have access to your data</li>
             </ul>
+            <p style="margin-top: 1.5rem; font-weight: 600">
+              All made possible because we use Bitcoin's lightning network for
+              payments. YOU get paid in the currency of your choice.
+            </p>
           </div>
         </div>
-
+<!-- TODO: Calculator section shows what you currently pay vs what you'd pay with BareBits annually. -->
         <!-- Row 3: What This Means (left) + Calculator (right) -->
         <div class="pitch-row">
           <div class="pitch-content">
@@ -133,27 +138,31 @@
             <div class="calculator-placeholder">
               <div class="calc-header">See your potential savings</div>
               <div class="calc-inputs">
-                <input
-                  type="text"
-                  placeholder="Enter monthly earnings"
-                  class="calc-input"
-                />
+                <div class="calc-input-wrapper">
+                  <span class="calc-dollar-sign">$</span>
+                  <input
+                    type="text"
+                    placeholder="Enter monthly revenue"
+                    class="calc-input"
+                    value="50000"
+                  />
+                </div>
                 <select class="calc-select">
                   <option value="">Processing Fee</option>
                   <option value="2.9">2.9%</option>
                   <option value="3.5">3.5%</option>
-                  <option value="5">5%</option>
+                  <option value="5" selected>5%</option>
                   <option value="8">8%</option>
                   <option value="12">12%</option>
                 </select>
               </div>
-              <div class="calc-result">Enter your monthly earnings</div>
+              <div class="calc-result">Enter your monthly revenue</div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
+<!-- TODO: Bitcoin wallets, # of people with access to CC's, good stats that show clients/businesses that a lot of people are using Bitcoin already, and the businesses they use also allow it. How many people have smart phones? (# of people you have access to) (cashapp has 40% market penetration) Bitcoin moves trillions of dollars in transactions in every month. CashAPP Venmo Paypal Stripe Square.-->
     <!-- Video Section -->
     <section class="video-section">
       <div class="container">
@@ -196,14 +205,6 @@
               src="assets/images/logos/companies/odoo_logo.png"
               alt="Odoo"
               class="company-logo"
-            />
-          </div>
-          <div class="integration-divider-line"></div>
-          <div class="integration-item">
-            <img
-              src="assets/images/logos/companies/magento-original-wordmark.png"
-              alt="Magento"
-              class="company-logo magento-logo"
             />
           </div>
         </div>
@@ -253,6 +254,80 @@
         </h2>
         <div class="badges-scroll">
           <!-- Company logos -->
+          <!-- Mainstream companies (commented out - waiting for PNG versions) -->
+          <!--
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/MICROSOFT.svg"
+              alt="Microsoft"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/AMC.svg"
+              alt="AMC Theatres"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/NEWEGG.svg"
+              alt="Newegg"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/ATT.svg"
+              alt="AT&T"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/TWITCH.svg"
+              alt="Twitch"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/SHAKESHACK.svg"
+              alt="Shake Shack"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/DISH.svg"
+              alt="DISH"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/PACSUN.svg"
+              alt="PacSun"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/RALPHLAUREN.svg"
+              alt="Ralph Lauren"
+              class="company-logo"
+            />
+          </div>
+          <div class="badge-item">
+            <img
+              src="assets/images/logos/companies/ACS.svg"
+              alt="ACS"
+              class="company-logo"
+            />
+          </div>
+          -->
+          <!-- Crypto-focused companies -->
           <div class="badge-item">
             <img
               src="assets/images/logos/companies/stike_logo.png"
@@ -316,38 +391,6 @@
               class="company-logo"
             />
           </div>
-          <!-- <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">Lightspark</div>
-          </div>
-          <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">Voltage</div>
-          </div>
-          <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">Newegg</div>
-          </div>
-          <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">AMC</div>
-          </div> -->
-          <!-- <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">Travala</div>
-          </div>
-          <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">Bitrefill</div>
-          </div>
-          <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">Namecheap</div>
-          </div>
-          <div class="badge-divider"></div>
-          <div class="badge-item">
-            <div class="badge-logo-placeholder">Twitter</div>
-          </div> -->
         </div>
       </div>
     </section>
@@ -361,7 +404,9 @@
               Are you ready to upgrade payment processing from the stone age to
               the future?
             </h2>
-            <a href="#contact" class="cta-button primary">Get Started</a>
+            <a href="pages/contact.html" class="cta-button primary"
+              >Get Started</a
+            >
           </div>
           <div class="cta-image">
             <img
@@ -404,17 +449,12 @@
               <li><a href="#">About Us</a></li>
               <li><a href="#">FAQ</a></li>
               <li><a href="#">Security</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
         <div class="footer-support-row">
           <a href="/support">Need Support?</a>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; 2025 BareBits. All rights reserved. Lightning-fast Bitcoin
-            payments for the modern world.
-          </p>
         </div>
         <div class="footer-legal">
           <p>
@@ -424,7 +464,14 @@
             are not responsible for the usage of our software by third parties.
             BareBits software can only be used for purposes which are legal
             within the United States. By using our software, you agree to our
-            <a href="#">terms of service</a> and <a href="#">privacy policy</a>.
+            <a href="pages/terms-of-service.html">terms of service</a> and
+            <a href="pages/privacy-policy.html">privacy policy</a>.
+          </p>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 BareBits. All rights reserved. Lightning-fast Bitcoin
+            payments for the modern world.
           </p>
         </div>
       </div>

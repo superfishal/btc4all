@@ -1,0 +1,157 @@
+# 🚀 BTC4ALL Website – Phase 2 Build Specification
+
+## 🧩 Overview
+BTC4ALL is a Bitcoin Lightning Network payment services company (parent brand: Coinceirge / BareBits) offering non-custodial, instant, borderless payments for high-risk industries.
+
+This stage focuses on:
+1. Finalizing the **marketing site** (landing, pricing, and how-it-works pages)  
+2. Adding **legal pages** (Privacy Policy + Terms of Service)  
+3. Building a **documentation / FAQ system** that scales by industry.
+
+---
+
+## 🏗️ Site Structure
+
+```
+/
+├── index.html                # Main landing page (pitch / hero / CTA)
+├── how-it-works.html         # Explainer of payment flow, semi-technical
+├── pricing.html              # Pricing tiers (or “Contact us” CTA)
+├── contact.html              # Contact form (CRM integration later)
+├── terms.html                # Terms of Service
+├── privacy.html              # Privacy Policy
+└── /docs/                    # Knowledge base / industry integration hub
+     ├── index.html           # Documentation home / directory
+     ├── adult-industry.html
+     ├── food-trucks.html
+     ├── firearms.html
+     ├── hospitality.html
+     └── nonprofit.html
+```
+
+---
+
+## 🎯 Goals
+
+- The **main site** = sales & credibility hub.  
+- The **docs hub** = scalable integration and compliance resource.  
+- Each new industry page follows a shared, template-based structure.  
+- Easy for non-devs to add new documentation pages later.
+
+---
+
+## 📚 Documentation Framework
+
+### Option A – **Jekyll / Docusaurus (Recommended)**
+- Markdown-based docs that auto-generate static HTML pages.
+- Free to host on GitHub Pages.
+- Simple to scale and version control.
+
+### Option B – **Vanilla HTML Template**
+- A single HTML layout duplicated for each industry.
+- JS or JSON can populate industry-specific data dynamically.
+
+---
+
+## 📄 Documentation Page Template
+
+**Title:** `Accept Bitcoin Payments for [Industry] with BTC4ALL`
+
+**1. Overview**  
+Describe industry pain points and how BTC4ALL helps.
+
+**2. How It Works**  
+Steps:
+1. Create BTC4ALL account  
+2. Connect Lightning wallet or hosted node  
+3. Integrate your payment link or QR code  
+4. Receive payments instantly in BTC or stable sats  
+5. (Optional) Convert to fiat  
+
+**3. Integration Options**  
+Examples:
+- Adult: WordPress or plugin integration  
+- Food trucks: QR-based POS  
+- Firearms: Online checkout or invoice system  
+
+**4. Legal & Compliance Notes**  
+Standard reassurance about non-custodial, P2P compliance.
+
+**5. Pricing & Support Links**  
+Links to `/pricing` and `/contact`.
+
+**6. FAQ Section**  
+Example questions:
+- “Is this legal in my state?”  
+- “Can I convert Bitcoin to USD?”  
+- “How do refunds work?”
+
+---
+
+## 💡 “How It Works” Page Concept
+
+**Audience:** Laypeople + semi-technical users.
+
+**Structure:**
+1. Headline: “Instant Bitcoin Payments, No Middlemen.”
+2. 3-step diagram explaining Lightning flow.
+3. Toggle for technical details (node/invoice/settlement info).
+4. CTA: “Start accepting Bitcoin today.”
+
+---
+
+## 💰 “Pricing” Page Layout
+
+| Plan | Features | Price | CTA |
+|------|-----------|-------|-----|
+| **Starter** | Instant Bitcoin payments, manual setup support | 2% per tx | “Contact Us” |
+| **Pro** | Branded checkout + dashboard | Custom | “Book a Call” |
+| **Enterprise** | Full integration & SLA | Contact for quote | “Schedule Consultation” |
+
+---
+
+## 🧱 Development To-Dos
+
+1. Add footer links for `Terms` and `Privacy`.
+2. Create `/docs` directory with an HTML or Markdown template.
+3. Draft `how-it-works.html` using simple + semi-technical language.
+4. Build `pricing.html` with responsive card layout.
+5. Add basic `contact.html` form (fields TBD from CRM lead).
+6. Ensure consistent nav/footer.
+
+---
+
+## 🛠️ Optional Enhancements
+
+- Add Lottie / JSON animation via `<lottie-player>`.
+- Use JSON (`docs.json`) to populate FAQs dynamically.
+- Add dark/light mode toggle.
+- Markdown front-matter for metadata (industry name, tags, last updated).
+
+---
+
+## 🧭 Tone & UX Guidelines
+
+- **Voice:** Confident, trustworthy, friendly crypto-tech tone.  
+- **Audience:** Small business owners & tech-curious operators.  
+- **Visuals:** Clean, modern (Cash App / BTCPayServer).  
+- **Accessibility:** WCAG-compliant, responsive.  
+- **SEO:** Each industry doc = unique title + meta description.
+
+---
+
+## 🧰 Tech Stack (Current)
+
+- Static HTML/CSS/JS (Jekyll optional)  
+- Hosted on GitHub Pages  
+- CRM integration (pending)  
+- Optional docs via Markdown or JSON
+
+---
+
+## 🔮 Future Scalability
+
+- Add industries easily with the docs template.
+- Add sidebar nav to `/docs` index.
+- Filter by industry or business type.
+- Potential migration to **Contentful**, **Docusaurus**, or **Next.js** docs subsite later.
