@@ -6,10 +6,15 @@
     <title>How It Works - BareBits</title>
     <link
       rel="icon"
-      type="image/svg+xml"
-      href="assets/images/logos/CAT_ICON/BareBits_Cat_Icon_BLK_A.svg"
+      type="image/png"
+      href="../assets/images/logos/CAT_ICON/BareBits_Cat_Icon_GLD_A.png"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      href="../assets/images/logos/CAT_ICON/BareBits_Cat_Icon_GLD_A.png"
+    />
+    <link rel="stylesheet" href="../assets/css/style-new.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -17,22 +22,21 @@
       <div class="container">
         <div class="nav-container">
           <div class="nav-left">
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
               <img
-                src="assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
+                src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
                 alt="BareBits Logo"
                 class="logo-img"
                 id="navbarLogo"
                 title="BareBits - Bitcoin Lightning Payment Solutions"
               />
             </a>
-            <ul class="nav-links" id="navLinks">
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="how-it-works.html">How It Works</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
           </div>
           <div class="nav-right">
+            <ul class="nav-links desktop-only" id="navLinks">
+              <li><a href="how-it-works.html">How It Works</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
             <a href="contact.html" class="nav-cta desktop-only"
               >Start Saving Today</a
             >
@@ -42,136 +46,952 @@
       </div>
     </nav>
 
-    <!-- How It Works Section -->
-    <section class="additional-section how-it-works-section" id="how-it-works">
+    <!-- Hero Section -->
+    <section class="hero">
       <div class="container">
-        <h1>How It Works</h1>
-        <p class="section-intro">
-          Get started with Bitcoin Lightning payments in three simple steps.
+        <h1>Simple. Instant. Payments.</h1>
+        <p class="hero-description">
+          We make accepting Bitcoin on your website as easy as cash — fast,
+          low-fee, fully secure.
         </p>
+        <!-- TODO: Add optional small graphic/illustration container -->
+        <div class="hero-illustration">
+          <!-- Placeholder for illustration -->
+        </div>
+      </div>
+    </section>
 
+    <!-- Beta Promo Banner -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner-content">
+          <p class="cta-banner-text">
+            New Signups Can Qualify for 0% Fees for the First Year
+          </p>
+
+          <div class="cta-banner-button">
+            <a href="contact.html" class="cta-button primary">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: The Process (3 Steps) -->
+    <section class="pitch-section">
+      <div class="container">
+        <h1 class="section-main-header">How It Works</h1>
+
+        <!-- Row 1: Setup (left) + Image (right) -->
+        <div class="pitch-row">
+          <div class="pitch-content">
+            <h3>1. Setup in minutes</h3>
+            <p>
+              Sign up for BareBits and we connect your online store to our
+              service. You are always in control of your funds and data.
+            </p>
+          </div>
+          <div class="pitch-animation">
+            <div class="process-image-placeholder gold">
+              <!-- TODO: Add setup illustration/image -->
+              Setup Image Placeholder
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Image (left) + Taking Payment (right) -->
+        <div class="pitch-row reverse">
+          <div class="pitch-animation">
+            <div class="process-image-placeholder orange">
+              <!-- TODO: Add payment illustration/image -->
+              Payment Image Placeholder
+            </div>
+          </div>
+          <div class="pitch-content">
+            <h3>2. Taking Payment</h3>
+            <p>
+              <!-- Client pays via a QR code or payment link → Lightning invoice is
+              generated →  -->
+              BareBits lets your customers choose to pay in Bitcoin at checkout.
+              Payments go directly from the customer to you in seconds for just
+              a 2% fee.
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 3: Cash Out (left) + Image (right) -->
+        <div class="pitch-row">
+          <div class="pitch-content">
+            <h3>3. Cash Out</h3>
+            <p>
+              Funds go directly to your Bitcoin wallet or enable automatic
+              conversion to USD. You control your funds completely with zero
+              chargeback risk.
+            </p>
+          </div>
+          <div class="pitch-animation">
+            <div class="process-image-placeholder gold">
+              <!-- TODO: Add settlement illustration/image -->
+              Settlement Image Placeholder
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: BareBits vs Traditional Payments -->
+    <section class="section additional-section comparison-section-orange">
+      <div class="container">
+        <h2 class="section-main-header">BareBits vs Competitors</h2>
+        <div class="comparison-table-wrapper">
+          <!-- Desktop Table -->
+          <table class="comparison-table desktop-only">
+            <thead>
+              <tr>
+                <th></th>
+                <th>
+                  <img
+                    src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
+                    alt="BareBits"
+                    class="comparison-logo"
+                  />
+                </th>
+                <th>Stripe</th>
+                <th>CCBill</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="comparison-label">Processing Fees</td>
+                <td class="comparison-highlight">
+                  <strong class="fee-low">2%</strong> per transaction<br />No
+                  per-transaction flat fee<br />No rolling reserves
+                </td>
+                <td>
+                  <strong class="fee-high">2.9% + $0.30</strong> (US cards)<br />Higher
+                  for international & currency conversion<br />Additional fees
+                  for disputes, Radar, etc.
+                </td>
+                <td>
+                  <strong class="fee-high">10–15%+</strong> effective fees
+                  (adult/high-risk)<br />Setup fees, rolling reserves, payout
+                  delays common<br />Fees vary by risk profile
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-label">Chargebacks & Disputes</td>
+                <td class="comparison-highlight">
+                  No chargebacks<br />Bitcoin payments are final<br />No dispute
+                  management overhead
+                </td>
+                <td>
+                  Chargebacks supported<br />$15 dispute fee per chargeback<br />Funds
+                  can be frozen during disputes
+                </td>
+                <td>
+                  Chargebacks common in adult industry<br />Dispute ratios
+                  heavily monitored<br />Accounts can be suspended
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-label">Payout Speed</td>
+                <td class="comparison-highlight">
+                  Instant settlement<br />Funds available immediately<br />No
+                  payout schedule or holds
+                </td>
+                <td>
+                  2–7 business days (US)<br />Longer for new accounts or
+                  high-risk businesses
+                </td>
+                <td>
+                  Weekly or bi-weekly payouts<br />Rolling reserves often
+                  applied
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-label">Global Reach</td>
+                <td class="comparison-highlight">
+                  Global by default<br />Works anywhere Bitcoin is accessible<br />No
+                  country-by-country approvals
+                </td>
+                <td>
+                  Available in ~45–50 countries<br />End customers need
+                  supported cards/banks
+                </td>
+                <td>
+                  International support, but region-dependent<br />Higher
+                  decline rates outside US/EU
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-label">Industry Restrictions</td>
+                <td class="comparison-highlight">
+                  Built for high-risk & fringe industries<br />Adult, creators,
+                  alternative commerce supported<br />Case-by-case onboarding
+                  (not blanket bans)
+                </td>
+                <td>
+                  Strict prohibited business list<br />Adult content, firearms,
+                  cannabis heavily restricted
+                </td>
+                <td>
+                  Adult-friendly<br />Other high-risk verticals still restricted
+                  or costly
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-label">Account Stability</td>
+                <td class="comparison-highlight">
+                  Non-custodial<br />No sudden fund freezes<br />Merchant
+                  controls funds
+                </td>
+                <td>
+                  Accounts can be frozen or terminated<br />Funds held during
+                  reviews
+                </td>
+                <td>
+                  Accounts subject to risk audits<br />Reserve increases without
+                  notice possible
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Mobile Cards -->
+          <div class="comparison-cards mobile-only">
+            <!-- BareBits Card -->
+            <div class="comparison-card card-barebits">
+              <div class="comparison-card-header">
+                <img
+                  src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
+                  alt="BareBits"
+                  class="comparison-card-logo"
+                />
+              </div>
+              <div class="comparison-card-content">
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Processing Fees</div>
+                  <div class="card-row-value comparison-highlight">
+                    <strong class="fee-low">2%</strong> per transaction<br />No
+                    per-transaction flat fee<br />No rolling reserves
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Chargebacks & Disputes</div>
+                  <div class="card-row-value comparison-highlight">
+                    No chargebacks<br />Bitcoin payments are final<br />No
+                    dispute management overhead
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Payout Speed</div>
+                  <div class="card-row-value comparison-highlight">
+                    Instant settlement<br />Funds available immediately<br />No
+                    payout schedule or holds
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Global Reach</div>
+                  <div class="card-row-value comparison-highlight">
+                    Global by default<br />Works anywhere Bitcoin is
+                    accessible<br />No country-by-country approvals
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Industry Restrictions</div>
+                  <div class="card-row-value comparison-highlight">
+                    Built for high-risk & fringe industries<br />Adult,
+                    creators, alternative commerce supported<br />Case-by-case
+                    onboarding (not blanket bans)
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Account Stability</div>
+                  <div class="card-row-value comparison-highlight">
+                    Non-custodial<br />No sudden fund freezes<br />Merchant
+                    controls funds
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stripe Card -->
+            <div class="comparison-card card-stripe">
+              <div class="comparison-card-header">
+                <h3>Stripe</h3>
+              </div>
+              <div class="comparison-card-content">
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Processing Fees</div>
+                  <div class="card-row-value">
+                    <strong class="fee-high">2.9% + $0.30</strong> (US cards)<br />Higher
+                    for international & currency conversion<br />Additional fees
+                    for disputes, Radar, etc.
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Chargebacks & Disputes</div>
+                  <div class="card-row-value">
+                    Chargebacks supported<br />$15 dispute fee per chargeback<br />Funds
+                    can be frozen during disputes
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Payout Speed</div>
+                  <div class="card-row-value">
+                    2–7 business days (US)<br />Longer for new accounts or
+                    high-risk businesses
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Global Reach</div>
+                  <div class="card-row-value">
+                    Available in ~45–50 countries<br />End customers need
+                    supported cards/banks
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Industry Restrictions</div>
+                  <div class="card-row-value">
+                    Strict prohibited business list<br />Adult content,
+                    firearms, cannabis heavily restricted
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Account Stability</div>
+                  <div class="card-row-value">
+                    Accounts can be frozen or terminated<br />Funds held during
+                    reviews
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CCBill Card -->
+            <div class="comparison-card card-ccbill">
+              <div class="comparison-card-header">
+                <h3>CCBill</h3>
+              </div>
+              <div class="comparison-card-content">
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Processing Fees</div>
+                  <div class="card-row-value">
+                    <strong class="fee-high">10–15%+</strong> effective fees
+                    (adult/high-risk)<br />Setup fees, rolling reserves, payout
+                    delays common<br />Fees vary by risk profile
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Chargebacks & Disputes</div>
+                  <div class="card-row-value">
+                    Chargebacks common in adult industry<br />Dispute ratios
+                    heavily monitored<br />Accounts can be suspended
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Payout Speed</div>
+                  <div class="card-row-value">
+                    Weekly or bi-weekly payouts<br />Rolling reserves often
+                    applied
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Global Reach</div>
+                  <div class="card-row-value">
+                    International support, but region-dependent<br />Higher
+                    decline rates outside US/EU
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Industry Restrictions</div>
+                  <div class="card-row-value">
+                    Adult-friendly<br />Other high-risk verticals still
+                    restricted or costly
+                  </div>
+                </div>
+                <div class="comparison-card-row">
+                  <div class="card-row-label">Account Stability</div>
+                  <div class="card-row-value">
+                    Accounts subject to risk audits<br />Reserve increases
+                    without notice possible
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comparison-cta">
+          <a href="contact.html" class="cta-button primary"
+            >Ready to get started?</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Use Cases / Trust Signals -->
+    <section class="section additional-section use-cases-section">
+      <div class="container">
+        <h2 class="section-main-header">BareBits is Perfect For...</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">🔧</div>
-            <h3>Easy Setup</h3>
+            <div class="feature-icon">🎬</div>
+            <h3>Creators</h3>
             <p>
-              Connect your business to our Lightning Network infrastructure. No
-              complex integrations or technical expertise required.
+              Accept tips and payments instantly from your global audience. No
+              chargeback risk and lower fees means more money in your pocket.
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Instant Payments</h3>
+            <div class="feature-icon">🛒</div>
+            <h3>E-commerce Shops</h3>
             <p>
-              Receive payments instantly with Lightning Network technology. No
-              waiting days or weeks for your money.
+              Scale your business and go where credit cards can't go. No
+              industry restrictions, accept payments from anywhere.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>All Merchants</h3>
+            <p>
+              We work with all businesses - ecommerce, adult entertainment,
+              firearms & sporting goods. We don't discriminate — all legal
+              businesses welcome.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Why Bitcoin Lightning -->
+    <!-- <section class="section additional-section">
+      <div class="container">
+        <h2 class="section-main-header">Why Bitcoin Lightning</h2>
+        <div
+          class="pitch-content"
+          style="max-width: 80rem; margin: 0 auto var(--space-2xl)"
+        >
+          <p
+            style="
+              font-size: 1.8rem;
+              line-height: 1.6;
+              color: var(--color-grey);
+              text-align: center;
+              margin-bottom: var(--space-xl);
+            "
+          >
+            Lightning is a second-layer network for Bitcoin that enables
+            instant, low-cost payments.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant Settlement</h3>
+            <p>
+              Receive payments instantly, not in 2-7 business days like slow
+              bank transfers or credit card processors.
             </p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">💰</div>
-            <h3>Save Money</h3>
-            <p>
-              Pay just 2% in processing fees instead of 5-15% with traditional
-              payment processors. Keep more of your profits.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Detailed Process Section -->
-    <section class="process-section">
-      <div class="container">
-        <h2>The BareBits Process</h2>
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Sign Up</h3>
-              <p>
-                Create your BareBits account and verify your business
-                information. The process takes just a few minutes.
-              </p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Integration</h3>
-              <p>
-                We provide you with simple integration tools - API keys,
-                webhooks, or plugins for popular platforms.
-              </p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Start Accepting</h3>
-              <p>
-                Begin accepting Bitcoin Lightning payments immediately.
-                Customers can pay with any Lightning wallet.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-      <div class="container">
-        <h2>Why Choose BareBits?</h2>
-        <div class="benefits-grid">
-          <div class="benefit-item">
             <h3>Lower Fees</h3>
             <p>
-              Save 60-85% on processing fees compared to traditional payment
-              processors.
+              No 2-3% credit card "tax". Pay just 2% in processing fees and keep
+              more of your money.
             </p>
           </div>
-          <div class="benefit-item">
-            <h3>Instant Settlement</h3>
-            <p>
-              Receive payments instantly, not in 2-7 business days like
-              traditional processors.
-            </p>
-          </div>
-          <div class="benefit-item">
-            <h3>No Discrimination</h3>
-            <p>
-              We don't discriminate against any industry. Adult, cannabis,
-              firearms - we serve all businesses.
-            </p>
-          </div>
-          <div class="benefit-item">
-            <h3>Global Reach</h3>
-            <p>Accept payments from customers anywhere in the world, 24/7.</p>
-          </div>
-          <div class="benefit-item">
-            <h3>No Chargebacks</h3>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>No Chargebacks, More Privacy</h3>
             <p>
               Bitcoin transactions are final. No more fraudulent chargebacks
-              eating your profits.
+              eating your profits. Your customers' payment data stays private.
             </p>
           </div>
-          <div class="benefit-item">
-            <h3>Privacy Focused</h3>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Section: Frequently Asked Questions (Accordion) -->
+    <section class="section additional-section">
+      <div class="container">
+        <h2 class="section-main-header">Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>What do I need to get started?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Internet access, email address, and a Bitcoin wallet. Don't have
+                a wallet? #StrikeWalletLink #LearnMore.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>What if I don't want Bitcoin?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Our service enables you to instantly convert to USD or any other
+                currency of your choice.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Bitcoin vs Bitcoin Lightning</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Bitcoin Lightning is a faster, cheaper way to process Bitcoin
+                payments. Our service accepts both Bitcoin and Bitcoin Lightning
+                payment seamlessy.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Does BareBits have access to my funds and data?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                We don't hold your funds and never have access to your data. You
+                control your wallet and your money.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>What About Chargebacks?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Funds settle instantly. Once the customer makes a payment the
+                money is yours and you can issue refunds at your convenience.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>Where does the money go when someone pays me?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Payments settle instantly to your on chain wallet, from there
+                you can use or convert it however you please.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>How long does setup take?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Most businesses can start accepting payments the same day. No
+                developer required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Benefits Summary -->
+    <section class="section additional-section benefits-section">
+      <div class="container">
+        <h2 class="section-main-header">Key Benefits</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Lower Processing Cost</h3>
             <p>
-              Your customers' payment data stays private. No unnecessary data
-              collection.
+              Save 60-85% on processing fees compared to legacy payment
+              processors. Keep more of your hard-earned money.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Faster Payout</h3>
+            <p>
+              Receive payments instantly, not in 2-7 business days. Your money
+              is available immediately when customers pay. No frozen payments,
+              no delays, no traditional bank nonsense.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Privacy & Control</h3>
+            <p>
+              You control your wallet and funds. No unnecessary data collection.
+              Your customers' payment information stays private.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>Scalable and Global</h3>
+            <p>
+              Accept payments from customers anywhere in the world, 24/7. No
+              geographic restrictions, Any customer, any time, anywhere.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Pricing/Feature Section Option 1: BitPay Style - Capability Cards -->
+    <section class="section additional-section" style="display: none">
       <div class="container">
-        <h2>Ready to Get Started?</h2>
-        <p>Join thousands of businesses already saving money with BareBits.</p>
-        <a href="contact.html" class="cta-button">Start Saving Today</a>
+        <h2 class="section-main-header">Accept Bitcoin. Lightning fast.⚡</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>CHEAPER FEES</h3>
+            <p>
+              Customers pay less than a fraction of a cent in transaction fees
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>MASSIVELY SCALABLE</h3>
+            <p>Accept frequent payments and microtransactions</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3>REACH A NEW AUDIENCE</h3>
+            <p>No additional setup required</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing/Feature Section Option 2: OpenNode Style - Capabilities Grid -->
+    <section class="section additional-section" style="display: none">
+      <div class="container">
+        <h2 class="section-main-header">
+          Secure bitcoin processing infrastructure for your business
+        </h2>
+        <div
+          class="capabilities-grid"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+          "
+        >
+          <div
+            class="capability-card"
+            style="
+              background: var(--color-white);
+              padding: var(--space-xl);
+              border-radius: var(--radius-md);
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3 style="font-size: 2rem; margin-bottom: var(--space-md)">
+              Bitcoin & local currencies
+            </h3>
+            <p
+              style="
+                color: var(--color-grey);
+                font-size: 1.4rem;
+                line-height: 1.6;
+              "
+            >
+              Accept bitcoin and receive bitcoin or local currencies like EUR,
+              GBP, USD and more.
+            </p>
+            <a
+              href="#"
+              style="
+                color: var(--color-btc-orange);
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: var(--space-md);
+                display: inline-block;
+              "
+              >Explore Capabilities →</a
+            >
+          </div>
+          <div
+            class="capability-card"
+            style="
+              background: var(--color-white);
+              padding: var(--space-xl);
+              border-radius: var(--radius-md);
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3 style="font-size: 2rem; margin-bottom: var(--space-md)">
+              Payments & Payouts
+            </h3>
+            <p
+              style="
+                color: var(--color-grey);
+                font-size: 1.4rem;
+                line-height: 1.6;
+              "
+            >
+              Accept bitcoin payments from anywhere. Fund global payouts with
+              local currency.
+            </p>
+            <a
+              href="#"
+              style="
+                color: var(--color-btc-orange);
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: var(--space-md);
+                display: inline-block;
+              "
+              >Explore Capabilities →</a
+            >
+          </div>
+          <div
+            class="capability-card"
+            style="
+              background: var(--color-white);
+              padding: var(--space-xl);
+              border-radius: var(--radius-md);
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3 style="font-size: 2rem; margin-bottom: var(--space-md)">
+              Invoices
+            </h3>
+            <p
+              style="
+                color: var(--color-grey);
+                font-size: 1.4rem;
+                line-height: 1.6;
+              "
+            >
+              Accept bitcoin with professional invoices using our billing
+              templates.
+            </p>
+            <a
+              href="#"
+              style="
+                color: var(--color-btc-orange);
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: var(--space-md);
+                display: inline-block;
+              "
+              >Explore Capabilities →</a
+            >
+          </div>
+          <div
+            class="capability-card"
+            style="
+              background: var(--color-white);
+              padding: var(--space-xl);
+              border-radius: var(--radius-md);
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3 style="font-size: 2rem; margin-bottom: var(--space-md)">
+              Conversion
+            </h3>
+            <p
+              style="
+                color: var(--color-grey);
+                font-size: 1.4rem;
+                line-height: 1.6;
+              "
+            >
+              Convert automatically, instantly or on your schedule.
+            </p>
+            <a
+              href="#"
+              style="
+                color: var(--color-btc-orange);
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: var(--space-md);
+                display: inline-block;
+              "
+              >Explore Capabilities →</a
+            >
+          </div>
+          <div
+            class="capability-card"
+            style="
+              background: var(--color-white);
+              padding: var(--space-xl);
+              border-radius: var(--radius-md);
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3 style="font-size: 2rem; margin-bottom: var(--space-md)">
+              Settlement
+            </h3>
+            <p
+              style="
+                color: var(--color-grey);
+                font-size: 1.4rem;
+                line-height: 1.6;
+              "
+            >
+              Receive funds in the currency of your choice using Split
+              Settlement.
+            </p>
+            <a
+              href="#"
+              style="
+                color: var(--color-btc-orange);
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: var(--space-md);
+                display: inline-block;
+              "
+              >Explore Capabilities →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing/Feature Section Option 3: Flash Payments Style - Feature List -->
+    <section class="section additional-section" style="display: none">
+      <div class="container">
+        <h2 class="section-main-header">Why Choose BareBits?</h2>
+        <div class="pitch-row" style="max-width: 90rem; margin: 0 auto">
+          <div class="pitch-content">
+            <h3 style="font-size: 2.4rem; margin-bottom: var(--space-lg)">
+              Complete Payment Solution
+            </h3>
+            <ul style="list-style: none; padding: 0">
+              <li
+                style="
+                  padding: var(--space-sm) 0;
+                  font-size: 1.6rem;
+                  color: var(--color-grey);
+                "
+              >
+                <strong style="color: var(--color-black)"
+                  >Instant Settlement</strong
+                >
+                — Receive payments in seconds, not days
+              </li>
+              <li
+                style="
+                  padding: var(--space-sm) 0;
+                  font-size: 1.6rem;
+                  color: var(--color-grey);
+                "
+              >
+                <strong style="color: var(--color-black)">Low Fees</strong> —
+                Just 2% processing fee, no hidden costs
+              </li>
+              <li
+                style="
+                  padding: var(--space-sm) 0;
+                  font-size: 1.6rem;
+                  color: var(--color-grey);
+                "
+              >
+                <strong style="color: var(--color-black)">Global Reach</strong>
+                — Accept payments from 229+ countries
+              </li>
+              <li
+                style="
+                  padding: var(--space-sm) 0;
+                  font-size: 1.6rem;
+                  color: var(--color-grey);
+                "
+              >
+                <strong style="color: var(--color-black)"
+                  >No Chargebacks</strong
+                >
+                — Bitcoin transactions are final
+              </li>
+              <li
+                style="
+                  padding: var(--space-sm) 0;
+                  font-size: 1.6rem;
+                  color: var(--color-grey);
+                "
+              >
+                <strong style="color: var(--color-black)"
+                  >Privacy Focused</strong
+                >
+                — Your data stays private
+              </li>
+            </ul>
+          </div>
+          <div class="pitch-animation">
+            <div
+              style="
+                width: 100%;
+                height: 400px;
+                background: var(--color-btc-gold);
+                border-radius: var(--radius-md);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-black);
+                font-size: 1.6rem;
+              "
+            >
+              <!-- TODO: Add feature illustration -->
+              Feature Illustration Placeholder
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing/Feature Section Option 4: Simple Benefits Grid -->
+    <section class="section additional-section" style="display: none">
+      <div class="container">
+        <h2 class="section-main-header">
+          Everything you need to accept Bitcoin payments
+        </h2>
+        <div
+          class="features-grid"
+          style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))"
+        >
+          <div class="feature-card">
+            <div class="feature-icon">💳</div>
+            <h3>Online Payments</h3>
+            <p>
+              Accept crypto payments, deposits, and donations online from your
+              customers.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📧</div>
+            <h3>Email Invoices</h3>
+            <p>
+              Send Bitcoin invoices as quickly and easily as sending an email.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>In-Person Payments</h3>
+            <p>
+              Accept Bitcoin on your smartphone or tablet at your retail store
+              or restaurant.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>Global Payments</h3>
+            <p>
+              Access 229+ countries & territories instantly with Lightning
+              Network.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -179,7 +999,7 @@
     <section class="footer-hero">
       <div class="container">
         <img
-          src="assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
+          src="../assets/images/wordmark/BareBits_UnzipLogo_WHT_GLD.svg"
           alt="BareBits Logo"
           class="footer-hero-logo"
         />
@@ -191,36 +1011,48 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>Services</h3>
+            <h3>Industries</h3>
             <ul>
-              <li><a href="index.html#services">Payment Processing</a></li>
-              <li><a href="index.html#services">Lightning Network</a></li>
-              <li><a href="index.html#services">Business Integration</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>Support</h3>
-            <ul>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="how-it-works.html">How It Works</a></li>
-              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Adult Entertainment</a></li>
+              <li><a href="#">Cannabis Dispensaries</a></li>
+              <li><a href="#">Firearms & Sporting Goods</a></li>
+              <li><a href="#">Political Activists</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h3>Company</h3>
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
         </div>
+        <div class="footer-support-row">
+          <a href="/support">Need Support?</a>
+        </div>
+        <div class="footer-legal">
+          <p>
+            If you have a payment dispute with a vendor who uses BareBits, you
+            must work with that vendor directly as we have no access to vendor
+            funds. We are unable to issue refunds or mediate any disputes. We
+            are not responsible for the usage of our software by third parties.
+            BareBits software can only be used for purposes which are legal
+            within the United States. By using our software, you agree to our
+            <a href="terms-of-service.html">terms of service</a> and
+            <a href="privacy-policy.html">privacy policy</a>.
+          </p>
+        </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 BareBits. All rights reserved.</p>
+          <p>
+            &copy; 2025 BareBits. All rights reserved. Lightning-fast Bitcoin
+            payments for the modern world.
+          </p>
         </div>
       </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
   </body>
 </html>

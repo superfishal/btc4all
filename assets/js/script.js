@@ -1,13 +1,7 @@
 // Font loading verification
 document.fonts.ready.then(() => {
-  console.log("Fonts loaded successfully!");
-
   // Check if Acumin Pro Wide is loaded
-  if (document.fonts.check("1em acumin-pro")) {
-    console.log("✅ Acumin Pro Wide is loaded and working!");
-  } else {
-    console.log("❌ Acumin Pro Wide not detected, using fallback fonts");
-
+  if (!document.fonts.check("1em acumin-pro")) {
     // Try to load the font manually
     const fontFace = new FontFace(
       "acumin-pro",
@@ -17,10 +11,9 @@ document.fonts.ready.then(() => {
       .load()
       .then((loadedFace) => {
         document.fonts.add(loadedFace);
-        console.log("✅ Acumin Pro Wide manually loaded!");
       })
-      .catch((error) => {
-        console.log("❌ Failed to manually load Acumin Pro Wide:", error);
+      .catch(() => {
+        // Font failed to load, fallback fonts will be used
       });
   }
 });
@@ -156,135 +149,6 @@ if (monthlyRevenueInput) {
   });
 }
 
-// Mouse wheel scrolling for badges section
-const badgesScroll = document.querySelector(".badges-scroll");
-const badgesSection = document.querySelector(".badges-section");
-const badgeItems = document.querySelectorAll(".badge-item");
-
-if (badgesScroll && badgesSection) {
-  let currentPatternOffset = 0;
-  let targetPatternOffset = 0;
-  let animationId = null;
-  let currentCenterIndex = 0;
-
-  // Function to update center company
-  function updateCenterCompany() {
-    badgeItems.forEach((item, index) => {
-      item.classList.remove("center", "side");
-      if (index === currentCenterIndex) {
-        item.classList.add("center");
-      } else {
-        item.classList.add("side");
-      }
-    });
-  }
-
-  // Function to find which item is closest to center
-  function updateCenterIndex() {
-    const containerWidth = badgesScroll.offsetWidth;
-    const scrollLeft = badgesScroll.scrollLeft;
-    const centerPoint = scrollLeft + containerWidth / 2;
-
-    let closestIndex = 0;
-    let closestDistance = Infinity;
-
-    badgeItems.forEach((item, index) => {
-      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-      const distance = Math.abs(itemCenter - centerPoint);
-
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closestIndex = index;
-      }
-    });
-
-    if (closestIndex !== currentCenterIndex) {
-      currentCenterIndex = closestIndex;
-      updateCenterCompany();
-    }
-  }
-
-  // Function to smoothly animate pattern position
-  const smoothUpdatePattern = () => {
-    const maxScroll = badgesScroll.scrollWidth - badgesScroll.clientWidth;
-    if (maxScroll <= 0) return; // Prevent division by zero
-
-    const scrollPercent = badgesScroll.scrollLeft / maxScroll;
-    targetPatternOffset = scrollPercent * 200; // Target position
-
-    // Cancel any existing animation
-    if (animationId) {
-      cancelAnimationFrame(animationId);
-    }
-
-    // Smooth animation function
-    const animate = () => {
-      const difference = targetPatternOffset - currentPatternOffset;
-
-      // If the difference is very small, stop animating
-      if (Math.abs(difference) < 0.1) {
-        currentPatternOffset = targetPatternOffset;
-        badgesSection.style.backgroundPosition = `${-currentPatternOffset}px 0`;
-        return;
-      }
-
-      // Smooth interpolation (easing)
-      currentPatternOffset += difference * 0.15; // Adjust this value for smoothness (0.1 = slower, 0.3 = faster)
-      badgesSection.style.backgroundPosition = `${-currentPatternOffset}px 0`;
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animate();
-  };
-
-  badgesScroll.addEventListener("wheel", (e) => {
-    // Allow natural scrolling - don't prevent default
-    // Reduce scroll sensitivity for smoother movement
-    badgesScroll.scrollLeft += e.deltaY * 1;
-    smoothUpdatePattern();
-    updateCenterIndex();
-  });
-
-  // Add touch/swipe support for mobile
-  let startX = 0;
-  let scrollLeft = 0;
-
-  badgesScroll.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].pageX - badgesScroll.offsetLeft;
-    scrollLeft = badgesScroll.scrollLeft;
-  });
-
-  badgesScroll.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    const x = e.touches[0].pageX - badgesScroll.offsetLeft;
-    const walk = (x - startX) * 1.5; // Reduced sensitivity
-    badgesScroll.scrollLeft = scrollLeft - walk;
-    smoothUpdatePattern();
-    updateCenterIndex();
-  });
-
-  // Click to center functionality
-  badgeItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-      const containerCenter = badgesScroll.offsetWidth / 2;
-      const scrollPosition = itemCenter - containerCenter;
-
-      badgesScroll.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
-      });
-
-      currentCenterIndex = index;
-      updateCenterCompany();
-    });
-  });
-
-  // Initialize center company
-  updateCenterCompany();
-}
-
 // Load Lottie animations
 document.addEventListener("DOMContentLoaded", function () {
   // Wait a bit to ensure DOM is fully loaded
@@ -292,55 +156,33 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load why section animation
     const whyAnimationElement = document.getElementById("why-animation");
     if (whyAnimationElement) {
-      console.log("Loading why animation...");
       try {
-        const whyAnimation = lottie.loadAnimation({
+        lottie.loadAnimation({
           container: whyAnimationElement,
           renderer: "svg",
           loop: true,
           autoplay: true,
           path: "assets/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json",
         });
-
-        whyAnimation.addEventListener("DOMLoaded", () => {
-          console.log("✅ Why animation loaded successfully");
-        });
-
-        whyAnimation.addEventListener("data_failed", () => {
-          console.log("❌ Why animation failed to load");
-        });
       } catch (error) {
-        console.log("❌ Error loading why animation:", error);
+        // Animation failed to load
       }
-    } else {
-      console.log("❌ Why animation element not found");
     }
 
     // Load how section animation (coin)
     const howAnimationElement = document.getElementById("how-animation");
     if (howAnimationElement) {
-      console.log("Loading how animation...");
       try {
-        const howAnimation = lottie.loadAnimation({
+        lottie.loadAnimation({
           container: howAnimationElement,
           renderer: "svg",
           loop: true,
           autoplay: true,
           path: "assets/animations/BB_KOIN/BB_KOIN.json",
         });
-
-        howAnimation.addEventListener("DOMLoaded", () => {
-          console.log("✅ How animation loaded successfully");
-        });
-
-        howAnimation.addEventListener("data_failed", () => {
-          console.log("❌ How animation failed to load");
-        });
       } catch (error) {
-        console.log("❌ Error loading how animation:", error);
+        // Animation failed to load
       }
-    } else {
-      console.log("❌ How animation element not found");
     }
   }, 100);
 });
@@ -352,19 +194,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const calcResult = document.querySelector(".calc-result");
 
   if (calcInput && calcSelect && calcResult) {
+    // Set default values and calculate on load
+    function initializeCalculator() {
+      // Default values are set in HTML, now calculate
+      const monthlyRevenue = parseFloat(calcInput.value) || 0;
+      const selectedRate = parseFloat(calcSelect.value) || 0;
+
+      if (monthlyRevenue > 0 && selectedRate > 0) {
+        calculateSavings();
+      }
+    }
+
     function calculateSavings() {
-      const monthlyEarnings = parseFloat(calcInput.value) || 0;
+      const monthlyRevenue = parseFloat(calcInput.value) || 0;
       const selectedRate = parseFloat(calcSelect.value) || 0;
 
       // Only show placeholder messages if BOTH are not filled
-      if (monthlyEarnings === 0 && selectedRate === 0) {
-        calcResult.textContent = "Enter your monthly earnings";
+      if (monthlyRevenue === 0 && selectedRate === 0) {
+        calcResult.textContent = "Enter your monthly revenue";
         calcResult.classList.remove("bulge");
         return;
       }
 
-      if (monthlyEarnings === 0) {
-        calcResult.textContent = "Enter your monthly earnings";
+      if (monthlyRevenue === 0) {
+        calcResult.textContent = "Enter your monthly revenue";
         calcResult.classList.remove("bulge");
         return;
       }
@@ -377,9 +230,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Both are filled - calculate and animate!
       const barebitsRate = 2; // BareBits rate
-      const annualEarnings = monthlyEarnings * 12;
-      const currentCost = (annualEarnings * selectedRate) / 100;
-      const barebitsCost = (annualEarnings * barebitsRate) / 100;
+      const annualRevenue = monthlyRevenue * 12;
+      const currentCost = (annualRevenue * selectedRate) / 100;
+      const barebitsCost = (annualRevenue * barebitsRate) / 100;
       const savings = currentCost - barebitsCost;
 
       // Format the result
@@ -404,117 +257,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Dropdown triggers immediately on change
     calcSelect.addEventListener("change", calculateSavings);
+
+    // Initialize calculator with default values
+    initializeCalculator();
   }
-});
-
-// Enhanced Companies Section - NEW FUNCTIONALITY
-document.addEventListener("DOMContentLoaded", function () {
-  const enhancedSection = document.querySelector(".enhanced-companies-section");
-  const enhancedScroll = document.querySelector(".enhanced-companies-scroll");
-  const enhancedItems = document.querySelectorAll(".enhanced-badge-item");
-
-  if (!enhancedSection || !enhancedScroll || !enhancedItems.length) {
-    console.log("Enhanced companies section not found");
-    return;
-  }
-
-  let currentIndex = 0;
-  let lastScrollDirection = "right";
-  let isScrolling = false;
-  let patternOffset = 0;
-  let patternDirection = 1; // 1 for right, -1 for left
-
-  // Initialize center company
-  function updateCenterCompany() {
-    enhancedItems.forEach((item, index) => {
-      item.classList.remove("center", "side");
-      if (index === currentIndex) {
-        item.classList.add("center");
-      } else {
-        item.classList.add("side");
-      }
-    });
-  }
-
-  // Calculate scroll position to center an item
-  function getScrollPositionForCenter(index) {
-    const item = enhancedItems[index];
-    if (!item) return 0;
-
-    const containerWidth = enhancedScroll.offsetWidth;
-    const itemWidth = item.offsetWidth;
-    const itemOffsetLeft = item.offsetLeft;
-
-    // Calculate position to center the item in the container
-    const centerPosition = itemOffsetLeft - containerWidth / 2 + itemWidth / 2;
-
-    return Math.max(0, centerPosition);
-  }
-
-  // Scroll to specific company
-  function scrollToCompany(index) {
-    if (isScrolling) return;
-
-    isScrolling = true;
-    currentIndex = Math.max(0, Math.min(index, enhancedItems.length - 1));
-
-    const scrollPosition = getScrollPositionForCenter(currentIndex);
-
-    // Smooth scroll to the calculated position
-    enhancedScroll.scrollTo({
-      left: scrollPosition,
-      behavior: "smooth",
-    });
-
-    updateCenterCompany();
-
-    setTimeout(() => {
-      isScrolling = false;
-    }, 500);
-  }
-
-  // Handle wheel scroll
-  enhancedScroll.addEventListener("wheel", function (e) {
-    e.preventDefault();
-
-    if (isScrolling) return;
-
-    const direction = e.deltaY > 0 ? "right" : "left";
-    lastScrollDirection = direction;
-
-    // Update pattern direction
-    patternDirection = direction === "right" ? 1 : -1;
-
-    if (direction === "right" && currentIndex < enhancedItems.length - 1) {
-      scrollToCompany(currentIndex + 1);
-    } else if (direction === "left" && currentIndex > 0) {
-      scrollToCompany(currentIndex - 1);
-    }
-  });
-
-  // Continuous pattern scrolling
-  function animatePattern() {
-    patternOffset += patternDirection * 0.5;
-    enhancedSection.style.backgroundPosition = `${patternOffset}px 0`;
-    requestAnimationFrame(animatePattern);
-  }
-
-  // Initialize - start with first company centered
-  updateCenterCompany();
-  // Center the first company on load
-  setTimeout(() => {
-    scrollToCompany(0);
-  }, 100);
-  animatePattern();
-
-  // Click to center
-  enhancedItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      scrollToCompany(index);
-    });
-  });
-
-  console.log("✅ Enhanced companies section initialized");
 });
 
 // Carousel badge logos - main centered, 1 on each side, rest hidden
@@ -590,4 +336,37 @@ document.addEventListener("DOMContentLoaded", function () {
     currentIndex = (currentIndex + 1) % items.length;
     updateCarousel();
   }, 3000);
+});
+
+// Accordion functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", function () {
+      const item = this.parentElement;
+      const content = item.querySelector(".accordion-content");
+      const icon = this.querySelector(".accordion-icon");
+      const isActive = item.classList.contains("active");
+
+      // Close all other items
+      document
+        .querySelectorAll(".accordion-item")
+        .forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.classList.remove("active");
+            otherItem.querySelector(".accordion-icon").textContent = "+";
+          }
+        });
+
+      // Toggle current item
+      if (isActive) {
+        item.classList.remove("active");
+        icon.textContent = "+";
+      } else {
+        item.classList.add("active");
+        icon.textContent = "−";
+      }
+    });
+  });
 });
