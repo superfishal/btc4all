@@ -346,11 +346,10 @@
   
   .cta-cat-image {
     width: auto;
-    height: auto;
+    max-width: none;
     min-height: 70vh;
     max-height: 85vh;
     object-fit: contain;
-    max-width: none;
   }
   
   .cta-image {

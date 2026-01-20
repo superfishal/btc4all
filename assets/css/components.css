@@ -1,7 +1,8 @@
 /* Components - Reusable Patterns */
 
 /* Buttons */
-.btn, .cta-button {
+.btn,
+.cta-button {
   display: inline-block;
   padding: 1.2rem 2.5rem;
   border-radius: var(--radius-md);
@@ -14,13 +15,15 @@
   font-family: var(--font-body);
 }
 
-.btn-primary, .cta-button.primary {
+.btn-primary,
+.cta-button.primary {
   background: var(--color-btc-orange);
   color: var(--color-white);
   border: 2px solid var(--color-btc-orange);
 }
 
-.btn-primary:hover, .cta-button.primary:hover {
+.btn-primary:hover,
+.cta-button.primary:hover {
   background: var(--color-btc-gold);
   color: var(--color-black);
   border-color: var(--color-black);
@@ -68,11 +71,15 @@ nav {
 }
 
 .logo-img {
-  height: 4vw; /* Responsive sizing - scales with viewport */
+  height: 4vw;
+  /* Responsive sizing - scales with viewport */
   width: auto;
-  max-width: 15rem; /* Maximum constraint */
-  min-height: 3rem; /* Minimum readable size */
-  max-height: 5rem; /* Maximum size cap */
+  max-width: 15rem;
+  /* Maximum constraint */
+  min-height: 3rem;
+  /* Minimum readable size */
+  max-height: 5rem;
+  /* Maximum size cap */
 }
 
 .nav-links {
@@ -80,7 +87,8 @@ nav {
   list-style: none;
   gap: var(--space-md);
   align-items: center;
-  flex-wrap: nowrap; /* Prevent nav items from wrapping */
+  flex-wrap: nowrap;
+  /* Prevent nav items from wrapping */
 }
 
 .nav-links a {
@@ -88,7 +96,8 @@ nav {
   font-weight: 500;
   font-size: 1.4rem;
   transition: var(--transition-base);
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
+  /* Prevent text wrapping */
 }
 
 .nav-links a:hover {
@@ -103,7 +112,8 @@ nav {
   font-weight: 600;
   font-size: 1.4rem;
   transition: var(--transition-base);
-  white-space: nowrap; /* Prevent button text from wrapping */
+  white-space: nowrap;
+  /* Prevent button text from wrapping */
 }
 
 .nav-cta:hover {
@@ -124,12 +134,14 @@ nav {
 .hero {
   background: var(--color-btc-gold);
   color: var(--color-black);
-  padding: 6rem var(--container-pad) 4rem; /* Reduced top padding for mobile */
+  padding: 6rem var(--container-pad) 4rem;
+  /* Reduced top padding for mobile */
   text-align: left;
 }
 
 .hero h1 {
-  font-size: 4rem; /* Mobile */
+  font-size: 4rem;
+  /* Mobile */
   margin-bottom: var(--space-sm);
 }
 
@@ -164,7 +176,8 @@ nav {
 }
 
 .section-main-header {
-  text-align: center; /* Center all section headers */
+  text-align: center;
+  /* Center all section headers */
   font-size: 4rem;
   margin-bottom: var(--space-2xl);
   margin-top: var(--space-md);
@@ -216,11 +229,15 @@ nav {
 }
 
 /* Lists */
-.pain-points, .benefits, .results {
+.pain-points,
+.benefits,
+.results {
   margin-top: var(--space-sm);
 }
 
-.pain-points li, .benefits li, .results li {
+.pain-points li,
+.benefits li,
+.results li {
   margin-bottom: var(--space-sm);
   position: relative;
   padding-left: var(--space-md);
@@ -228,11 +245,15 @@ nav {
   line-height: 1.5;
 }
 
-.pain-points li:last-child, .benefits li:last-child, .results li:last-child {
+.pain-points li:last-child,
+.benefits li:last-child,
+.results li:last-child {
   margin-bottom: 0;
 }
 
-.pain-points li:before, .benefits li:before, .results li:before {
+.pain-points li:before,
+.benefits li:before,
+.results li:before {
   content: "•";
   color: var(--color-btc-gold);
   font-weight: 900;
@@ -357,9 +378,11 @@ nav {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.15);
   }
+
   100% {
     transform: scale(1);
   }
@@ -521,7 +544,7 @@ footer {
   .footer-legal p {
     font-size: 0.9rem;
   }
-  
+
   .footer-bottom {
     font-size: 1.15rem;
   }
@@ -531,14 +554,16 @@ footer {
   .footer-legal p {
     font-size: 0.95rem;
   }
-  
+
   .footer-bottom {
     font-size: 1.2rem;
   }
 }
 
 /* Additional Section Styles */
-.section-gold, .additional-section, .pitch-section {
+.section-gold,
+.additional-section,
+.pitch-section {
   padding: 5rem var(--container-pad);
   background: #f8f9fa;
 }
@@ -658,7 +683,8 @@ footer {
 }
 
 /* Integrations/Badges Section */
-.integrations-section, .badges-section {
+.integrations-section,
+.badges-section {
   background-image: url('../images/patterns/BareBits_Pattern_BG_4_V1.svg');
   background-repeat: repeat;
   padding: 5rem var(--container-pad);
@@ -666,7 +692,8 @@ footer {
   position: relative;
 }
 
-.integrations-section h2, .badges-section h2 {
+.integrations-section h2,
+.badges-section h2 {
   font-size: 3rem;
   margin-bottom: var(--space-lg);
   color: var(--color-white);
@@ -684,7 +711,8 @@ footer {
   margin-bottom: var(--space-md) !important;
 }
 
-.integrations-scroll, .badges-scroll {
+.integrations-scroll,
+.badges-scroll {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -772,7 +800,7 @@ footer {
     overflow: visible;
     min-height: auto;
   }
-  
+
   .integration-item {
     position: relative;
     opacity: 1;
@@ -780,7 +808,7 @@ footer {
     transform: none !important;
     left: auto;
   }
-  
+
   .integration-item.prev,
   .integration-item.active,
   .integration-item.next {
@@ -789,19 +817,17 @@ footer {
     transform: none !important;
     z-index: auto;
   }
-  
+
   .integration-divider-line {
     display: block;
     width: 1px;
     height: 80px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(0, 0, 0, 0.2) 20%,
-      rgba(0, 0, 0, 0.3) 50%,
-      rgba(0, 0, 0, 0.2) 80%,
-      transparent 100%
-    );
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 20%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.2) 80%,
+        transparent 100%);
     margin: 0 var(--space-xs);
     position: relative;
   }
@@ -813,14 +839,12 @@ footer {
     top: 0;
     right: -0.5px;
     bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(0, 0, 0, 0.15) 25%,
-      rgba(0, 0, 0, 0.25) 50%,
-      rgba(0, 0, 0, 0.15) 75%,
-      transparent 100%
-    );
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.15) 25%,
+        rgba(0, 0, 0, 0.25) 50%,
+        rgba(0, 0, 0, 0.15) 75%,
+        transparent 100%);
     filter: blur(2px);
   }
 }
@@ -925,11 +949,11 @@ footer {
     flex-direction: column;
     gap: var(--space-md);
   }
-  
+
   .cta-banner-text {
     font-size: 1.8rem;
   }
-  
+
   .cta-banner-button {
     width: auto;
   }
@@ -1138,7 +1162,7 @@ footer {
     align-items: flex-start;
     gap: 4rem;
   }
-  
+
   .footer-section {
     text-align: center;
     flex: 1;
@@ -1316,15 +1340,15 @@ footer {
     flex-direction: row;
     align-items: stretch;
   }
-  
+
   .pricing-card {
     flex: 1;
   }
-  
+
   .pricing-card-featured {
     transform: scale(1.05);
   }
-  
+
   .pricing-card-featured:hover {
     transform: scale(1.05) translateY(-5px);
   }
@@ -1379,7 +1403,7 @@ footer {
   .why-pricing-grid {
     flex-direction: row;
   }
-  
+
   .why-pricing-card {
     flex: 1;
   }
@@ -1464,7 +1488,7 @@ footer {
   .calculator-comparison {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .comparison-item.savings {
     grid-column: auto;
   }
@@ -1485,27 +1509,27 @@ footer {
   .pricing-hero h1 {
     font-size: 3rem;
   }
-  
+
   .pricing-hero .hero-description {
     font-size: 1.4rem;
   }
-  
+
   .pricing-card {
     padding: var(--space-lg);
   }
-  
+
   .price-amount {
     font-size: 3rem;
   }
-  
+
   .pricing-card-title {
     font-size: 2rem;
   }
-  
+
   .calculator-comparison {
     grid-template-columns: 1fr;
   }
-  
+
   .comparison-item.savings {
     grid-column: 1;
   }
@@ -1515,7 +1539,7 @@ footer {
   .pricing-hero h1 {
     font-size: 5rem;
   }
-  
+
   .pricing-hero .hero-description {
     font-size: 2rem;
   }
@@ -1525,23 +1549,23 @@ footer {
   .pricing-hero {
     padding: 10rem var(--container-pad) 6rem;
   }
-  
+
   .pricing-hero h1 {
     font-size: 6rem;
   }
-  
+
   .pricing-tiers-section {
     padding: 6rem var(--container-pad);
   }
-  
+
   .why-pricing-section {
     padding: 6rem var(--container-pad);
   }
-  
+
   .pricing-calculator-section {
     padding: 6rem var(--container-pad);
   }
-  
+
   .pricing-faq-section {
     padding: 6rem var(--container-pad);
   }
@@ -1646,7 +1670,7 @@ footer {
   .contact-form h2 {
     text-align: left;
   }
-  
+
   .contact-info {
     text-align: left;
   }
@@ -1858,12 +1882,13 @@ footer {
 
 /* Responsive adjustments for background sections */
 @media (max-width: 767px) {
+
   .comparison-section-orange,
   .use-cases-section,
   .benefits-section {
     padding: 3rem var(--container-pad);
   }
-  
+
   .comparison-section-orange .section-main-header,
   .use-cases-section .section-main-header,
   .benefits-section .section-main-header {
@@ -1872,6 +1897,7 @@ footer {
 }
 
 @media (min-width: 1024px) {
+
   .comparison-section-orange,
   .use-cases-section,
   .benefits-section {
@@ -1888,42 +1914,42 @@ footer {
   .mobile-only {
     display: block;
   }
-  
+
   .desktop-only {
     display: none;
   }
-  
+
   .comparison-table-wrapper {
     overflow-x: visible;
   }
-  
+
   .comparison-cards {
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
   }
-  
+
   .comparison-card {
     background: var(--color-white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     overflow: hidden;
   }
-  
+
   .comparison-card-header {
     background: var(--color-black);
     color: var(--color-white);
     padding: var(--space-lg);
     text-align: center;
   }
-  
+
   .comparison-card-header h3 {
     margin: 0;
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--color-white);
   }
-  
+
   .comparison-card-logo {
     height: 3rem;
     width: auto;
@@ -1931,40 +1957,40 @@ footer {
     display: block;
     margin: 0 auto;
   }
-  
+
   .card-barebits .comparison-card-header {
     background: var(--color-black);
   }
-  
+
   .comparison-card-content {
     padding: var(--space-lg);
   }
-  
+
   .comparison-card-row {
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-lg);
     border-bottom: 1px solid #e5e7eb;
   }
-  
+
   .comparison-card-row:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
   }
-  
+
   .card-row-label {
     font-weight: 600;
     color: var(--color-black);
     font-size: 1.4rem;
     margin-bottom: var(--space-sm);
   }
-  
+
   .card-row-value {
     font-size: 1.3rem;
     line-height: 1.6;
     color: var(--color-grey);
   }
-  
+
   .card-row-value.comparison-highlight {
     color: var(--color-black);
     font-weight: 700;
@@ -1976,12 +2002,12 @@ footer {
   .mobile-only {
     display: none !important;
   }
-  
+
   .comparison-table.desktop-only {
     display: table;
     width: 100%;
   }
-  
+
   .comparison-cards.mobile-only {
     display: none;
   }
@@ -1992,14 +2018,13 @@ footer {
     font-size: 1.8rem;
     text-align: center;
   }
-  
+
   .comparison-table td {
     font-size: 1.5rem;
     text-align: center;
   }
-  
+
   .comparison-label {
     text-align: left;
   }
 }
-

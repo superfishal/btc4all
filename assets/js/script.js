@@ -3,10 +3,12 @@ document.fonts.ready.then(() => {
   // Check if Acumin Pro Wide is loaded
   if (!document.fonts.check("1em acumin-pro")) {
     // Try to load the font manually
-    const fontFace = new FontFace(
-      "acumin-pro",
-      "url(assets/fonts/acuminprowide-regular-webfont.woff2)"
-    );
+    const isInPagesFolder = window.location.pathname.includes('/pages/');
+    const fontPath = isInPagesFolder 
+      ? '../assets/fonts/acuminprowide-regular-webfont.woff2'
+      : 'assets/fonts/acuminprowide-regular-webfont.woff2';
+    
+    const fontFace = new FontFace("acumin-pro", `url(${fontPath})`);
     fontFace
       .load()
       .then((loadedFace) => {
@@ -22,9 +24,11 @@ document.fonts.ready.then(() => {
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 
-navToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -38,7 +42,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       });
     }
     // Close mobile menu if open
-    navLinks.classList.remove("active");
+    if (navLinks) {
+      navLinks.classList.remove("active");
+    }
   });
 });
 
@@ -151,18 +157,22 @@ if (monthlyRevenueInput) {
 
 // Load Lottie animations
 document.addEventListener("DOMContentLoaded", function () {
+  // Determine base path based on current page location
+  const isInPagesFolder = window.location.pathname.includes('/pages/');
+  const basePath = isInPagesFolder ? '../assets' : 'assets';
+  
   // Wait a bit to ensure DOM is fully loaded
   setTimeout(() => {
     // Load why section animation
     const whyAnimationElement = document.getElementById("why-animation");
-    if (whyAnimationElement) {
+    if (whyAnimationElement && typeof lottie !== "undefined") {
       try {
         lottie.loadAnimation({
           container: whyAnimationElement,
           renderer: "svg",
           loop: true,
           autoplay: true,
-          path: "assets/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json",
+          path: `${basePath}/animations/BITKAT_POOR_500_V2/BITKAT_POOR_500_V2.json`,
         });
       } catch (error) {
         // Animation failed to load
@@ -171,14 +181,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load how section animation (coin)
     const howAnimationElement = document.getElementById("how-animation");
-    if (howAnimationElement) {
+    if (howAnimationElement && typeof lottie !== "undefined") {
       try {
         lottie.loadAnimation({
           container: howAnimationElement,
           renderer: "svg",
           loop: true,
           autoplay: true,
-          path: "assets/animations/BB_KOIN/BB_KOIN.json",
+          path: `${basePath}/animations/BB_KOIN/BB_KOIN.json`,
         });
       } catch (error) {
         // Animation failed to load
