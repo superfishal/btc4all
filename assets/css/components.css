@@ -1689,46 +1689,15 @@ footer {
   border-color: var(--color-btc-gold);
 }
 
-.pricing-card-featured {
-  border-color: var(--color-btc-orange);
-  border-width: 3px;
-  position: relative;
-}
-
-.pricing-badge {
-  position: absolute;
-  top: -1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-btc-orange);
-  color: var(--color-white);
-  padding: 0.5rem 1.5rem;
-  border-radius: 2rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
 .pricing-card-header {
   text-align: center;
   margin-bottom: var(--space-lg);
-}
-
-.pricing-card-icon {
-  font-size: 4rem;
-  margin-bottom: var(--space-sm);
 }
 
 .pricing-card-title {
   font-size: 2.4rem;
   margin-bottom: var(--space-xs);
   color: var(--color-black);
-}
-
-.pricing-card-subtitle {
-  font-size: 1.4rem;
-  color: var(--color-grey);
-  margin: 0;
 }
 
 .pricing-card-price {
@@ -1745,13 +1714,7 @@ footer {
   font-weight: 700;
   color: var(--color-btc-orange);
   line-height: 1;
-  margin-bottom: var(--space-xs);
-}
-
-.price-period {
-  display: block;
-  font-size: 1.4rem;
-  color: var(--color-grey);
+  animation: bulge 0.6s ease-out;
 }
 
 .pricing-features {
@@ -1793,14 +1756,49 @@ footer {
   .pricing-card {
     flex: 1;
   }
+}
 
-  .pricing-card-featured {
-    transform: scale(1.05);
-  }
+/* VPS Info Section */
+.vps-info-section {
+  background-image: url('../images/patterns/BareBits_Pattern_BG_5_V1.svg');
+  background-repeat: repeat;
+  background-size: cover;
+  padding: 3rem var(--container-pad);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
-  .pricing-card-featured:hover {
-    transform: scale(1.05) translateY(-5px);
-  }
+.vps-info-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.vps-info-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.vps-info-text {
+  font-size: 1.6rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.vps-info-section .cta-button {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  width: auto;
 }
 
 /* Why Pricing Section */
@@ -1818,16 +1816,18 @@ footer {
 }
 
 .why-pricing-card {
-  background: #f8f9fa;
+  background: var(--color-btc-orange);
   padding: var(--space-xl);
   border-radius: var(--radius-md);
   text-align: center;
   transition: var(--transition-base);
+  border: 2px solid transparent;
 }
 
 .why-pricing-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--color-black);
 }
 
 .why-pricing-icon {
@@ -1838,14 +1838,15 @@ footer {
 .why-pricing-card h3 {
   font-size: 2.2rem;
   margin-bottom: var(--space-sm);
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 .why-pricing-card p {
   font-size: 1.6rem;
-  color: var(--color-grey);
+  color: var(--color-white);
   line-height: 1.6;
   margin: 0;
+  opacity: 0.95;
 }
 
 @media (min-width: 768px) {
