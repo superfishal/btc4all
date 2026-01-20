@@ -287,7 +287,7 @@ nav {
 }
 
 /* Calculator Placeholder */
-.calculator-placeholder {
+.calculator {
   background: var(--color-btc-orange);
   padding: 2.5rem;
   border-radius: 15px;
@@ -301,6 +301,7 @@ nav {
   color: var(--color-white);
   text-align: center;
   box-shadow: 0 10px 30px rgba(255, 137, 0, 0.3);
+  box-sizing: border-box;
 }
 
 .calc-header {
@@ -313,16 +314,36 @@ nav {
 .calc-inputs {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
   width: 100%;
   max-width: 350px;
+  box-sizing: border-box;
+}
+
+.calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.calc-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-white);
+  text-align: left;
+  margin-bottom: 0.3rem;
 }
 
 .calc-input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .calc-dollar-sign {
@@ -343,6 +364,8 @@ nav {
   background: var(--color-white);
   color: var(--color-black);
   width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .calc-input::placeholder {
@@ -356,22 +379,348 @@ nav {
   font-size: 1.6rem;
   background: var(--color-white);
   color: var(--color-black);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
-.calc-result {
-  font-size: 2.8rem;
+.calc-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 350px;
+  box-sizing: border-box;
+}
+
+.calc-result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.calc-result-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-white);
+  opacity: 0.9;
+  text-align: center;
+}
+
+.calc-result-value {
+  font-size: 3.2rem;
   font-weight: 800;
   color: var(--color-white);
-  min-height: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, font-size 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, font-size 0.3s ease;
+  min-height: 4rem;
 }
 
-.calc-result.bulge {
+.calc-result-value.bulge {
   animation: bulge 0.6s ease-in-out;
+}
+
+/* Color styling for result values */
+#currentAnnualCost {
+  color: #ff3333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#savingsAmount {
+  color: #33ff33;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive calculator styles */
+@media (min-width: 768px) {
+  .calculator {
+    max-width: 100%;
+    align-items: stretch;
+  }
+
+  .calc-inputs {
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .calc-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .calc-input-group {
+    flex: 1;
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .calc-results {
+    flex-direction: row;
+    gap: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .calc-result-item {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* New Table Calculator */
+.calculator-table-wrapper {
+  background: var(--color-btc-orange);
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(255, 137, 0, 0.3);
+}
+
+.calc-table-header {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-white);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.calc-table-input-wrapper {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.calc-table-label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 0.8rem;
+}
+
+.calc-table-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.calc-table-dollar {
+  font-size: 1.6rem;
+  color: var(--color-white);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.calc-table-input {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  background: var(--color-white);
+  color: var(--color-black);
+  box-sizing: border-box;
+  text-align: left;
+  min-width: 250px;
+  max-width: 350px;
+  width: 100%;
+}
+
+.calc-table-input::placeholder {
+  color: #999;
+  opacity: 1;
+  font-size: 1.2rem;
+}
+
+/* New Flex-based Comparison Grid */
+.calc-comparison-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.calc-row {
+  display: flex;
+  flex-direction: row;
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calc-provider-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.calc-provider-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.3;
+}
+
+.calc-provider-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.calc-logo-img {
+  height: 2.5rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.calc-provider-fee {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.calc-fee-red {
+  color: #ff3333;
+}
+
+.calc-fee-green {
+  color: #16a34a;
+}
+
+.calc-transaction-fee {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-grey);
+  line-height: 1.4;
+}
+
+.calc-transaction-fee.calc-fee-red {
+  color: #ff3333;
+}
+
+.calc-cost-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  min-width: 0;
+  text-align: right;
+}
+
+.calc-cost-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calc-cost-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-black);
+  line-height: 1;
+}
+
+.calc-cost-barebits {
+  color: #16a34a;
+}
+
+.calc-cost-red {
+  color: #ff3333;
+}
+
+/* Responsive calculator */
+@media (max-width: 767px) {
+  .calculator-table-wrapper {
+    padding: 1.5rem;
+  }
+
+  .calc-table-header {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calc-table-label {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .calc-table-input-container {
+    flex-direction: row;
+    gap: 0.6rem;
+  }
+
+  .calc-table-input {
+    padding: 0.7rem 0.8rem;
+    font-size: 1.2rem;
+    min-width: 200px;
+    max-width: 280px;
+  }
+
+  .calc-table-input::placeholder {
+    font-size: 1rem;
+  }
+
+  .calc-table-dollar {
+    font-size: 1.4rem;
+  }
+
+  .calc-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .calc-provider-info {
+    width: 100%;
+  }
+
+  .calc-cost-info {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .calc-provider-name {
+    font-size: 1.2rem;
+  }
+
+  .calc-logo-img {
+    height: 2rem;
+  }
+
+  .calc-provider-fee {
+    font-size: 1.4rem;
+  }
+
+  .calc-transaction-fee {
+    font-size: 1rem;
+  }
+
+  .calc-cost-value {
+    font-size: 1.8rem;
+  }
 }
 
 @keyframes bulge {
@@ -566,6 +915,98 @@ footer {
 .pitch-section {
   padding: 5rem var(--container-pad);
   background: #f8f9fa;
+}
+
+/* Pitch Metrics Section */
+.pitch-metrics {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  width: 100%;
+}
+
+.metrics-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.metric-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  min-width: 0;
+}
+
+.metric-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 2rem;
+  color: var(--color-btc-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.metric-text {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-btc-orange);
+  line-height: 1.2;
+}
+
+.metric-divider {
+  width: 2px;
+  height: 100px;
+  background: var(--color-btc-orange);
+  flex-shrink: 0;
+  margin: 0 2rem;
+}
+
+/* Responsive metrics */
+@media (max-width: 767px) {
+  .pitch-metrics {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .metrics-container {
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .metric-divider {
+    width: 100px;
+    height: 2px;
+    margin: 0;
+  }
+
+  .metric-item {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .metric-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric-text {
+    font-size: 2rem;
+  }
 }
 
 /* Content Lists for Legal/Policy Pages */

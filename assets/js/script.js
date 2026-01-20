@@ -197,13 +197,84 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 100);
 });
 
-// Calculator Functionality - NEW
+// Table Calculator Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const tableInput = document.getElementById("tableMonthlyRevenue");
+  const barebitsCostEl = document.getElementById("barebitsCost");
+  const stripeCostEl = document.getElementById("stripeCost");
+  const ccbillCostEl = document.getElementById("ccbillCost");
+  const transactionFeeEl = document.getElementById("transactionFeeAmount");
+
+  if (tableInput && barebitsCostEl && stripeCostEl && ccbillCostEl) {
+    // Processing fee rates
+    const rates = {
+      barebits: 2,      // 2%
+      stripe: 2.9,      // 2.9% + $0.30 per transaction
+      ccbill: 11.5      // ~8-15% average (using 11.5% as midpoint)
+    };
+
+    function calculateTableCosts() {
+      const monthlyRevenue = parseFloat(tableInput.value) || 0;
+
+      if (monthlyRevenue === 0 || isNaN(monthlyRevenue)) {
+        barebitsCostEl.textContent = "$0";
+        stripeCostEl.textContent = "$0";
+        ccbillCostEl.textContent = "$0";
+        if (transactionFeeEl) {
+          transactionFeeEl.textContent = "+ $0";
+        }
+        return;
+      }
+
+      // Calculate annual revenue
+      const annualRevenue = monthlyRevenue * 12;
+
+      // Calculate annual costs for each provider
+      const barebitsCost = (annualRevenue * rates.barebits) / 100;
+      const stripeCost = (annualRevenue * rates.stripe) / 100;
+      const ccbillCost = (annualRevenue * rates.ccbill) / 100;
+
+      // Calculate transaction fees: $0.30 for every $10 of monthly revenue
+      // Monthly transaction fees = (monthlyRevenue / 10) * 0.30
+      // Annual transaction fees = monthly transaction fees * 12
+      const monthlyTransactionFees = (monthlyRevenue / 10) * 0.30;
+      const annualTransactionFees = monthlyTransactionFees * 12;
+
+      // Format and update display
+      barebitsCostEl.textContent = `$${Math.round(barebitsCost).toLocaleString()}`;
+      stripeCostEl.textContent = `$${Math.round(stripeCost).toLocaleString()}`;
+      ccbillCostEl.textContent = `$${Math.round(ccbillCost).toLocaleString()}`;
+
+      // Update transaction fee amount
+      if (transactionFeeEl) {
+        const formattedTransactionFees = Math.round(annualTransactionFees).toLocaleString();
+        transactionFeeEl.textContent = `+ $${formattedTransactionFees}`;
+      }
+    }
+
+    // Event listeners
+    tableInput.addEventListener("input", calculateTableCosts);
+    tableInput.addEventListener("blur", calculateTableCosts);
+    tableInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        calculateTableCosts();
+      }
+    });
+
+    // Initialize calculator with default value
+    calculateTableCosts();
+  }
+});
+
+// OLD Calculator Functionality - COMMENTED OUT
+/*
 document.addEventListener("DOMContentLoaded", function () {
   const calcInput = document.querySelector(".calc-input");
   const calcSelect = document.querySelector(".calc-select");
-  const calcResult = document.querySelector(".calc-result");
+  const currentAnnualCostEl = document.getElementById("currentAnnualCost");
+  const savingsAmountEl = document.getElementById("savingsAmount");
 
-  if (calcInput && calcSelect && calcResult) {
+  if (calcInput && calcSelect && currentAnnualCostEl && savingsAmountEl) {
     // Set default values and calculate on load
     function initializeCalculator() {
       // Default values are set in HTML, now calculate
@@ -219,46 +290,49 @@ document.addEventListener("DOMContentLoaded", function () {
       const monthlyRevenue = parseFloat(calcInput.value) || 0;
       const selectedRate = parseFloat(calcSelect.value) || 0;
 
-      // Only show placeholder messages if BOTH are not filled
-      if (monthlyRevenue === 0 && selectedRate === 0) {
-        calcResult.textContent = "Enter your monthly revenue";
-        calcResult.classList.remove("bulge");
+      // If either value is missing, show $0
+      if (monthlyRevenue === 0 || selectedRate === 0) {
+        currentAnnualCostEl.textContent = "$0";
+        savingsAmountEl.textContent = "$0";
+        currentAnnualCostEl.classList.remove("bulge");
+        savingsAmountEl.classList.remove("bulge");
         return;
       }
 
-      if (monthlyRevenue === 0) {
-        calcResult.textContent = "Enter your monthly revenue";
-        calcResult.classList.remove("bulge");
-        return;
-      }
-
-      if (selectedRate === 0) {
-        calcResult.textContent = "Select your processing fee";
-        calcResult.classList.remove("bulge");
-        return;
-      }
-
-      // Both are filled - calculate and animate!
-      const barebitsRate = 2; // BareBits rate
+      // Calculate annual values
       const annualRevenue = monthlyRevenue * 12;
-      const currentCost = (annualRevenue * selectedRate) / 100;
-      const barebitsCost = (annualRevenue * barebitsRate) / 100;
-      const savings = currentCost - barebitsCost;
+      const barebitsRate = 2; // BareBits rate is 2%
+      
+      // Current annual cost: monthly revenue x 12 x processing fee %
+      const currentAnnualCost = (annualRevenue * selectedRate) / 100;
+      
+      // BareBits annual cost: monthly revenue x 12 x 2%
+      const barebitsAnnualCost = (annualRevenue * barebitsRate) / 100;
+      
+      // Savings: current cost - BareBits cost
+      const savings = currentAnnualCost - barebitsAnnualCost;
 
-      // Format the result
+      // Format the results
+      const formattedCurrentCost = Math.round(currentAnnualCost).toLocaleString();
       const formattedSavings = Math.round(savings).toLocaleString();
-      calcResult.textContent = `You save $${formattedSavings}/year with BareBits!`;
+
+      // Update the display
+      currentAnnualCostEl.textContent = `$${formattedCurrentCost}`;
+      savingsAmountEl.textContent = `$${formattedSavings}`;
 
       // Trigger animation by removing and re-adding the class
-      calcResult.classList.remove("bulge");
+      currentAnnualCostEl.classList.remove("bulge");
+      savingsAmountEl.classList.remove("bulge");
       // Use setTimeout to trigger the animation on the next frame
       setTimeout(() => {
-        calcResult.classList.add("bulge");
+        currentAnnualCostEl.classList.add("bulge");
+        savingsAmountEl.classList.add("bulge");
       }, 10);
     }
 
     // Calculate on input change - wait for blur/enter on input
     calcInput.addEventListener("blur", calculateSavings);
+    calcInput.addEventListener("input", calculateSavings);
     calcInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         calculateSavings();
@@ -272,6 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeCalculator();
   }
 });
+*/
 
 // Carousel badge logos - main centered, 1 on each side, rest hidden
 document.addEventListener("DOMContentLoaded", function () {
