@@ -455,3 +455,61 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Rotating text functionality for pricing hero
+document.addEventListener("DOMContentLoaded", function () {
+  const rotatingTextElement = document.getElementById("rotatingText");
+  if (!rotatingTextElement) return;
+
+  const phrases = [
+    "No surprise fees.",
+    "No per-transaction costs.",
+    "No percentage jumps. One rate.",
+    "Any legal business, any size.",
+    "No hidden processing costs.",
+    "No scalability costs as you grow.",
+    "No chargebacks.",
+  ];
+
+  let currentIndex = 0;
+  let isPaused = false;
+  let timeoutId = null;
+
+  function rotateText() {
+    if (isPaused) return;
+
+    // Fade out
+    rotatingTextElement.classList.add("fade-out");
+
+    setTimeout(() => {
+      // Update text
+      currentIndex = (currentIndex + 1) % phrases.length;
+      rotatingTextElement.textContent = phrases[currentIndex];
+
+      // Fade in
+      rotatingTextElement.classList.remove("fade-out");
+
+      // Schedule next rotation
+      timeoutId = setTimeout(rotateText, 2750);
+    }, 500);
+  }
+
+  // Pause on hover
+  rotatingTextElement.addEventListener("mouseenter", function () {
+    isPaused = true;
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+  });
+
+  rotatingTextElement.addEventListener("mouseleave", function () {
+    isPaused = false;
+    timeoutId = setTimeout(rotateText, 2750);
+  });
+
+  // Initialize with first phrase
+  rotatingTextElement.textContent = phrases[0];
+  
+  // Start rotation after initial delay
+  timeoutId = setTimeout(rotateText, 2750);
+});

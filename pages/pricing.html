@@ -36,6 +36,7 @@
             <ul class="nav-links desktop-only" id="navLinks">
               <li><a href="how-it-works.html">How It Works</a></li>
               <li><a href="pricing.html">Pricing</a></li>
+              <li class="mobile-only"><a href="contact.html">Contact</a></li>
             </ul>
             <a href="contact.html" class="nav-cta desktop-only"
               >Start Saving Today</a
@@ -65,45 +66,71 @@
           </p>
 
           <div class="cta-banner-button">
-            <a href="contact.html" class="cta-button primary">Apply Now</a>
+            <a href="contact.html" class="cta-button primary">Get Early Access</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- TODO: Pricing and comparison section: Stripe vs PayPal vs BareBits.  Per transaction fee, percentage trasanction fee, global reach (how many people can access - countries or people).  Sign up/Setup Process, Industries (all vs some).  Other ways to compare.  -->
-    <!-- Pricing Tier Section -->
-    <section class="pricing-tiers-section">
+    <!-- Industries Section -->
+    <section class="industries-section">
       <div class="container">
-        <div class="pricing-cards-grid">
-          <!-- Starter Card -->
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <h3 class="pricing-card-title">Online Merchants</h3>
+        <div class="pricing-hero-content">
+          <div class="pricing-hero-animation">
+            <img
+              src="../assets/images/illustrations/BTC-CAT_2_2percent.svg"
+              alt="2%"
+              class="pricing-percent-animation"
+            />
+          </div>
+          <p class="pricing-hero-subheadline">That's all you pay</p>
+          <div class="rotating-text-container">
+            <span class="rotating-text" id="rotatingText" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="industries-grid">
+          <!-- Online Merchants Card -->
+          <div class="industry-card">
+            <div class="industry-card-header">
+              <h3 class="industry-card-title">Online Merchants</h3>
+              <p class="industry-card-subtitle">Websites, e-commerce, subscriptions</p>
             </div>
-            <div class="pricing-card-price">
-              <span class="price-amount">2%</span>
-            </div>
+            <ul class="industry-card-benefits">
+              <li>Instant payment confirmation</li>
+              <li>Settle funds on your schedule</li>
+              <li>No chargeback risk</li>
+              <li>Works with existing checkout flows</li>
+              <li>Zero transaction or cashout fees</li>
+            </ul>
           </div>
 
-          <!-- Business / Pro Card -->
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <h3 class="pricing-card-title">Brick & Mortar</h3>
+          <!-- Brick & Mortar Card -->
+          <div class="industry-card">
+            <div class="industry-card-header">
+              <h3 class="industry-card-title">Brick & Mortar</h3>
+              <p class="industry-card-subtitle">In-person payments, local businesses</p>
             </div>
-            <div class="pricing-card-price">
-              <span class="price-amount">2%</span>
-            </div>
+            <ul class="industry-card-benefits">
+              <li>Accept payments instantly at point of sale</li>
+              <li>No disputed transactions or reversals</li>
+              <li>Funds available instantly</li>
+              <li>Simple setup with hardware you already have</li>
+            </ul>
           </div>
 
           <!-- Enterprise Card -->
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <h3 class="pricing-card-title">Enterprise</h3>
+          <div class="industry-card">
+            <div class="industry-card-header">
+              <h3 class="industry-card-title">Enterprise</h3>
+              <p class="industry-card-subtitle">Platforms, marketplaces, high-volume businesses</p>
             </div>
-            <div class="pricing-card-price">
-              <span class="price-amount">2%</span>
-            </div>
+            <ul class="industry-card-benefits">
+              <li>Stable pricing as you scale</li>
+              <li>Global payments without regional restrictions</li>
+              <li>Custom settlement and payout workflows</li>
+              <li>Built for high-throughput transactions</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -118,6 +145,39 @@
           no contract required.
         </p>
         <a href="contact.html" class="cta-button primary">Get BareBits</a>
+      </div>
+    </section>
+    <section class="why-pricing-section">
+      <div class="container">
+        <h2 class="section-main-header">Why use BareBits?</h2>
+        <div class="why-pricing-grid">
+          <div class="why-pricing-card">
+            <div class="why-pricing-icon">💰</div>
+            <h3>Lower Fees vs Credit Cards</h3>
+            <p>
+              Save 60-85% on processing fees compared to traditional payment
+              processors. Credit cards charge 2.9% - 15%, we charge just 2%.
+              Keep more of your money.
+            </p>
+          </div>
+          <div class="why-pricing-card">
+            <div class="why-pricing-icon">⚡</div>
+            <h3>Instant Settlement</h3>
+            <p>
+              Receive payments instantly, not in 2-7 business days. Your money
+              is available immediately when customers pay via Lightning Network.
+            </p>
+          </div>
+          <div class="why-pricing-card">
+            <div class="why-pricing-icon">🔒</div>
+            <h3>No Hidden Fees</h3>
+            <p>
+              What you see is what you pay. No monthly minimums, no setup fees,
+              no chargeback fees. Lightning lets us keep costs low and pass
+              those savings onto you.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Section: BareBits vs Traditional Payments -->
@@ -401,43 +461,11 @@
       </div>
     </section>
     <!-- Why Our Pricing Section -->
-    <section class="why-pricing-section">
-      <div class="container">
-        <h2 class="section-main-header">Why use BareBits?</h2>
-        <div class="why-pricing-grid">
-          <div class="why-pricing-card">
-            <div class="why-pricing-icon">💰</div>
-            <h3>Lower Fees vs Credit Cards</h3>
-            <p>
-              Save 60-85% on processing fees compared to traditional payment
-              processors. Credit cards charge 2.9% - 15%, we charge just 2%.
-              Keep more of your money.
-            </p>
-          </div>
-          <div class="why-pricing-card">
-            <div class="why-pricing-icon">⚡</div>
-            <h3>Instant Settlement</h3>
-            <p>
-              Receive payments instantly, not in 2-7 business days. Your money
-              is available immediately when customers pay via Lightning Network.
-            </p>
-          </div>
-          <div class="why-pricing-card">
-            <div class="why-pricing-icon">🔒</div>
-            <h3>No Hidden Fees</h3>
-            <p>
-              What you see is what you pay. No monthly minimums, no setup fees,
-              no chargeback fees. Lightning lets us keep costs low and pass
-              those savings onto you.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
 
-    <!-- Payment Examples / Use Case Calculator (Optional) -->
+
+    <!-- Payment Examples / Use Case Calculator (Optional)
     <section class="pricing-calculator-section">
       <div class="container">
         <h2 class="section-main-header">See Your Potential Savings</h2>
@@ -470,7 +498,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- FAQ about Pricing -->
     <section class="pricing-faq-section">
