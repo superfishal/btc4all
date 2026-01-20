@@ -95,6 +95,13 @@
   max-width: 200px;
 }
 
+/* SVGs still need explicit dimensions on mobile */
+.badge-item img[src$=".svg"],
+.company-logo[src$=".svg"] {
+  width: 200px;
+  height: auto;
+}
+
 /* Mobile pitch-row reverse reordering */
 .pitch-row.reverse .pitch-animation {
   order: 2;
@@ -450,6 +457,13 @@
   .badge-item img,
   .integration-item img {
     max-width: 150px;
+  }
+  
+  /* SVGs need explicit dimensions at smallest breakpoint too */
+  .badge-item img[src$=".svg"],
+  .company-logo[src$=".svg"] {
+    width: 150px;
+    height: auto;
   }
   
   /* Reduce container padding */

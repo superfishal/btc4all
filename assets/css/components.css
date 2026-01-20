@@ -1335,6 +1335,13 @@ footer {
   transition: transform 0.8s ease;
 }
 
+/* SVGs need explicit dimensions to render properly when used as <img> tags */
+.badge-item img[src$=".svg"],
+.company-logo[src$=".svg"] {
+  width: 235px;
+  height: 156px;
+  object-fit: contain;
+}
 
 .company-logo {
   max-width: 235px;
