@@ -171,6 +171,16 @@ nav {
   width: auto;
 }
 
+.pitch-cta {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.pitch-cta .cta-button {
+  width: auto;
+}
+
 /* Section Patterns */
 .section {
   padding: 2rem var(--container-pad) var(--space-2xl);
