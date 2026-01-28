@@ -1,3 +1,4 @@
-*Bare_Bits_Launch_MASTER_V1_MIX_3.mp4 filter=lfs diff=lfs merge=lfs -text
-Bare_Bits_Launch_MASTER_V1_MIX_3.mp4 filter=lfs diff=lfs merge=lfs -text
+# Match this video in any path (e.g. assets/videos/...)
+**/Bare_Bits_Launch_MASTER_V1_MIX_3.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
 assets/videos/Bare_Bits_Launch_MASTER_V1_MIX_3.mp4 filter=lfs diff=lfs merge=lfs -text
