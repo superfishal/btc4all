@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BareBits - Bitcoin Lightning Payment Solutions</title>
 
-    <!-- Adobe Fonts -->
-
     <!-- Favicon -->
     <link
       rel="icon"
@@ -56,7 +54,7 @@
     <section class="hero" id="home">
       <div class="container">
         <h1>Stop Getting Screwed.</h1>
-        <h2 class="hero-subtitle">Save 98% vs Credit Card fees</h2>
+        <h2 class="hero-subtitle">Save 80% vs Credit Card fees</h2>
         <p class="hero-description">
           BareBits is the fastest, easiest, most secure way to accept payments.
           Our service gives you payment processing at just 2%. Lightning fast,
@@ -132,48 +130,7 @@
             </ul>
           </div>
           <div class="pitch-animation">
-            <!-- OLD CALCULATOR - COMMENTED OUT -->
-            <!--
-            <div class="calculator">
-              <div class="calc-header">See what BareBits can save you!</div>
-              <div class="calc-inputs">
-                <div class="calc-input-group">
-                  <label class="calc-label">Monthly revenue</label>
-                  <div class="calc-input-wrapper">
-                    <span class="calc-dollar-sign">$</span>
-                    <input
-                      type="text"
-                      placeholder="Enter monthly revenue"
-                      class="calc-input"
-                      value="10000"
-                    />
-                  </div>
-                </div>
-                <div class="calc-input-group">
-                  <label class="calc-label">Processing fee %</label>
-                  <select class="calc-select">
-                    <option value="">Processing Fee</option>
-                    <option value="2.9">2.9%</option>
-                    <option value="3.5">3.5%</option>
-                    <option value="5">5%</option>
-                    <option value="8" selected>8%</option>
-                    <option value="12">12%</option>
-                  </select>
-                </div>
-              </div>
-              <div class="calc-results">
-                <div class="calc-result-item">
-                  <div class="calc-result-label">Your current annual processing fees:</div>
-                  <div class="calc-result-value" id="currentAnnualCost">$0</div>
-                </div>
-                <div class="calc-result-item">
-                  <div class="calc-result-label">What you save with BareBits:</div>
-                  <div class="calc-result-value" id="savingsAmount">$0</div>
-                </div>
-              </div>
-            </div>
-            -->
-            
+
             <!-- NEW TABLE CALCULATOR -->
             <div class="calculator-table-wrapper">
               <div class="calc-table-header">See What BareBits Can Save You!</div>
@@ -257,7 +214,7 @@
                   <path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </div>
-              <div class="metric-text">Over 800 million are crypto wallets</div>
+              <div class="metric-text">40-60% of consumers have a Bitcoin wallet on their phone (CashApp, PayPal, Venmo, Strike)</div>
             </div>
             <div class="metric-divider"></div>
             <div class="metric-item">
@@ -390,21 +347,20 @@
         </div>
       </div>
     </section>
-        <!-- Beta Promo Banner -->
-        <section class="cta-banner">
-          <div class="container">
-            <div class="cta-banner-content">
-              <p class="cta-banner-text">
-                New Signups Can Qualify for 0% Fees for the First Year
-              </p>
-    
-              <div class="cta-banner-button">
-                <a href="pages/contact.html" class="cta-button primary">Apply Now</a>
-              </div>
-            </div>
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner-content">
+          <p class="cta-banner-text">
+            New Signups Can Qualify for 0% Fees for the First Year
+          </p>
+          <div class="cta-banner-button">
+            <a href="pages/contact.html" class="cta-button primary">Apply Now</a>
           </div>
-        </section>
-    
+        </div>
+      </div>
+    </section>
+
     <!-- How It Works Section -->
     <section class="additional-section how-it-works-section" id="how-it-works">
       <div class="container">
@@ -442,13 +398,13 @@
     <section class="video-section">
       <div class="container">
         <div class="video-content">
-          <h2>Video Content Coming Soon</h2>
-          <p>Watch how easy it is to accept Bitcoin Lightning payments</p>
-          <div class="video-placeholder">
-            <div class="video-play-button">▶</div>
-            <div class="video-overlay">
-              <h3>BareBits Demo Video</h3>
-            </div>
+          <div class="video-wrapper" data-video-src="assets/videos/Bare_Bits_Launch_MASTER_V1_MIX_3.mp4">
+            <button type="button" class="video-placeholder" aria-label="Play BareBits launch video">
+              <span class="video-play-button" aria-hidden="true">▶</span>
+            </button>
+            <video class="video-player is-hidden" controls playsinline preload="none" aria-label="BareBits launch video" poster="">
+              <!-- src set on first play via JS for lazy-load -->
+            </video>
           </div>
         </div>
       </div>

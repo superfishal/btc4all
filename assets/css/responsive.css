@@ -111,6 +111,16 @@
   order: 1;
 }
 
+/* Pitch and industry-card bullet lists: consistent bullet-to-text spacing on mobile */
+@media (max-width: 767px) {
+  .pain-points li,
+  .benefits li,
+  .results li,
+  .industry-card-benefits li {
+    padding-left: 2rem;
+  }
+}
+
 /* ============================================
    TABLET & UP (768px+)
    Typography scales, nav becomes visible

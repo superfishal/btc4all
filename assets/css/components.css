@@ -153,7 +153,7 @@ nav {
 }
 
 .hero-description {
-  font-size: 1.6rem !important;
+  font-size: 1.6rem ;
   margin-bottom: 0;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.8);
@@ -1072,38 +1072,48 @@ footer {
 /* Video Section */
 .video-section {
   background: var(--color-black);
-  padding: 5rem var(--container-pad);
+  padding-block: 5rem;
+  padding-inline: var(--container-pad);
   text-align: center;
 }
 
-.video-content h2 {
-  font-size: 3rem;
-  color: var(--color-white);
-  margin-bottom: var(--space-sm);
+.video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.video-content p {
-  font-size: 1.8rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: var(--space-xl);
-}
-
-/* Video Placeholder */
-.video-placeholder {
+.video-wrapper {
   position: relative;
   width: 100%;
   max-width: 90rem;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
-  background: var(--color-black);
-  border: 3px solid var(--color-btc-gold);
   border-radius: var(--radius-lg);
   overflow: hidden;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 3px solid var(--color-btc-gold);
+  border-radius: var(--radius-lg);
+  background: var(--color-black);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font: inherit;
+  color: inherit;
   transition: var(--transition-base);
+}
+
+.video-placeholder.is-hidden {
+  display: none;
 }
 
 .video-placeholder:hover {
@@ -1114,18 +1124,6 @@ footer {
 .video-placeholder:hover .video-play-button {
   background: var(--color-btc-gold);
   transform: scale(1.1);
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .video-play-button {
@@ -1139,6 +1137,21 @@ footer {
   font-size: 3rem;
   color: var(--color-white);
   transition: var(--transition-base);
+}
+
+.video-player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 3px solid var(--color-btc-gold);
+  border-radius: var(--radius-lg);
+  background: var(--color-black);
+}
+
+.video-player.is-hidden {
+  display: none;
 }
 
 /* Integrations/Badges Section */
@@ -1370,7 +1383,8 @@ footer {
 
 /* CTA Banner (Thin Promo) */
 .cta-banner {
-  background-image: url('../images/patterns/BareBits_Pattern_BG_7_V1.svg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('../images/patterns/BareBits_Pattern_BG_7_V1.svg');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 1.5rem var(--container-pad);
@@ -1390,10 +1404,11 @@ footer {
 .cta-banner-text {
   font-size: 1.6rem;
   font-weight: 500;
-  color: var(--color-white);
+  color: #fff;
   margin: 0;
   line-height: 1.4;
   width: 100%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.8);
 }
 
 .cta-banner-button {
@@ -1411,11 +1426,6 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .cta-banner-content {
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
   .cta-banner-text {
     font-size: 1.8rem;
   }
@@ -1708,6 +1718,8 @@ footer {
   justify-content: center;
   margin-top: var(--space-sm);
   position: relative;
+  padding: 0 var(--space-sm);
+  box-sizing: border-box;
 }
 
 .rotating-text {
@@ -1757,6 +1769,17 @@ footer {
   gap: var(--space-xl);
 }
 
+.industries-vps-note {
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-black);
+  line-height: 1.5;
+  max-width: 100%;
+}
+
 /* Industry Card */
 .industry-card {
   background: var(--color-white);
@@ -1801,7 +1824,8 @@ footer {
 }
 
 .industry-card-benefits li {
-  padding: var(--space-sm) 0 var(--space-sm) 3rem;
+  padding: var(--space-sm) 0;
+  padding-left: 3rem;
   font-size: 1.4rem;
   line-height: 1.6;
   color: var(--color-black);
@@ -1812,6 +1836,8 @@ footer {
   content: '⚡';
   position: absolute;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--color-btc-orange);
   font-weight: 700;
   font-size: 1.6rem;
@@ -1873,47 +1899,33 @@ footer {
   }
 }
 
-/* VPS Info Section */
+/* VPS Info Section – same background + text treatment as CTA Banner */
 .vps-info-section {
-  background-image: url('../images/patterns/BareBits_Pattern_BG_5_V1.svg');
-  background-repeat: repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('../images/patterns/BareBits_Pattern_BG_7_V1.svg');
+  background-repeat: no-repeat;
   background-size: cover;
-  padding: 3rem var(--container-pad);
+  background-color: var(--color-black);
+  padding: 1.5rem var(--container-pad);
   text-align: center;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.vps-info-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.vps-info-section .container {
-  position: relative;
-  z-index: 2;
+  color: var(--color-white);
 }
 
 .vps-info-text {
   font-size: 1.6rem;
-  color: var(--color-white);
-  margin-bottom: var(--space-lg);
   font-weight: 500;
+  color: #fff;
+  margin: 0 0 var(--space-lg) 0;
   line-height: 1.6;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0.8);
 }
 
 .vps-info-section .cta-button {
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.3rem;
+  white-space: nowrap;
   width: auto;
+  max-width: 20rem;
 }
 
 /* Why Pricing Section */
@@ -2134,7 +2146,7 @@ footer {
   }
 
   .rotating-text {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 

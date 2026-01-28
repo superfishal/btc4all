@@ -3,11 +3,11 @@ document.fonts.ready.then(() => {
   // Check if Acumin Pro Wide is loaded
   if (!document.fonts.check("1em acumin-pro")) {
     // Try to load the font manually
-    const isInPagesFolder = window.location.pathname.includes('/pages/');
-    const fontPath = isInPagesFolder 
-      ? '../assets/fonts/acuminprowide-regular-webfont.woff2'
-      : 'assets/fonts/acuminprowide-regular-webfont.woff2';
-    
+    const isInPagesFolder = window.location.pathname.includes("/pages/");
+    const fontPath = isInPagesFolder
+      ? "../assets/fonts/acuminprowide-regular-webfont.woff2"
+      : "assets/fonts/acuminprowide-regular-webfont.woff2";
+
     const fontFace = new FontFace("acumin-pro", `url(${fontPath})`);
     fontFace
       .load()
@@ -60,7 +60,7 @@ const pitchObserver = new IntersectionObserver(
   {
     threshold: 0.2,
     rootMargin: "0px 0px -100px 0px",
-  }
+  },
 );
 
 // Observe all pitch steps
@@ -158,9 +158,9 @@ if (monthlyRevenueInput) {
 // Load Lottie animations
 document.addEventListener("DOMContentLoaded", function () {
   // Determine base path based on current page location
-  const isInPagesFolder = window.location.pathname.includes('/pages/');
-  const basePath = isInPagesFolder ? '../assets' : 'assets';
-  
+  const isInPagesFolder = window.location.pathname.includes("/pages/");
+  const basePath = isInPagesFolder ? "../assets" : "assets";
+
   // Wait a bit to ensure DOM is fully loaded
   setTimeout(() => {
     // Load why section animation
@@ -208,9 +208,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (tableInput && barebitsCostEl && stripeCostEl && ccbillCostEl) {
     // Processing fee rates
     const rates = {
-      barebits: 2,      // 2%
-      stripe: 2.9,      // 2.9% + $0.30 per transaction
-      ccbill: 11.5      // ~8-15% average (using 11.5% as midpoint)
+      barebits: 2, // 2%
+      stripe: 2.9, // 2.9% + $0.30 per transaction
+      ccbill: 11.5, // ~8-15% average (using 11.5% as midpoint)
     };
 
     function calculateTableCosts() {
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Calculate transaction fees: $0.30 for every $10 of monthly revenue
       // Monthly transaction fees = (monthlyRevenue / 10) * 0.30
       // Annual transaction fees = monthly transaction fees * 12
-      const monthlyTransactionFees = (monthlyRevenue / 10) * 0.30;
+      const monthlyTransactionFees = (monthlyRevenue / 10) * 0.3;
       const annualTransactionFees = monthlyTransactionFees * 12;
 
       // Format and update display
@@ -247,7 +247,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Update transaction fee amount
       if (transactionFeeEl) {
-        const formattedTransactionFees = Math.round(annualTransactionFees).toLocaleString();
+        const formattedTransactionFees = Math.round(
+          annualTransactionFees,
+        ).toLocaleString();
         transactionFeeEl.textContent = `+ $${formattedTransactionFees}`;
       }
     }
@@ -435,14 +437,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const isActive = item.classList.contains("active");
 
       // Close all other items
-      document
-        .querySelectorAll(".accordion-item")
-        .forEach((otherItem) => {
-          if (otherItem !== item) {
-            otherItem.classList.remove("active");
-            otherItem.querySelector(".accordion-icon").textContent = "+";
-          }
-        });
+      document.querySelectorAll(".accordion-item").forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".accordion-icon").textContent = "+";
+        }
+      });
 
       // Toggle current item
       if (isActive) {
@@ -509,7 +509,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize with first phrase
   rotatingTextElement.textContent = phrases[0];
-  
+
   // Start rotation after initial delay
   timeoutId = setTimeout(rotateText, 2750);
 });
+
+// Lazy-load video: load and play only when user clicks the placeholder
+(function () {
+  const wrapper = document.querySelector(".video-wrapper");
+  if (!wrapper) return;
+  const placeholder = wrapper.querySelector(".video-placeholder");
+  const video = wrapper.querySelector(".video-player");
+  if (!placeholder || !video) return;
+
+  placeholder.addEventListener("click", function () {
+    const src = wrapper.getAttribute("data-video-src");
+    if (!src) return;
+    video.src = src;
+    placeholder.classList.add("is-hidden");
+    video.classList.remove("is-hidden");
+    video.play();
+  });
+})();
