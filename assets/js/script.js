@@ -514,7 +514,9 @@ document.addEventListener("DOMContentLoaded", function () {
   timeoutId = setTimeout(rotateText, 2750);
 });
 
-// Lazy-load video: load and play only when user clicks the placeholder
+// Lazy-load video: load and play only when user taps/clicks the placeholder.
+// On mobile, play() must run in the same user gesture (tap/click); we also call
+// load() and handle play() promise so failures fall back to native controls.
 (function () {
   const wrapper = document.querySelector(".video-wrapper");
   if (!wrapper) return;
@@ -522,12 +524,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = wrapper.querySelector(".video-player");
   if (!placeholder || !video) return;
 
-  placeholder.addEventListener("click", function () {
+  function startVideo() {
     const src = wrapper.getAttribute("data-video-src");
-    if (!src) return;
+    if (!src || video.src) return; // already started
     video.src = src;
+    video.load();
     placeholder.classList.add("is-hidden");
     video.classList.remove("is-hidden");
-    video.play();
+    var p = video.play();
+    if (p && typeof p.catch === "function") {
+      p.catch(function () {
+        // Programmatic play blocked (e.g. mobile); video has controls, user can tap play
+      });
+    }
+  }
+
+  placeholder.addEventListener("click", function (e) {
+    e.preventDefault();
+    startVideo();
   });
+  placeholder.addEventListener("touchend", function (e) {
+    e.preventDefault();
+    startVideo();
+  }, { passive: false });
 })();
