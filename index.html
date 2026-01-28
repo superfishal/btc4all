@@ -395,10 +395,12 @@
     </section>
 
     <!-- Video Section -->
+    <!-- Video is served from GitHub Releases because the file is in Git LFS and >100MB;
+         GitHub Pages does not serve LFS objects. Create a release, attach the mp4, then use that URL. -->
     <section class="video-section">
       <div class="container">
         <div class="video-content">
-          <div class="video-wrapper" data-video-src="assets/videos/Bare_Bits_Launch_MASTER_V1_MIX_3.mp4">
+          <div class="video-wrapper" data-video-src="https://github.com/superfishal/btc4all/releases/download/v1.0/Bare_Bits_Launch_MASTER_V1_MIX_3.mp4">
             <button type="button" class="video-placeholder" aria-label="Play BareBits launch video">
               <span class="video-play-button" aria-hidden="true">▶</span>
             </button>
