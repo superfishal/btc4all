@@ -60,7 +60,7 @@ const pitchObserver = new IntersectionObserver(
   {
     threshold: 0.2,
     rootMargin: "0px 0px -100px 0px",
-  },
+  }
 );
 
 // Observe all pitch steps
@@ -194,6 +194,29 @@ document.addEventListener("DOMContentLoaded", function () {
         // Animation failed to load
       }
     }
+
+    // Load How It Works process animations (Setup, Payment, Settlement)
+    const processAnimations = [
+      { id: "process-animation-1", path: "animations/1/1_V1.json" },
+      { id: "process-animation-2", path: "animations/2/2_V1.json" },
+      { id: "process-animation-3", path: "animations/3/3_V1.json" },
+    ];
+    processAnimations.forEach(({ id, path }) => {
+      const el = document.getElementById(id);
+      if (el && typeof lottie !== "undefined") {
+        try {
+          lottie.loadAnimation({
+            container: el,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: `${basePath}/${path}`,
+          });
+        } catch (error) {
+          // Animation failed to load
+        }
+      }
+    });
   }, 100);
 });
 
@@ -241,14 +264,16 @@ document.addEventListener("DOMContentLoaded", function () {
       const annualTransactionFees = monthlyTransactionFees * 12;
 
       // Format and update display
-      barebitsCostEl.textContent = `$${Math.round(barebitsCost).toLocaleString()}`;
+      barebitsCostEl.textContent = `$${Math.round(
+        barebitsCost
+      ).toLocaleString()}`;
       stripeCostEl.textContent = `$${Math.round(stripeCost).toLocaleString()}`;
       ccbillCostEl.textContent = `$${Math.round(ccbillCost).toLocaleString()}`;
 
       // Update transaction fee amount
       if (transactionFeeEl) {
         const formattedTransactionFees = Math.round(
-          annualTransactionFees,
+          annualTransactionFees
         ).toLocaleString();
         transactionFeeEl.textContent = `+ $${formattedTransactionFees}`;
       }
@@ -513,38 +538,3 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start rotation after initial delay
   timeoutId = setTimeout(rotateText, 2750);
 });
-
-// Lazy-load video: load and play only when user taps/clicks the placeholder.
-// On mobile, play() must run in the same user gesture (tap/click); we also call
-// load() and handle play() promise so failures fall back to native controls.
-(function () {
-  const wrapper = document.querySelector(".video-wrapper");
-  if (!wrapper) return;
-  const placeholder = wrapper.querySelector(".video-placeholder");
-  const video = wrapper.querySelector(".video-player");
-  if (!placeholder || !video) return;
-
-  function startVideo() {
-    const src = wrapper.getAttribute("data-video-src");
-    if (!src || video.src) return; // already started
-    video.src = src;
-    video.load();
-    placeholder.classList.add("is-hidden");
-    video.classList.remove("is-hidden");
-    var p = video.play();
-    if (p && typeof p.catch === "function") {
-      p.catch(function () {
-        // Programmatic play blocked (e.g. mobile); video has controls, user can tap play
-      });
-    }
-  }
-
-  placeholder.addEventListener("click", function (e) {
-    e.preventDefault();
-    startVideo();
-  });
-  placeholder.addEventListener("touchend", function (e) {
-    e.preventDefault();
-    startVideo();
-  }, { passive: false });
-})();

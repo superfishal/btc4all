@@ -1077,14 +1077,7 @@ footer {
   text-align: center;
 }
 
-.video-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .video-wrapper {
-  position: relative;
   width: 100%;
   max-width: 90rem;
   margin: 0 auto;
@@ -1093,65 +1086,12 @@ footer {
   overflow: hidden;
 }
 
-.video-placeholder {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border: 3px solid var(--color-btc-gold);
-  border-radius: var(--radius-lg);
-  background: var(--color-black);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font: inherit;
-  color: inherit;
-  transition: var(--transition-base);
-}
-
-.video-placeholder.is-hidden {
-  display: none;
-}
-
-.video-placeholder:hover {
-  border-color: var(--color-btc-orange);
-  box-shadow: 0 0 50px rgba(255, 137, 0, 0.4);
-}
-
-.video-placeholder:hover .video-play-button {
-  background: var(--color-btc-gold);
-  transform: scale(1.1);
-}
-
-.video-play-button {
-  width: 8rem;
-  height: 8rem;
-  background: var(--color-btc-orange);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: var(--color-white);
-  transition: var(--transition-base);
-}
-
-.video-player {
-  position: absolute;
-  inset: 0;
+.video-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 3px solid var(--color-btc-gold);
+  display: block;
   border-radius: var(--radius-lg);
-  background: var(--color-black);
-}
-
-.video-player.is-hidden {
-  display: none;
 }
 
 /* Integrations/Badges Section */
@@ -1503,7 +1443,7 @@ footer {
   border: 3px solid var(--color-black);
 }
 
-/* Process Image Placeholder */
+/* Process Image Placeholder (legacy - kept for reference) */
 .process-image-placeholder {
   width: 100%;
   height: 300px;
@@ -1522,6 +1462,17 @@ footer {
 .process-image-placeholder.orange {
   background: var(--color-btc-orange);
   color: var(--color-white);
+}
+
+/* Process Lottie Animations - mobile-first, responsive */
+.process-lottie {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 /* Accordion Component */
@@ -1598,6 +1549,10 @@ footer {
   line-height: 1.6;
   font-size: 1.4rem;
   margin: 0;
+}
+
+.link-cta {
+  color: var(--color-btc-orange);
 }
 
 /* Footer Hero */

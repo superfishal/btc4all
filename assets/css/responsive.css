@@ -226,6 +226,11 @@
     flex-direction: column;
   }
 
+  /* Process Lottie - tablet sizing */
+  .process-lottie {
+    height: 320px;
+  }
+
   /* Tablet CTA still column */
   .cta-content {
     flex-direction: column;
@@ -303,6 +308,11 @@
 
   .pitch-animation {
     flex: 0 0 40%;
+  }
+
+  /* Process Lottie - desktop sizing */
+  .process-lottie {
+    height: 360px;
   }
 
   .large-animation {

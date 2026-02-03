@@ -89,19 +89,22 @@
             </p>
           </div>
           <div class="pitch-animation">
-            <div class="process-image-placeholder gold">
-              Setup Image Placeholder
-            </div>
+            <div
+              id="process-animation-1"
+              class="process-lottie"
+              aria-hidden="true"
+            ></div>
           </div>
         </div>
 
         <!-- Row 2: Image (left) + Taking Payment (right) -->
         <div class="pitch-row reverse">
           <div class="pitch-animation">
-            <div class="process-image-placeholder orange">
-              <!-- TODO: Add payment illustration/image -->
-              Payment Image Placeholder
-            </div>
+            <div
+              id="process-animation-2"
+              class="process-lottie"
+              aria-hidden="true"
+            ></div>
           </div>
           <div class="pitch-content">
             <h3>2. Taking Payment</h3>
@@ -126,10 +129,11 @@
             </p>
           </div>
           <div class="pitch-animation">
-            <div class="process-image-placeholder gold">
-              <!-- TODO: Add settlement illustration/image -->
-              Settlement Image Placeholder
-            </div>
+            <div
+              id="process-animation-3"
+              class="process-lottie"
+              aria-hidden="true"
+            ></div>
           </div>
         </div>
         <div class="pitch-cta">
@@ -172,56 +176,6 @@
       </div>
     </section>
 
-    <!-- Section: Why Bitcoin Lightning -->
-    <!-- <section class="section additional-section">
-      <div class="container">
-        <h2 class="section-main-header">Why Bitcoin Lightning</h2>
-        <div
-          class="pitch-content"
-          style="max-width: 80rem; margin: 0 auto var(--space-2xl)"
-        >
-          <p
-            style="
-              font-size: 1.8rem;
-              line-height: 1.6;
-              color: var(--color-grey);
-              text-align: center;
-              margin-bottom: var(--space-xl);
-            "
-          >
-            Lightning is a second-layer network for Bitcoin that enables
-            instant, low-cost payments.
-          </p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Instant Settlement</h3>
-            <p>
-              Receive payments instantly, not in 2-7 business days like slow
-              bank transfers or credit card processors.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">💰</div>
-            <h3>Lower Fees</h3>
-            <p>
-              No 2-3% credit card "tax". Pay just 2% in processing fees and keep
-              more of your money.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>No Chargebacks, More Privacy</h3>
-            <p>
-              Bitcoin transactions are final. No more fraudulent chargebacks
-              eating your profits. Your customers' payment data stays private.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <!-- Section: Frequently Asked Questions (Accordion) -->
     <section class="section additional-section">
       <div class="container">
@@ -234,8 +188,15 @@
             </button>
             <div class="accordion-content">
               <p>
-                Internet access, email address, and a Bitcoin wallet. Don't have
-                a wallet? #StrikeWalletLink #LearnMore.
+                Internet access, email address, a VPS, and a Bitcoin wallet.
+                Don't have a wallet?
+                <a
+                  href="https://strike.me/en/"
+                  class="link-cta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Get one here</a
+                >
               </p>
             </div>
           </div>
@@ -295,8 +256,8 @@
             </button>
             <div class="accordion-content">
               <p>
-                Payments settle instantly to your wallet, from there
-                you can use or convert it however you please.
+                Payments settle instantly to your wallet, from there you can use
+                or convert it however you please.
               </p>
             </div>
           </div>
@@ -357,150 +318,6 @@
         </div>
       </div>
     </section>
-
-
-
-    <!-- Pricing/Feature Section Option 2: OpenNode Style - Capabilities Grid -->
-    <!-- <section class="section additional-section">
-      <div class="container">
-        <h2 class="section-main-header section-header-left">
-          Get educated on BareBits & <br/>Bitcoin Lightning ⚡ 
-        </h2>
-        <div class="capabilities-grid">
-          <div class="capability-card">
-            <h3 class="capability-card-title">Bitcoin & local currencies</h3>
-            <p class="capability-card-text">
-              Accept bitcoin and receive bitcoin or local currencies like EUR,
-              GBP, USD and more.
-            </p>
-            <a href="#" class="capability-card-link">Learn More →</a>
-          </div>
-          <div class="capability-card">
-            <h3 class="capability-card-title">Payments & Payouts</h3>
-            <p class="capability-card-text">
-              Accept bitcoin payments from anywhere. Fund global payouts with
-              local currency.
-            </p>
-            <a href="#" class="capability-card-link">Learn More →</a>
-          </div>
-          <div class="capability-card">
-            <h3 class="capability-card-title">Invoices</h3>
-            <p class="capability-card-text">
-              Accept bitcoin with professional invoices using our billing
-              templates.
-            </p>
-            <a href="#" class="capability-card-link">Learn More →</a>
-          </div>
-          <div class="capability-card">
-            <h3 class="capability-card-title">Conversion</h3>
-            <p class="capability-card-text">
-              Convert automatically, instantly or on your schedule.
-            </p>
-            <a href="#" class="capability-card-link">Learn More →</a>
-          </div>
-          <div class="capability-card">
-            <h3 class="capability-card-title">Settlement</h3>
-            <p class="capability-card-text">
-              Receive funds in the currency of your choice using Split
-              Settlement.
-            </p>
-            <a href="#" class="capability-card-link">Learn More →</a>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Pricing/Feature Section Option 3: Flash Payments Style - Feature List -->
-    <section class="section additional-section" style="display: none">
-      <div class="container">
-        <h2 class="section-main-header">Why Choose BareBits?</h2>
-        <div class="pitch-row" style="max-width: 90rem; margin: 0 auto">
-          <div class="pitch-content">
-            <h3 style="font-size: 2.4rem; margin-bottom: var(--space-lg)">
-              Complete Payment Solution
-            </h3>
-            <ul style="list-style: none; padding: 0">
-              <li
-                style="
-                  padding: var(--space-sm) 0;
-                  font-size: 1.6rem;
-                  color: var(--color-grey);
-                "
-              >
-                <strong style="color: var(--color-black)"
-                  >Instant Settlement</strong
-                >
-                — Receive payments in seconds, not days
-              </li>
-              <li
-                style="
-                  padding: var(--space-sm) 0;
-                  font-size: 1.6rem;
-                  color: var(--color-grey);
-                "
-              >
-                <strong style="color: var(--color-black)">Low Fees</strong> —
-                Just 2% processing fee, no hidden costs
-              </li>
-              <li
-                style="
-                  padding: var(--space-sm) 0;
-                  font-size: 1.6rem;
-                  color: var(--color-grey);
-                "
-              >
-                <strong style="color: var(--color-black)">Global Reach</strong>
-                — Accept payments from 229+ countries
-              </li>
-              <li
-                style="
-                  padding: var(--space-sm) 0;
-                  font-size: 1.6rem;
-                  color: var(--color-grey);
-                "
-              >
-                <strong style="color: var(--color-black)"
-                  >No Chargebacks</strong
-                >
-                — Bitcoin transactions are final
-              </li>
-              <li
-                style="
-                  padding: var(--space-sm) 0;
-                  font-size: 1.6rem;
-                  color: var(--color-grey);
-                "
-              >
-                <strong style="color: var(--color-black)"
-                  >Privacy Focused</strong
-                >
-                — Your data stays private
-              </li>
-            </ul>
-          </div>
-          <div class="pitch-animation">
-            <div
-              style="
-                width: 100%;
-                height: 400px;
-                background: var(--color-btc-gold);
-                border-radius: var(--radius-md);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--color-black);
-                font-size: 1.6rem;
-              "
-            >
-              <!-- TODO: Add feature illustration -->
-              Feature Illustration Placeholder
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
 
     <!-- Footer Hero Section -->
     <section class="footer-hero">

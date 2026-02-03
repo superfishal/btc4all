@@ -39,7 +39,9 @@
             <ul class="nav-links desktop-only" id="navLinks">
               <li><a href="pages/how-it-works.html">How It Works</a></li>
               <li><a href="pages/pricing.html">Pricing</a></li>
-              <li class="mobile-only"><a href="pages/contact.html">Contact</a></li>
+              <li class="mobile-only">
+                <a href="pages/contact.html">Contact</a>
+              </li>
             </ul>
             <a href="pages/contact.html" class="nav-cta desktop-only"
               >Start Saving Today</a
@@ -58,7 +60,7 @@
         <p class="hero-description">
           BareBits is the fastest, easiest, most secure way to accept payments.
           Our service gives you payment processing at just 2%. Lightning fast,
-          easy and secure.  Banks discriminate, we don't.
+          easy and secure. Banks discriminate, we don't.
         </p>
         <div class="hero-cta">
           <a href="pages/contact.html" class="cta-button primary"
@@ -130,10 +132,11 @@
             </ul>
           </div>
           <div class="pitch-animation">
-
             <!-- NEW TABLE CALCULATOR -->
             <div class="calculator-table-wrapper">
-              <div class="calc-table-header">See What BareBits Can Save You!</div>
+              <div class="calc-table-header">
+                See What BareBits Can Save You!
+              </div>
               <div class="calc-table-input-wrapper">
                 <div class="calc-table-input-container">
                   <span class="calc-table-dollar">$</span>
@@ -150,9 +153,9 @@
                 <div class="calc-row">
                   <div class="calc-provider-info">
                     <div class="calc-provider-logo">
-                      <img 
-                        src="assets/images/wordmark/BareBits_UnzipLogo_BLK_GLD.svg" 
-                        alt="BareBits" 
+                      <img
+                        src="assets/images/wordmark/BareBits_UnzipLogo_BLK_GLD.svg"
+                        alt="BareBits"
                         class="calc-logo-img"
                       />
                     </div>
@@ -160,24 +163,38 @@
                   </div>
                   <div class="calc-cost-info">
                     <div class="calc-cost-label">Annual Processing Fees</div>
-                    <div class="calc-cost-value calc-cost-barebits" id="barebitsCost">$0</div>
+                    <div
+                      class="calc-cost-value calc-cost-barebits"
+                      id="barebitsCost"
+                    >
+                      $0
+                    </div>
                   </div>
                 </div>
-                
+
                 <!-- Row 2: Stripe/PayPal/Square -->
                 <div class="calc-row">
                   <div class="calc-provider-info">
                     <div class="calc-provider-name">Stripe/PayPal/Square</div>
                     <div class="calc-provider-fee calc-fee-red">2.9%</div>
-                    <div class="calc-transaction-fee calc-fee-red">+$0.30 per transaction</div>
+                    <div class="calc-transaction-fee calc-fee-red">
+                      +$0.30 per transaction
+                    </div>
                   </div>
                   <div class="calc-cost-info">
                     <div class="calc-cost-label">Annual Processing Fees</div>
-                    <div class="calc-cost-value calc-cost-red" id="stripeCost">$0</div>
-                    <div class="calc-transaction-fee calc-fee-red" id="transactionFeeAmount">+ $0</div>
+                    <div class="calc-cost-value calc-cost-red" id="stripeCost">
+                      $0
+                    </div>
+                    <div
+                      class="calc-transaction-fee calc-fee-red"
+                      id="transactionFeeAmount"
+                    >
+                      + $0
+                    </div>
                   </div>
                 </div>
-                
+
                 <!-- Row 3: CCBill -->
                 <div class="calc-row">
                   <div class="calc-provider-info">
@@ -186,44 +203,100 @@
                   </div>
                   <div class="calc-cost-info">
                     <div class="calc-cost-label">Annual Processing Fees</div>
-                    <div class="calc-cost-value calc-cost-red" id="ccbillCost">$0</div>
+                    <div class="calc-cost-value calc-cost-red" id="ccbillCost">
+                      $0
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <!-- Metrics Section -->
         <div class="pitch-metrics">
           <div class="metrics-container">
             <div class="metric-item">
               <div class="metric-icon">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/>
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
                 </svg>
               </div>
-              <div class="metric-text">4 billion people use digital wallets</div>
+              <div class="metric-text">
+                4 billion people use digital wallets
+              </div>
             </div>
             <div class="metric-divider"></div>
             <div class="metric-item">
               <div class="metric-icon">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
-                  <path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="5"
+                    y="2"
+                    width="14"
+                    height="20"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 18h.01"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
                 </svg>
               </div>
-              <div class="metric-text">40-60% of smart phones have Bitcoin Wallets <br/>(CashApp, PayPal, Venmo, Strike)</div>
+              <div class="metric-text">
+                60% of users have Bitcoin Wallets <br />(CashApp, PayPal, Venmo,
+                Strike)
+              </div>
             </div>
             <div class="metric-divider"></div>
             <div class="metric-item">
               <div class="metric-icon">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
-              <div class="metric-text">Bitcoin can be accepted by anyone, anywhere, anytime</div>
+              <div class="metric-text">
+                Bitcoin can be accepted by anyone, anywhere, anytime
+              </div>
             </div>
           </div>
         </div>
@@ -343,7 +416,6 @@
               class="company-logo"
             />
           </div>
-          
         </div>
       </div>
     </section>
@@ -355,7 +427,9 @@
             New Signups Can Qualify for 0% Fees for the First Year
           </p>
           <div class="cta-banner-button">
-            <a href="pages/contact.html" class="cta-button primary">Apply Now</a>
+            <a href="pages/contact.html" class="cta-button primary"
+              >Apply Now</a
+            >
           </div>
         </div>
       </div>
@@ -386,8 +460,8 @@
             <div class="feature-icon">💰</div>
             <h3>Save Money</h3>
             <p>
-              Pay just 2% in fees compared to 3-15% + transaction fees with traditional payment
-              processors.
+              Pay just 2% in fees compared to 3-15% + transaction fees with
+              traditional payment processors.
             </p>
           </div>
         </div>
@@ -395,23 +469,21 @@
     </section>
 
     <!-- Video Section -->
-    <!-- Video is served from GitHub Releases because the file is in Git LFS and >100MB;
-         GitHub Pages does not serve LFS objects. Create a release, attach the mp4, then use that URL. -->
     <section class="video-section">
       <div class="container">
-        <div class="video-content">
-          <div class="video-wrapper" data-video-src="https://github.com/superfishal/btc4all/releases/download/v1.0/Bare_Bits_Launch_MASTER_V1_MIX_3.mp4">
-            <button type="button" class="video-placeholder" aria-label="Play BareBits launch video">
-              <span class="video-play-button" aria-hidden="true">▶</span>
-            </button>
-            <video class="video-player is-hidden" controls playsinline webkit-playsinline preload="none" aria-label="BareBits launch video" poster="">
-              <!-- src set on first play via JS for lazy-load -->
-            </video>
-          </div>
+        <div class="video-wrapper">
+          <video
+            src="assets/videos/Bare_Bits_Launch_MASTER_V1_MIX_3.2.mp4"
+            poster="assets/images/logos/CAT_ICON/BareBits_Cat_Icon_BLK_B.svg"
+            controls
+            playsinline
+            muted
+            preload="metadata"
+            aria-label="BareBits launch video"
+          ></video>
         </div>
       </div>
     </section>
-
 
     <!-- Integrations Section -->
     <section class="integrations-section simple-integrations">
